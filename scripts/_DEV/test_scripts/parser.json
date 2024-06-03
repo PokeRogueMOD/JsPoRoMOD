@@ -1,0 +1,394 @@
+{
+    "enemyPokemons": [
+        {
+            "name": "Waumpel",
+            "passive": false,
+            "shiny": false,
+            "luck": 0,
+            "level": 2,
+            "levelExp": 0,
+            "ivs": [
+                1,
+                13,
+                26,
+                9,
+                1,
+                18
+            ],
+            "hp": 0,
+            "gender": 0,
+            "pokerus": false,
+            "shinySparkle": null,
+            "stats": [
+                13,
+                7,
+                7,
+                4,
+                6,
+                6
+            ],
+            "turnData": {
+                "attacksReceived": [
+                    {
+                        "move": 202,
+                        "result": 3,
+                        "damage": 7,
+                        "critical": false,
+                        "sourceId": 2086143461
+                    }
+                ],
+                "currDamageDealt": 4,
+                "damageDealt": 4,
+                "damageTaken": 7
+            },
+            "battleData": {
+                "abilitiesApplied": [],
+                "berriesEaten": [],
+                "endured": false,
+                "hitCount": 2
+            },
+            "moveset": [
+                {
+                    "moveId": 33,
+                    "ppUp": 0,
+                    "ppUsed": 1,
+                    "virtual": false
+                },
+                {
+                    "moveId": 81,
+                    "ppUp": 0,
+                    "ppUsed": 1,
+                    "virtual": false
+                }
+            ],
+            "species": {
+                "ability1": 19,
+                "ability2": 0,
+                "abilityHidden": 50,
+                "baseExp": 56,
+                "baseFriendship": 70,
+                "baseStats": [
+                    45,
+                    45,
+                    35,
+                    20,
+                    30,
+                    20
+                ],
+                "baseTotal": 195,
+                "canChangeForm": false,
+                "catchRate": 255,
+                "formIndex": 0,
+                "forms": [],
+                "genderDiffs": false,
+                "generation": 3,
+                "growthRate": 2,
+                "height": 0.3,
+                "legendary": false,
+                "malePercent": 50,
+                "mythical": false,
+                "name": "Waumpel",
+                "species": "Worm Pokémon",
+                "speciesId": 265,
+                "subLegendary": false,
+                "type1": 6,
+                "type2": null,
+                "weight": 3.6
+            }
+        },
+        {
+            "name": "Wolly",
+            "shiny": false,
+            "luck": 0,
+            "level": 2,
+            "levelExp": 0,
+            "ivs": [
+                23,
+                0,
+                15,
+                17,
+                14,
+                16
+            ],
+            "hp": 0,
+            "gender": 0,
+            "pokerus": false,
+            "shinySparkle": null,
+            "stats": [
+                14,
+                6,
+                8,
+                6,
+                7,
+                6
+            ],
+            "turnData": {
+                "attacksReceived": [
+                    {
+                        "move": 52,
+                        "result": 1,
+                        "damage": 14,
+                        "critical": false,
+                        "sourceId": 1679790701
+                    }
+                ],
+                "currDamageDealt": 0,
+                "damageDealt": 0,
+                "damageTaken": 14
+            },
+            "battleData": {
+                "abilitiesApplied": [
+                    218
+                ],
+                "berriesEaten": [],
+                "endured": false,
+                "hitCount": 1
+            },
+            "moveset": [
+                {
+                    "moveId": 33,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                },
+                {
+                    "moveId": 45,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                }
+            ],
+            "species": {
+                "ability1": 218,
+                "ability2": 50,
+                "abilityHidden": 171,
+                "baseExp": 122,
+                "baseFriendship": 50,
+                "baseStats": [
+                    42,
+                    40,
+                    55,
+                    40,
+                    45,
+                    48
+                ],
+                "baseTotal": 270,
+                "canChangeForm": false,
+                "catchRate": 255,
+                "formIndex": 0,
+                "forms": [],
+                "genderDiffs": false,
+                "generation": 8,
+                "growthRate": 2,
+                "height": 0.6,
+                "legendary": false,
+                "malePercent": 50,
+                "mythical": false,
+                "name": "Wolly",
+                "species": "Sheep Pokémon",
+                "speciesId": 831,
+                "subLegendary": false,
+                "type1": 0,
+                "type2": null,
+                "weight": 6
+            }
+        },
+        {
+            "name": "Waumpel",
+            "shiny": false,
+            "luck": 0,
+            "level": 2,
+            "levelExp": 0,
+            "ivs": [
+                1,
+                2,
+                24,
+                18,
+                9,
+                19
+            ],
+            "hp": 0,
+            "gender": 0,
+            "pokerus": false,
+            "shinySparkle": null,
+            "stats": [
+                13,
+                6,
+                7,
+                6,
+                6,
+                5
+            ],
+            "turnData": {
+                "attacksReceived": [
+                    {
+                        "move": 52,
+                        "result": 2,
+                        "damage": 3,
+                        "critical": false,
+                        "sourceId": 1679790701
+                    }
+                ],
+                "currDamageDealt": 0,
+                "damageDealt": 0,
+                "damageTaken": 3
+            },
+            "battleData": {
+                "abilitiesApplied": [],
+                "berriesEaten": [],
+                "endured": false,
+                "hitCount": 2
+            },
+            "moveset": [
+                {
+                    "moveId": 33,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                },
+                {
+                    "moveId": 81,
+                    "ppUp": 0,
+                    "ppUsed": 1,
+                    "virtual": false
+                }
+            ],
+            "species": {
+                "ability1": 19,
+                "ability2": 0,
+                "abilityHidden": 50,
+                "baseExp": 56,
+                "baseFriendship": 70,
+                "baseStats": [
+                    45,
+                    45,
+                    35,
+                    20,
+                    30,
+                    20
+                ],
+                "baseTotal": 195,
+                "canChangeForm": false,
+                "catchRate": 255,
+                "formIndex": 0,
+                "forms": [],
+                "genderDiffs": false,
+                "generation": 3,
+                "growthRate": 2,
+                "height": 0.3,
+                "legendary": false,
+                "malePercent": 50,
+                "mythical": false,
+                "name": "Waumpel",
+                "species": "Worm Pokémon",
+                "speciesId": 265,
+                "subLegendary": false,
+                "type1": 6,
+                "type2": null,
+                "weight": 3.6
+            }
+        }
+    ],
+    "myPokemons": [
+        {
+            "name": "Glumanda",
+            "passive": false,
+            "shiny": true,
+            "luck": 3,
+            "level": 5,
+            "levelExp": 35,
+            "ivs": [
+                31,
+                31,
+                31,
+                31,
+                31,
+                31
+            ],
+            "hp": 20,
+            "gender": 0,
+            "pokerus": false,
+            "shinySparkle": "shiny_3",
+            "stats": [
+                20,
+                11,
+                10,
+                12,
+                11,
+                13
+            ],
+            "turnData": {
+                "attacksReceived": [],
+                "currDamageDealt": 0,
+                "damageDealt": 0,
+                "damageTaken": 0
+            },
+            "battleData": {
+                "abilitiesApplied": [],
+                "berriesEaten": [],
+                "endured": false,
+                "hitCount": 0
+            },
+            "moveset": [
+                {
+                    "moveId": 10,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                },
+                {
+                    "moveId": 45,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                },
+                {
+                    "moveId": 52,
+                    "ppUp": 0,
+                    "ppUsed": 2,
+                    "virtual": false
+                },
+                {
+                    "moveId": 349,
+                    "ppUp": 0,
+                    "ppUsed": 0,
+                    "virtual": false
+                }
+            ],
+            "species": {
+                "ability1": 66,
+                "ability2": 0,
+                "abilityHidden": 94,
+                "baseExp": 62,
+                "baseFriendship": 50,
+                "baseStats": [
+                    39,
+                    52,
+                    43,
+                    60,
+                    50,
+                    65
+                ],
+                "baseTotal": 309,
+                "canChangeForm": false,
+                "catchRate": 45,
+                "formIndex": 0,
+                "forms": [],
+                "genderDiffs": false,
+                "generation": 1,
+                "growthRate": 3,
+                "height": 0.6,
+                "legendary": false,
+                "malePercent": 87.5,
+                "mythical": false,
+                "name": "Glumanda",
+                "species": "Lizard Pokémon",
+                "speciesId": 4,
+                "subLegendary": false,
+                "type1": 9,
+                "type2": null,
+                "weight": 8.5
+            }
+        }
+    ]
+}

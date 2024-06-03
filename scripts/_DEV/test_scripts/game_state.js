@@ -1,0 +1,21 @@
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.input.pointers[0].camera.renderList[0].scene [Old Base Path]
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameData.gameStats
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameData.eggs
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameData.starterData
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameData.voucherCounts
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameMode
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.gameSpeed
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.pokeballCounts
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.waveIndex
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.trainer.name
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.trainer.config.hasDouble
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.trainer.config.doubleOnly
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.seenEnemyPartyMemberIds
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.turn
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.turnCommands
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.enemySwitchCounter
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.escapeAttempts
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.lastUsedPokeball
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.moneyScattered
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.playerParticipantIds
+// Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.renderer.currentMask.camera.renderList[0].scene.sys.make.scene.trainer.scene.currentBattle.postBattleLoot

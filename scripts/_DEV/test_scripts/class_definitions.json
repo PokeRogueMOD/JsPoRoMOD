@@ -1,0 +1,3406 @@
+[
+  {
+    "path": "window.RexPlugins.GameObjects.BBCodeText",
+    "name": "BBCodeText"
+  },
+  {
+    "path": "window.RexPlugins.GameObjects.InputText",
+    "name": "InputText"
+  },
+  {
+    "path": "window.RexPlugins.GameObjects.TransitionImagePack",
+    "name": "TransitionImagePack"
+  },
+  {
+    "path": "window.RexPlugins.UI.NinePatch",
+    "name": "NinePatch"
+  },
+  {
+    "path": "window.RexPlugins.UI.NinePatch2",
+    "name": "NinePatch"
+  },
+  {
+    "path": "window.RexPlugins.UI.RoundRectangle",
+    "name": "RoundRectangle"
+  },
+  {
+    "path": "window.RexPlugins.UI.RoundRectangleCanvas",
+    "name": "RoundRectangle"
+  },
+  {
+    "path": "window.RexPlugins.UI.BBCodeText",
+    "name": "BBCodeText"
+  },
+  {
+    "path": "window.RexPlugins.UI.TagText",
+    "name": "TagText"
+  },
+  {
+    "path": "window.RexPlugins.UI.DynamicText",
+    "name": "DynamicText"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextPlayer",
+    "name": "TextPlayer"
+  },
+  {
+    "path": "window.RexPlugins.UI.CanvasInput",
+    "name": "CanvasInput"
+  },
+  {
+    "path": "window.RexPlugins.UI.HiddenEdit",
+    "name": "HiddenTextEdit"
+  },
+  {
+    "path": "window.RexPlugins.UI.Checkbox",
+    "name": "Checkbox"
+  },
+  {
+    "path": "window.RexPlugins.UI.ToggleSwitch",
+    "name": "ToggleSwitch"
+  },
+  {
+    "path": "window.RexPlugins.UI.Canvas",
+    "name": "Canvas"
+  },
+  {
+    "path": "window.RexPlugins.UI.CircleMaskImage",
+    "name": "CircleMaskImage"
+  },
+  {
+    "path": "window.RexPlugins.UI.AlphaMaskImage",
+    "name": "AlphaMaskImage"
+  },
+  {
+    "path": "window.RexPlugins.UI.CircularProgress",
+    "name": "CircularProgress"
+  },
+  {
+    "path": "window.RexPlugins.UI.CircularProgressCanvas",
+    "name": "CircularProgress"
+  },
+  {
+    "path": "window.RexPlugins.UI.LineProgress",
+    "name": "LineProgress"
+  },
+  {
+    "path": "window.RexPlugins.UI.LineProgressCanvas",
+    "name": "LineProgress"
+  },
+  {
+    "path": "window.RexPlugins.UI.Triangle",
+    "name": "Triangle"
+  },
+  {
+    "path": "window.RexPlugins.UI.Knob",
+    "name": "Knob"
+  },
+  {
+    "path": "window.RexPlugins.UI.CustomShapes",
+    "name": "CustomShapes"
+  },
+  {
+    "path": "window.RexPlugins.UI.CustomProgress",
+    "name": "CustomProgress"
+  },
+  {
+    "path": "window.RexPlugins.UI.TransitionImage",
+    "name": "TransitionImage"
+  },
+  {
+    "path": "window.RexPlugins.UI.TransitionImagePack",
+    "name": "TransitionImagePack"
+  },
+  {
+    "path": "window.RexPlugins.UI.ImageBox",
+    "name": "ImageBox"
+  },
+  {
+    "path": "window.RexPlugins.UI.FullWindowRectangle",
+    "name": "FullWindowRectangle"
+  },
+  {
+    "path": "window.RexPlugins.UI.Cover",
+    "name": "Cover"
+  },
+  {
+    "path": "window.RexPlugins.UI.InputText",
+    "name": "InputText"
+  },
+  {
+    "path": "window.RexPlugins.UI.FileChooser",
+    "name": "FileChooser"
+  },
+  {
+    "path": "window.RexPlugins.UI.FileDropZone",
+    "name": "FileDropZone"
+  },
+  {
+    "path": "window.RexPlugins.UI.ImageInputLabel",
+    "name": "ImageInputLabel"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesImage",
+    "name": "StatesImage"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesRoundRectangle",
+    "name": "StatesRoundRectangle"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesNineSlice",
+    "name": "StatesNineSlice"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesNinePatch",
+    "name": "StatesNinePatch"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesText",
+    "name": "StatesText"
+  },
+  {
+    "path": "window.RexPlugins.UI.StatesBitmapText",
+    "name": "StatesBitmapText"
+  },
+  {
+    "path": "window.RexPlugins.UI.Chart",
+    "name": "Chart"
+  },
+  {
+    "path": "window.RexPlugins.UI.Container",
+    "name": "ContainerLite"
+  },
+  {
+    "path": "window.RexPlugins.UI.Sizer",
+    "name": "Sizer"
+  },
+  {
+    "path": "window.RexPlugins.UI.GridSizer",
+    "name": "GridSizer"
+  },
+  {
+    "path": "window.RexPlugins.UI.FixWidthSizer",
+    "name": "FixWidthSizer"
+  },
+  {
+    "path": "window.RexPlugins.UI.OverlapSizer",
+    "name": "OverlapSizer"
+  },
+  {
+    "path": "window.RexPlugins.UI.Space",
+    "name": "Space"
+  },
+  {
+    "path": "window.RexPlugins.UI.Label",
+    "name": "Label"
+  },
+  {
+    "path": "window.RexPlugins.UI.SimpleLabel",
+    "name": "SimpleLabel"
+  },
+  {
+    "path": "window.RexPlugins.UI.TitleLabel",
+    "name": "TitleLabel"
+  },
+  {
+    "path": "window.RexPlugins.UI.SimpleTitleLabel",
+    "name": "SimpleTitleLabel"
+  },
+  {
+    "path": "window.RexPlugins.UI.NameValueLabel",
+    "name": "NameValueLabel"
+  },
+  {
+    "path": "window.RexPlugins.UI.ExpBar",
+    "name": "ExpBar"
+  },
+  {
+    "path": "window.RexPlugins.UI.Buttons",
+    "name": "Buttons"
+  },
+  {
+    "path": "window.RexPlugins.UI.GridButtons",
+    "name": "GridButtons"
+  },
+  {
+    "path": "window.RexPlugins.UI.FixWidthButtons",
+    "name": "Buttons"
+  },
+  {
+    "path": "window.RexPlugins.UI.FileSelectorButton",
+    "name": "FileSelectorButton"
+  },
+  {
+    "path": "window.RexPlugins.UI.Dialog",
+    "name": "Dialog"
+  },
+  {
+    "path": "window.RexPlugins.UI.ConfirmDialog",
+    "name": "ConfirmDialog"
+  },
+  {
+    "path": "window.RexPlugins.UI.ConfirmActionButton",
+    "name": "ConfirmActionButton"
+  },
+  {
+    "path": "window.RexPlugins.UI.HolyGrail",
+    "name": "HolyGrail"
+  },
+  {
+    "path": "window.RexPlugins.UI.Tabs",
+    "name": "Tabs"
+  },
+  {
+    "path": "window.RexPlugins.UI.Slider",
+    "name": "Slider"
+  },
+  {
+    "path": "window.RexPlugins.UI.GridTable",
+    "name": "GridTable"
+  },
+  {
+    "path": "window.RexPlugins.UI.Menu",
+    "name": "Menu"
+  },
+  {
+    "path": "window.RexPlugins.UI.DropDownList",
+    "name": "DropDownList"
+  },
+  {
+    "path": "window.RexPlugins.UI.SimpleDropDownList",
+    "name": "SimpleDropDownList"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextBox",
+    "name": "TextBox"
+  },
+  {
+    "path": "window.RexPlugins.UI.SimpleTextBox",
+    "name": "SimpleTextBox"
+  },
+  {
+    "path": "window.RexPlugins.UI.NumberBar",
+    "name": "NumberBar"
+  },
+  {
+    "path": "window.RexPlugins.UI.ScrollBar",
+    "name": "ScrollBar"
+  },
+  {
+    "path": "window.RexPlugins.UI.BadgeLabel",
+    "name": "Badge"
+  },
+  {
+    "path": "window.RexPlugins.UI.Pages",
+    "name": "Pages"
+  },
+  {
+    "path": "window.RexPlugins.UI.PerspectiveCard",
+    "name": "PerspectiveCard"
+  },
+  {
+    "path": "window.RexPlugins.UI.TabPages",
+    "name": "TabPages"
+  },
+  {
+    "path": "window.RexPlugins.UI.Folder",
+    "name": "Folder"
+  },
+  {
+    "path": "window.RexPlugins.UI.Trees",
+    "name": "Trees"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextArea",
+    "name": "TextArea"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextAreaInput",
+    "name": "TextAreaInput"
+  },
+  {
+    "path": "window.RexPlugins.UI.ScrollablePanel",
+    "name": "ScrollablePanel"
+  },
+  {
+    "path": "window.RexPlugins.UI.Toast",
+    "name": "Toast"
+  },
+  {
+    "path": "window.RexPlugins.UI.ColorInput",
+    "name": "ColorInput"
+  },
+  {
+    "path": "window.RexPlugins.UI.ColorInputBase",
+    "name": "ColorInput"
+  },
+  {
+    "path": "window.RexPlugins.UI.ColorPicker",
+    "name": "ColorPicker"
+  },
+  {
+    "path": "window.RexPlugins.UI.ColorComponents",
+    "name": "ColorComponents"
+  },
+  {
+    "path": "window.RexPlugins.UI.SplitPanels",
+    "name": "SplitPanels"
+  },
+  {
+    "path": "window.RexPlugins.UI.Sides",
+    "name": "Sides"
+  },
+  {
+    "path": "window.RexPlugins.UI.Tweaker",
+    "name": "Tweaker"
+  },
+  {
+    "path": "window.RexPlugins.UI.Click",
+    "name": "Button"
+  },
+  {
+    "path": "window.RexPlugins.UI.ClickOutside",
+    "name": "ClickOutside"
+  },
+  {
+    "path": "window.RexPlugins.UI.InTouching",
+    "name": "InTouching"
+  },
+  {
+    "path": "window.RexPlugins.UI.Tap",
+    "name": "Tap"
+  },
+  {
+    "path": "window.RexPlugins.UI.Press",
+    "name": "Press"
+  },
+  {
+    "path": "window.RexPlugins.UI.Swipe",
+    "name": "Swipe"
+  },
+  {
+    "path": "window.RexPlugins.UI.Pan",
+    "name": "Pan"
+  },
+  {
+    "path": "window.RexPlugins.UI.Drag",
+    "name": "Drag"
+  },
+  {
+    "path": "window.RexPlugins.UI.Pinch",
+    "name": "Pinch"
+  },
+  {
+    "path": "window.RexPlugins.UI.Rotate",
+    "name": "Rotate"
+  },
+  {
+    "path": "window.RexPlugins.UI.Flip",
+    "name": "Flip"
+  },
+  {
+    "path": "window.RexPlugins.UI.Shake",
+    "name": "ShakePosition"
+  },
+  {
+    "path": "window.RexPlugins.UI.TouchEventStop",
+    "name": "TouchEventStop"
+  },
+  {
+    "path": "window.RexPlugins.UI.Perspective",
+    "name": "ContainerPerspective"
+  },
+  {
+    "path": "window.RexPlugins.UI.Skew",
+    "name": "ContainerSkew"
+  },
+  {
+    "path": "window.RexPlugins.UI.Anchor",
+    "name": "Anchor"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextTyping",
+    "name": "TextTyping"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextPage",
+    "name": "TextPage"
+  },
+  {
+    "path": "window.RexPlugins.UI.TextEdit",
+    "name": "TextEdit"
+  },
+  {
+    "path": "window.RexPlugins.UI.LayerManager",
+    "name": "LayerManager"
+  },
+  {
+    "path": "window.Phaser.Class",
+    "name": "Class"
+  },
+  {
+    "path": "window.Phaser.Game",
+    "name": "Game"
+  },
+  {
+    "path": "window.Phaser.Scene",
+    "name": "Scene"
+  },
+  {
+    "path": "window.Phaser.Sound.BaseSound",
+    "name": "BaseSound"
+  },
+  {
+    "path": "window.Phaser.Sound.BaseSoundManager",
+    "name": "BaseSoundManager"
+  },
+  {
+    "path": "window.Phaser.Sound.WebAudioSound",
+    "name": "WebAudioSound"
+  },
+  {
+    "path": "window.Phaser.Sound.WebAudioSoundManager",
+    "name": "WebAudioSoundManager"
+  },
+  {
+    "path": "window.Phaser.Sound.HTML5AudioSound",
+    "name": "HTML5AudioSound"
+  },
+  {
+    "path": "window.Phaser.Sound.HTML5AudioSoundManager",
+    "name": "HTML5AudioSoundManager"
+  },
+  {
+    "path": "window.Phaser.Sound.NoAudioSound",
+    "name": "NoAudioSound"
+  },
+  {
+    "path": "window.Phaser.Sound.NoAudioSoundManager",
+    "name": "NoAudioSoundManager"
+  },
+  {
+    "path": "window.Phaser.Utils.NOOP",
+    "name": "NOOP"
+  },
+  {
+    "path": "window.Phaser.Utils.NULL",
+    "name": "NULL"
+  },
+  {
+    "path": "window.Phaser.Utils.String.Format",
+    "name": "Format"
+  },
+  {
+    "path": "window.Phaser.Utils.String.Pad",
+    "name": "Pad"
+  },
+  {
+    "path": "window.Phaser.Utils.String.RemoveAt",
+    "name": "RemoveAt"
+  },
+  {
+    "path": "window.Phaser.Utils.String.Reverse",
+    "name": "Reverse"
+  },
+  {
+    "path": "window.Phaser.Utils.String.UppercaseFirst",
+    "name": "UppercaseFirst"
+  },
+  {
+    "path": "window.Phaser.Utils.String.UUID",
+    "name": "UUID"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.Clone",
+    "name": "Clone"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.DeepCopy",
+    "name": "DeepCopy"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.Extend",
+    "name": "Extend"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.GetAdvancedValue",
+    "name": "GetAdvancedValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.GetFastValue",
+    "name": "GetFastValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.GetMinMaxValue",
+    "name": "GetMinMaxValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.GetValue",
+    "name": "GetValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.HasAll",
+    "name": "HasAll"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.HasAny",
+    "name": "HasAny"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.HasValue",
+    "name": "HasValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.IsPlainObject",
+    "name": "IsPlainObject"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.Merge",
+    "name": "Merge"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.MergeRight",
+    "name": "MergeRight"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.Pick",
+    "name": "Pick"
+  },
+  {
+    "path": "window.Phaser.Utils.Objects.SetValue",
+    "name": "SetValue"
+  },
+  {
+    "path": "window.Phaser.Utils.Base64.ArrayBufferToBase64",
+    "name": "ArrayBufferToBase64"
+  },
+  {
+    "path": "window.Phaser.Utils.Base64.Base64ToArrayBuffer",
+    "name": "Base64ToArrayBuffer"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Add",
+    "name": "Add"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.AddAt",
+    "name": "AddAt"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.BringToTop",
+    "name": "BringToTop"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.CountAllMatching",
+    "name": "CountAllMatching"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Each",
+    "name": "Each"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.EachInRange",
+    "name": "EachInRange"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.FindClosestInSorted",
+    "name": "FindClosestInSorted"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Flatten",
+    "name": "Flatten"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.GetAll",
+    "name": "GetAll"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.GetFirst",
+    "name": "GetFirst"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.GetRandom",
+    "name": "GetRandom"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.MoveDown",
+    "name": "MoveDown"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.MoveTo",
+    "name": "MoveTo"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.MoveUp",
+    "name": "MoveUp"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.MoveAbove",
+    "name": "MoveAbove"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.MoveBelow",
+    "name": "MoveBelow"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.NumberArray",
+    "name": "NumberArray"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.NumberArrayStep",
+    "name": "NumberArrayStep"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.QuickSelect",
+    "name": "QuickSelect"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Range",
+    "name": "Range"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Remove",
+    "name": "Remove"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.RemoveAt",
+    "name": "RemoveAt"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.RemoveBetween",
+    "name": "RemoveBetween"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.RemoveRandomElement",
+    "name": "RemoveRandomElement"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Replace",
+    "name": "Replace"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.RotateLeft",
+    "name": "RotateLeft"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.RotateRight",
+    "name": "RotateRight"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.SafeRange",
+    "name": "SafeRange"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.SendToBack",
+    "name": "SendToBack"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.SetAll",
+    "name": "SetAll"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Shuffle",
+    "name": "Shuffle"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.SortByDigits",
+    "name": "SortByDigits"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.SpliceOne",
+    "name": "SpliceOne"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.StableSort",
+    "name": "StableSort"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Swap",
+    "name": "Swap"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.CheckMatrix",
+    "name": "CheckMatrix"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.MatrixToString",
+    "name": "MatrixToString"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.ReverseColumns",
+    "name": "ReverseColumns"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.ReverseRows",
+    "name": "ReverseRows"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.Rotate180",
+    "name": "Rotate180"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.RotateLeft",
+    "name": "RotateLeft"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.RotateMatrix",
+    "name": "RotateMatrix"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.RotateRight",
+    "name": "RotateRight"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.Translate",
+    "name": "TranslateMatrix"
+  },
+  {
+    "path": "window.Phaser.Utils.Array.Matrix.TransposeMatrix",
+    "name": "TransposeMatrix"
+  },
+  {
+    "path": "window.Phaser.Tweens.TweenManager",
+    "name": "TweenManager"
+  },
+  {
+    "path": "window.Phaser.Tweens.Tween",
+    "name": "Tween"
+  },
+  {
+    "path": "window.Phaser.Tweens.TweenData",
+    "name": "TweenData"
+  },
+  {
+    "path": "window.Phaser.Tweens.TweenFrameData",
+    "name": "TweenFrameData"
+  },
+  {
+    "path": "window.Phaser.Tweens.BaseTween",
+    "name": "BaseTween"
+  },
+  {
+    "path": "window.Phaser.Tweens.TweenChain",
+    "name": "TweenChain"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetBoolean",
+    "name": "GetBoolean"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetEaseFunction",
+    "name": "GetEaseFunction"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetInterpolationFunction",
+    "name": "GetInterpolationFunction"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetNewValue",
+    "name": "GetNewValue"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetProps",
+    "name": "GetProps"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetTargets",
+    "name": "GetTargets"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.GetValueOp",
+    "name": "GetValueOp"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.NumberTweenBuilder",
+    "name": "NumberTweenBuilder"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.StaggerBuilder",
+    "name": "StaggerBuilder"
+  },
+  {
+    "path": "window.Phaser.Tweens.Builders.TweenBuilder",
+    "name": "TweenBuilder"
+  },
+  {
+    "path": "window.Phaser.Time.Clock",
+    "name": "Clock"
+  },
+  {
+    "path": "window.Phaser.Time.Timeline",
+    "name": "Timeline"
+  },
+  {
+    "path": "window.Phaser.Time.TimerEvent",
+    "name": "TimerEvent"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.ImageCollection",
+    "name": "ImageCollection"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.ParseToTilemap",
+    "name": "ParseToTilemap"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Tile",
+    "name": "Tile"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Tilemap",
+    "name": "Tilemap"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Tileset",
+    "name": "Tileset"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.TilemapLayer",
+    "name": "TilemapLayer"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.LayerData",
+    "name": "LayerData"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.MapData",
+    "name": "MapData"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.ObjectLayer",
+    "name": "ObjectLayer"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.FromOrientationString",
+    "name": "FromOrientationString"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Parse",
+    "name": "Parse"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Parse2DArray",
+    "name": "Parse2DArray"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.ParseCSV",
+    "name": "ParseCSV"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.AssignTileProperties",
+    "name": "AssignTileProperties"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.Base64Decode",
+    "name": "Base64Decode"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.BuildTilesetIndex",
+    "name": "BuildTilesetIndex"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.CreateGroupLayer",
+    "name": "CreateGroupLayer"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseGID",
+    "name": "ParseGID"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseImageLayers",
+    "name": "ParseImageLayers"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseJSONTiled",
+    "name": "ParseJSONTiled"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseObject",
+    "name": "ParseObject"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseObjectLayers",
+    "name": "ParseObjectLayers"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseTileLayers",
+    "name": "ParseTileLayers"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Tiled.ParseTilesets",
+    "name": "ParseTilesets"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Impact.ParseTileLayers",
+    "name": "ParseTileLayers"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Impact.ParseTilesets",
+    "name": "ParseTilesets"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Parsers.Impact.ParseWeltmeister",
+    "name": "ParseWeltmeister"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CalculateFacesAt",
+    "name": "CalculateFacesAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CalculateFacesWithin",
+    "name": "CalculateFacesWithin"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CheckIsoBounds",
+    "name": "CheckIsoBounds"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.Copy",
+    "name": "Copy"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CreateFromTiles",
+    "name": "CreateFromTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CullBounds",
+    "name": "CullBounds"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.CullTiles",
+    "name": "CullTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.Fill",
+    "name": "Fill"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.FilterTiles",
+    "name": "FilterTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.FindByIndex",
+    "name": "FindByIndex"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.FindTile",
+    "name": "FindTile"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.ForEachTile",
+    "name": "ForEachTile"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetCullTilesFunction",
+    "name": "GetCullTilesFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileAt",
+    "name": "GetTileAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileAtWorldXY",
+    "name": "GetTileAtWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileCorners",
+    "name": "GetTileCorners"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileCornersFunction",
+    "name": "GetTileCornersFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTilesWithin",
+    "name": "GetTilesWithin"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTilesWithinShape",
+    "name": "GetTilesWithinShape"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTilesWithinWorldXY",
+    "name": "GetTilesWithinWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileToWorldXFunction",
+    "name": "GetTileToWorldXFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileToWorldXYFunction",
+    "name": "GetTileToWorldXYFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetTileToWorldYFunction",
+    "name": "GetTileToWorldYFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetWorldToTileXFunction",
+    "name": "GetWorldToTileXFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetWorldToTileXYFunction",
+    "name": "GetWorldToTileXYFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.GetWorldToTileYFunction",
+    "name": "GetWorldToTileYFunction"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HasTileAt",
+    "name": "HasTileAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HasTileAtWorldXY",
+    "name": "HasTileAtWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HexagonalCullBounds",
+    "name": "HexagonalCullBounds"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HexagonalCullTiles",
+    "name": "HexagonalCullTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HexagonalGetTileCorners",
+    "name": "HexagonalGetTileCorners"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HexagonalTileToWorldXY",
+    "name": "HexagonalTileToWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.HexagonalWorldToTileXY",
+    "name": "HexagonalWorldToTileXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.IsInLayerBounds",
+    "name": "IsInLayerBounds"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.IsometricCullTiles",
+    "name": "IsometricCullTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.IsometricTileToWorldXY",
+    "name": "IsometricTileToWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.IsometricWorldToTileXY",
+    "name": "IsometricWorldToTileXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.PutTileAt",
+    "name": "PutTileAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.PutTileAtWorldXY",
+    "name": "PutTileAtWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.PutTilesAt",
+    "name": "PutTilesAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.Randomize",
+    "name": "Randomize"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.RemoveTileAt",
+    "name": "RemoveTileAt"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.RemoveTileAtWorldXY",
+    "name": "RemoveTileAtWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.RenderDebug",
+    "name": "RenderDebug"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.ReplaceByIndex",
+    "name": "ReplaceByIndex"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.RunCull",
+    "name": "RunCull"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetCollision",
+    "name": "SetCollision"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetCollisionBetween",
+    "name": "SetCollisionBetween"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetCollisionByExclusion",
+    "name": "SetCollisionByExclusion"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetCollisionByProperty",
+    "name": "SetCollisionByProperty"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetCollisionFromCollisionGroup",
+    "name": "SetCollisionFromCollisionGroup"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetLayerCollisionIndex",
+    "name": "SetLayerCollisionIndex"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetTileCollision",
+    "name": "SetTileCollision"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetTileIndexCallback",
+    "name": "SetTileIndexCallback"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SetTileLocationCallback",
+    "name": "SetTileLocationCallback"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.Shuffle",
+    "name": "Shuffle"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredCullBounds",
+    "name": "StaggeredCullBounds"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredCullTiles",
+    "name": "StaggeredCullTiles"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredTileToWorldXY",
+    "name": "StaggeredTileToWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredTileToWorldY",
+    "name": "StaggeredTileToWorldY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredWorldToTileXY",
+    "name": "StaggeredWorldToTileXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.StaggeredWorldToTileY",
+    "name": "StaggeredWorldToTileY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.SwapByIndex",
+    "name": "SwapByIndex"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.TileToWorldX",
+    "name": "TileToWorldX"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.TileToWorldXY",
+    "name": "TileToWorldXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.TileToWorldY",
+    "name": "TileToWorldY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.WeightedRandomize",
+    "name": "WeightedRandomize"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.WorldToTileX",
+    "name": "WorldToTileX"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.WorldToTileXY",
+    "name": "WorldToTileXY"
+  },
+  {
+    "path": "window.Phaser.Tilemaps.Components.WorldToTileY",
+    "name": "WorldToTileY"
+  },
+  {
+    "path": "window.Phaser.Textures.CanvasTexture",
+    "name": "CanvasTexture"
+  },
+  {
+    "path": "window.Phaser.Textures.DynamicTexture",
+    "name": "DynamicTexture"
+  },
+  {
+    "path": "window.Phaser.Textures.Frame",
+    "name": "Frame"
+  },
+  {
+    "path": "window.Phaser.Textures.Texture",
+    "name": "Texture"
+  },
+  {
+    "path": "window.Phaser.Textures.TextureManager",
+    "name": "TextureManager"
+  },
+  {
+    "path": "window.Phaser.Textures.TextureSource",
+    "name": "TextureSource"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.AtlasXML",
+    "name": "AtlasXML"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.Canvas",
+    "name": "Canvas"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.Image",
+    "name": "Image"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.JSONArray",
+    "name": "JSONArray"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.JSONHash",
+    "name": "JSONHash"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.KTXParser",
+    "name": "KTXParser"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.PVRParser",
+    "name": "PVRParser"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.SpriteSheet",
+    "name": "SpriteSheet"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.SpriteSheetFromAtlas",
+    "name": "SpriteSheetFromAtlas"
+  },
+  {
+    "path": "window.Phaser.Textures.Parsers.UnityYAML",
+    "name": "UnityYAML"
+  },
+  {
+    "path": "window.Phaser.Structs.List",
+    "name": "List"
+  },
+  {
+    "path": "window.Phaser.Structs.Map",
+    "name": "Map"
+  },
+  {
+    "path": "window.Phaser.Structs.ProcessQueue",
+    "name": "ProcessQueue"
+  },
+  {
+    "path": "window.Phaser.Structs.Set",
+    "name": "Set"
+  },
+  {
+    "path": "window.Phaser.Structs.Size",
+    "name": "Size"
+  },
+  {
+    "path": "window.Phaser.Scenes.GetPhysicsPlugins",
+    "name": "GetPhysicsPlugins"
+  },
+  {
+    "path": "window.Phaser.Scenes.GetScenePlugins",
+    "name": "GetScenePlugins"
+  },
+  {
+    "path": "window.Phaser.Scenes.SceneManager",
+    "name": "SceneManager"
+  },
+  {
+    "path": "window.Phaser.Scenes.ScenePlugin",
+    "name": "ScenePlugin"
+  },
+  {
+    "path": "window.Phaser.Scenes.Systems",
+    "name": "Systems"
+  },
+  {
+    "path": "window.Phaser.Scale.ScaleManager",
+    "name": "ScaleManager"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.PipelineManager",
+    "name": "PipelineManager"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.RenderTarget",
+    "name": "RenderTarget"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.WebGLPipeline",
+    "name": "WebGLPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.WebGLRenderer",
+    "name": "WebGLRenderer"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.WebGLShader",
+    "name": "WebGLShader"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLAttribLocationWrapper",
+    "name": "WebGLAttribLocationWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLBufferWrapper",
+    "name": "WebGLBufferWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLProgramWrapper",
+    "name": "WebGLProgramWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLTextureWrapper",
+    "name": "WebGLTextureWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLFramebufferWrapper",
+    "name": "WebGLFramebufferWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Wrappers.WebGLUniformLocationWrapper",
+    "name": "WebGLUniformLocationWrapper"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.BitmapMaskPipeline",
+    "name": "BitmapMaskPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FXPipeline",
+    "name": "FXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.LightPipeline",
+    "name": "LightPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.MobilePipeline",
+    "name": "MobilePipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.MultiPipeline",
+    "name": "MultiPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.PointLightPipeline",
+    "name": "PointLightPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.PostFXPipeline",
+    "name": "PostFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.PreFXPipeline",
+    "name": "PreFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.RopePipeline",
+    "name": "RopePipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.SinglePipeline",
+    "name": "SinglePipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.UtilityPipeline",
+    "name": "UtilityPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Barrel",
+    "name": "BarrelFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Bloom",
+    "name": "BloomFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Blur",
+    "name": "BlurFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Bokeh",
+    "name": "BokehFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Circle",
+    "name": "CircleFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.ColorMatrix",
+    "name": "ColorMatrixFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Displacement",
+    "name": "DisplacementFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Glow",
+    "name": "GlowFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Gradient",
+    "name": "GradientFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Pixelate",
+    "name": "PixelateFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Shadow",
+    "name": "ShadowFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Shine",
+    "name": "ShineFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Vignette",
+    "name": "VignetteFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.WebGL.Pipelines.FX.Wipe",
+    "name": "WipeFXPipeline"
+  },
+  {
+    "path": "window.Phaser.Renderer.Canvas.CanvasRenderer",
+    "name": "CanvasRenderer"
+  },
+  {
+    "path": "window.Phaser.Renderer.Canvas.GetBlendModes",
+    "name": "GetBlendModes"
+  },
+  {
+    "path": "window.Phaser.Renderer.Canvas.SetTransform",
+    "name": "SetTransform"
+  },
+  {
+    "path": "window.Phaser.Renderer.Snapshot.Canvas",
+    "name": "CanvasSnapshot"
+  },
+  {
+    "path": "window.Phaser.Renderer.Snapshot.WebGL",
+    "name": "WebGLSnapshot"
+  },
+  {
+    "path": "window.Phaser.Plugins.BasePlugin",
+    "name": "BasePlugin"
+  },
+  {
+    "path": "window.Phaser.Plugins.PluginManager",
+    "name": "PluginManager"
+  },
+  {
+    "path": "window.Phaser.Plugins.ScenePlugin",
+    "name": "ScenePlugin"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.BodyBounds",
+    "name": "BodyBounds"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.Factory",
+    "name": "Factory"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.MatterGameObject",
+    "name": "MatterGameObject"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.Image",
+    "name": "MatterImage"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.MatterPhysics",
+    "name": "MatterPhysics"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.Sprite",
+    "name": "MatterSprite"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.TileBody",
+    "name": "MatterTileBody"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.PointerConstraint",
+    "name": "PointerConstraint"
+  },
+  {
+    "path": "window.Phaser.Physics.Matter.World",
+    "name": "World"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.ArcadePhysics",
+    "name": "ArcadePhysics"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Body",
+    "name": "Body"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Collider",
+    "name": "Collider"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Factory",
+    "name": "Factory"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.GetCollidesWith",
+    "name": "GetCollidesWith"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.GetOverlapX",
+    "name": "GetOverlapX"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.GetOverlapY",
+    "name": "GetOverlapY"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.SeparateX",
+    "name": "SeparateX"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.SeparateY",
+    "name": "SeparateY"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Group",
+    "name": "PhysicsGroup"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Image",
+    "name": "ArcadeImage"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Sprite",
+    "name": "ArcadeSprite"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.StaticBody",
+    "name": "StaticBody"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.StaticGroup",
+    "name": "StaticPhysicsGroup"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.World",
+    "name": "World"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.ProcessTileCallbacks",
+    "name": "ProcessTileCallbacks"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.ProcessTileSeparationX",
+    "name": "ProcessTileSeparationX"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.ProcessTileSeparationY",
+    "name": "ProcessTileSeparationY"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.SeparateTile",
+    "name": "SeparateTile"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.TileCheckX",
+    "name": "TileCheckX"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.TileCheckY",
+    "name": "TileCheckY"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Tilemap.TileIntersectsBody",
+    "name": "TileIntersectsBody"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Components.OverlapCirc",
+    "name": "OverlapCirc"
+  },
+  {
+    "path": "window.Phaser.Physics.Arcade.Components.OverlapRect",
+    "name": "OverlapRect"
+  },
+  {
+    "path": "window.Phaser.Math.RandomDataGenerator",
+    "name": "RandomDataGenerator"
+  },
+  {
+    "path": "window.Phaser.Math.Average",
+    "name": "Average"
+  },
+  {
+    "path": "window.Phaser.Math.Bernstein",
+    "name": "Bernstein"
+  },
+  {
+    "path": "window.Phaser.Math.Between",
+    "name": "Between"
+  },
+  {
+    "path": "window.Phaser.Math.CatmullRom",
+    "name": "CatmullRom"
+  },
+  {
+    "path": "window.Phaser.Math.CeilTo",
+    "name": "CeilTo"
+  },
+  {
+    "path": "window.Phaser.Math.Clamp",
+    "name": "Clamp"
+  },
+  {
+    "path": "window.Phaser.Math.DegToRad",
+    "name": "DegToRad"
+  },
+  {
+    "path": "window.Phaser.Math.Difference",
+    "name": "Difference"
+  },
+  {
+    "path": "window.Phaser.Math.Euler",
+    "name": "Euler"
+  },
+  {
+    "path": "window.Phaser.Math.Factorial",
+    "name": "Factorial"
+  },
+  {
+    "path": "window.Phaser.Math.FloatBetween",
+    "name": "FloatBetween"
+  },
+  {
+    "path": "window.Phaser.Math.FloorTo",
+    "name": "FloorTo"
+  },
+  {
+    "path": "window.Phaser.Math.FromPercent",
+    "name": "FromPercent"
+  },
+  {
+    "path": "window.Phaser.Math.GetSpeed",
+    "name": "GetSpeed"
+  },
+  {
+    "path": "window.Phaser.Math.IsEven",
+    "name": "IsEven"
+  },
+  {
+    "path": "window.Phaser.Math.IsEvenStrict",
+    "name": "IsEvenStrict"
+  },
+  {
+    "path": "window.Phaser.Math.Linear",
+    "name": "Linear"
+  },
+  {
+    "path": "window.Phaser.Math.LinearXY",
+    "name": "LinearXY"
+  },
+  {
+    "path": "window.Phaser.Math.MaxAdd",
+    "name": "MaxAdd"
+  },
+  {
+    "path": "window.Phaser.Math.Median",
+    "name": "Median"
+  },
+  {
+    "path": "window.Phaser.Math.MinSub",
+    "name": "MinSub"
+  },
+  {
+    "path": "window.Phaser.Math.Percent",
+    "name": "Percent"
+  },
+  {
+    "path": "window.Phaser.Math.RadToDeg",
+    "name": "RadToDeg"
+  },
+  {
+    "path": "window.Phaser.Math.RandomXY",
+    "name": "RandomXY"
+  },
+  {
+    "path": "window.Phaser.Math.RandomXYZ",
+    "name": "RandomXYZ"
+  },
+  {
+    "path": "window.Phaser.Math.RandomXYZW",
+    "name": "RandomXYZW"
+  },
+  {
+    "path": "window.Phaser.Math.Rotate",
+    "name": "Rotate"
+  },
+  {
+    "path": "window.Phaser.Math.RotateAround",
+    "name": "RotateAround"
+  },
+  {
+    "path": "window.Phaser.Math.RotateAroundDistance",
+    "name": "RotateAroundDistance"
+  },
+  {
+    "path": "window.Phaser.Math.RotateTo",
+    "name": "RotateTo"
+  },
+  {
+    "path": "window.Phaser.Math.RoundAwayFromZero",
+    "name": "RoundAwayFromZero"
+  },
+  {
+    "path": "window.Phaser.Math.RoundTo",
+    "name": "RoundTo"
+  },
+  {
+    "path": "window.Phaser.Math.SinCosTableGenerator",
+    "name": "SinCosTableGenerator"
+  },
+  {
+    "path": "window.Phaser.Math.SmootherStep",
+    "name": "SmootherStep"
+  },
+  {
+    "path": "window.Phaser.Math.SmoothStep",
+    "name": "SmoothStep"
+  },
+  {
+    "path": "window.Phaser.Math.ToXY",
+    "name": "ToXY"
+  },
+  {
+    "path": "window.Phaser.Math.TransformXY",
+    "name": "TransformXY"
+  },
+  {
+    "path": "window.Phaser.Math.Within",
+    "name": "Within"
+  },
+  {
+    "path": "window.Phaser.Math.Wrap",
+    "name": "Wrap"
+  },
+  {
+    "path": "window.Phaser.Math.Vector2",
+    "name": "Vector2"
+  },
+  {
+    "path": "window.Phaser.Math.Vector3",
+    "name": "Vector3"
+  },
+  {
+    "path": "window.Phaser.Math.Vector4",
+    "name": "Vector4"
+  },
+  {
+    "path": "window.Phaser.Math.Matrix3",
+    "name": "Matrix3"
+  },
+  {
+    "path": "window.Phaser.Math.Matrix4",
+    "name": "Matrix4"
+  },
+  {
+    "path": "window.Phaser.Math.Quaternion",
+    "name": "Quaternion"
+  },
+  {
+    "path": "window.Phaser.Math.RotateVec3",
+    "name": "RotateVec3"
+  },
+  {
+    "path": "window.Phaser.Math.Snap.Ceil",
+    "name": "SnapCeil"
+  },
+  {
+    "path": "window.Phaser.Math.Snap.Floor",
+    "name": "SnapFloor"
+  },
+  {
+    "path": "window.Phaser.Math.Snap.To",
+    "name": "SnapTo"
+  },
+  {
+    "path": "window.Phaser.Math.Pow2.GetNext",
+    "name": "GetPowerOfTwo"
+  },
+  {
+    "path": "window.Phaser.Math.Pow2.IsSize",
+    "name": "IsSizePowerOfTwo"
+  },
+  {
+    "path": "window.Phaser.Math.Pow2.IsValue",
+    "name": "IsValuePowerOfTwo"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.Bezier",
+    "name": "BezierInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.CatmullRom",
+    "name": "CatmullRomInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.CubicBezier",
+    "name": "CubicBezierInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.Linear",
+    "name": "LinearInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.QuadraticBezier",
+    "name": "QuadraticBezierInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.SmoothStep",
+    "name": "SmoothStepInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Interpolation.SmootherStep",
+    "name": "SmootherStepInterpolation"
+  },
+  {
+    "path": "window.Phaser.Math.Fuzzy.Ceil",
+    "name": "Ceil"
+  },
+  {
+    "path": "window.Phaser.Math.Fuzzy.Equal",
+    "name": "Equal"
+  },
+  {
+    "path": "window.Phaser.Math.Fuzzy.Floor",
+    "name": "Floor"
+  },
+  {
+    "path": "window.Phaser.Math.Fuzzy.GreaterThan",
+    "name": "GreaterThan"
+  },
+  {
+    "path": "window.Phaser.Math.Fuzzy.LessThan",
+    "name": "LessThan"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Linear",
+    "name": "Linear"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Stepped",
+    "name": "Stepped"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Sine.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Sine.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Sine.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quintic.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quintic.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quintic.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quartic.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quartic.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quartic.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quadratic.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quadratic.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Quadratic.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Expo.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Expo.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Expo.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Elastic.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Elastic.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Elastic.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Cubic.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Cubic.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Cubic.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Circular.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Circular.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Circular.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Bounce.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Bounce.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Bounce.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Back.In",
+    "name": "In"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Back.Out",
+    "name": "Out"
+  },
+  {
+    "path": "window.Phaser.Math.Easing.Back.InOut",
+    "name": "InOut"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.Between",
+    "name": "DistanceBetween"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.BetweenPoints",
+    "name": "DistanceBetweenPoints"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.BetweenPointsSquared",
+    "name": "DistanceBetweenPointsSquared"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.Chebyshev",
+    "name": "ChebyshevDistance"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.Power",
+    "name": "DistancePower"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.Snake",
+    "name": "SnakeDistance"
+  },
+  {
+    "path": "window.Phaser.Math.Distance.Squared",
+    "name": "DistanceSquared"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.Between",
+    "name": "Between"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.BetweenPoints",
+    "name": "BetweenPoints"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.BetweenPointsY",
+    "name": "BetweenPointsY"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.BetweenY",
+    "name": "BetweenY"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.CounterClockwise",
+    "name": "CounterClockwise"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.Normalize",
+    "name": "Normalize"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.Random",
+    "name": "Random"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.RandomDegrees",
+    "name": "RandomDegrees"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.Reverse",
+    "name": "Reverse"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.RotateTo",
+    "name": "RotateTo"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.ShortestBetween",
+    "name": "ShortestBetween"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.Wrap",
+    "name": "Wrap"
+  },
+  {
+    "path": "window.Phaser.Math.Angle.WrapDegrees",
+    "name": "WrapDegrees"
+  },
+  {
+    "path": "window.Phaser.Loader.File",
+    "name": "File"
+  },
+  {
+    "path": "window.Phaser.Loader.GetURL",
+    "name": "GetURL"
+  },
+  {
+    "path": "window.Phaser.Loader.LoaderPlugin",
+    "name": "LoaderPlugin"
+  },
+  {
+    "path": "window.Phaser.Loader.MergeXHRSettings",
+    "name": "MergeXHRSettings"
+  },
+  {
+    "path": "window.Phaser.Loader.MultiFile",
+    "name": "MultiFile"
+  },
+  {
+    "path": "window.Phaser.Loader.XHRLoader",
+    "name": "XHRLoader"
+  },
+  {
+    "path": "window.Phaser.Loader.XHRSettings",
+    "name": "XHRSettings"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.AnimationJSONFile",
+    "name": "AnimationJSONFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.AsepriteFile",
+    "name": "AsepriteFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.AtlasJSONFile",
+    "name": "AtlasJSONFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.AtlasXMLFile",
+    "name": "AtlasXMLFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.AudioFile",
+    "name": "AudioFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.BinaryFile",
+    "name": "BinaryFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.BitmapFontFile",
+    "name": "BitmapFontFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.CompressedTextureFile",
+    "name": "CompressedTextureFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.CSSFile",
+    "name": "CSSFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.GLSLFile",
+    "name": "GLSLFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.HTML5AudioFile",
+    "name": "HTML5AudioFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.HTMLFile",
+    "name": "HTMLFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.HTMLTextureFile",
+    "name": "HTMLTextureFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.ImageFile",
+    "name": "ImageFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.JSONFile",
+    "name": "JSONFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.MultiAtlasFile",
+    "name": "MultiAtlasFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.MultiScriptFile",
+    "name": "MultiScriptFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.OBJFile",
+    "name": "OBJFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.PackFile",
+    "name": "PackFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.PluginFile",
+    "name": "PluginFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.SceneFile",
+    "name": "SceneFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.ScenePluginFile",
+    "name": "ScenePluginFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.ScriptFile",
+    "name": "ScriptFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.SpriteSheetFile",
+    "name": "SpriteSheetFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.SVGFile",
+    "name": "SVGFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.TextFile",
+    "name": "TextFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.TilemapCSVFile",
+    "name": "TilemapCSVFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.TilemapImpactFile",
+    "name": "TilemapImpactFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.TilemapJSONFile",
+    "name": "TilemapJSONFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.UnityAtlasFile",
+    "name": "UnityAtlasFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.VideoFile",
+    "name": "VideoFile"
+  },
+  {
+    "path": "window.Phaser.Loader.FileTypes.XMLFile",
+    "name": "XMLFile"
+  },
+  {
+    "path": "window.Phaser.Input.CreatePixelPerfectHandler",
+    "name": "CreatePixelPerfectHandler"
+  },
+  {
+    "path": "window.Phaser.Input.CreateInteractiveObject",
+    "name": "CreateInteractiveObject"
+  },
+  {
+    "path": "window.Phaser.Input.InputManager",
+    "name": "InputManager"
+  },
+  {
+    "path": "window.Phaser.Input.InputPlugin",
+    "name": "InputPlugin"
+  },
+  {
+    "path": "window.Phaser.Input.Pointer",
+    "name": "Pointer"
+  },
+  {
+    "path": "window.Phaser.Input.Touch.TouchManager",
+    "name": "TouchManager"
+  },
+  {
+    "path": "window.Phaser.Input.Mouse.MouseManager",
+    "name": "MouseManager"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.KeyboardManager",
+    "name": "KeyboardManager"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.KeyboardPlugin",
+    "name": "KeyboardPlugin"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.Key",
+    "name": "Key"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.KeyCombo",
+    "name": "KeyCombo"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.AdvanceKeyCombo",
+    "name": "AdvanceKeyCombo"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.ProcessKeyCombo",
+    "name": "ProcessKeyCombo"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.ResetKeyCombo",
+    "name": "ResetKeyCombo"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.JustDown",
+    "name": "JustDown"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.JustUp",
+    "name": "JustUp"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.DownDuration",
+    "name": "DownDuration"
+  },
+  {
+    "path": "window.Phaser.Input.Keyboard.UpDuration",
+    "name": "UpDuration"
+  },
+  {
+    "path": "window.Phaser.Input.Gamepad.Axis",
+    "name": "Axis"
+  },
+  {
+    "path": "window.Phaser.Input.Gamepad.Button",
+    "name": "Button"
+  },
+  {
+    "path": "window.Phaser.Input.Gamepad.Gamepad",
+    "name": "Gamepad"
+  },
+  {
+    "path": "window.Phaser.Input.Gamepad.GamepadPlugin",
+    "name": "GamepadPlugin"
+  },
+  {
+    "path": "window.Phaser.Geom.Circle",
+    "name": "Circle"
+  },
+  {
+    "path": "window.Phaser.Geom.Ellipse",
+    "name": "Ellipse"
+  },
+  {
+    "path": "window.Phaser.Geom.Line",
+    "name": "Line"
+  },
+  {
+    "path": "window.Phaser.Geom.Point",
+    "name": "Point"
+  },
+  {
+    "path": "window.Phaser.Geom.Polygon",
+    "name": "Polygon"
+  },
+  {
+    "path": "window.Phaser.Geom.Rectangle",
+    "name": "Rectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Triangle",
+    "name": "Triangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.Face",
+    "name": "Face"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.GenerateGridVerts",
+    "name": "GenerateGridVerts"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.GenerateObjVerts",
+    "name": "GenerateObjVerts"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.GenerateVerts",
+    "name": "GenerateVerts"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.ParseObj",
+    "name": "ParseObj"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.ParseObjMaterial",
+    "name": "ParseObjMaterial"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.RotateFace",
+    "name": "RotateFace"
+  },
+  {
+    "path": "window.Phaser.Geom.Mesh.Vertex",
+    "name": "Vertex"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.CircleToCircle",
+    "name": "CircleToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.CircleToRectangle",
+    "name": "CircleToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetCircleToCircle",
+    "name": "GetCircleToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetCircleToRectangle",
+    "name": "GetCircleToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetLineToCircle",
+    "name": "GetLineToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetLineToLine",
+    "name": "GetLineToLine"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetLineToPoints",
+    "name": "GetLineToPoints"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetLineToPolygon",
+    "name": "GetLineToPolygon"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetLineToRectangle",
+    "name": "GetLineToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetRaysFromPointToPolygon",
+    "name": "GetRaysFromPointToPolygon"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetRectangleIntersection",
+    "name": "GetRectangleIntersection"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetRectangleToRectangle",
+    "name": "GetRectangleToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetRectangleToTriangle",
+    "name": "GetRectangleToTriangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetTriangleToCircle",
+    "name": "GetTriangleToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetTriangleToLine",
+    "name": "GetTriangleToLine"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.GetTriangleToTriangle",
+    "name": "GetTriangleToTriangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.LineToCircle",
+    "name": "LineToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.LineToLine",
+    "name": "LineToLine"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.LineToRectangle",
+    "name": "LineToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.PointToLine",
+    "name": "PointToLine"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.PointToLineSegment",
+    "name": "PointToLineSegment"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.RectangleToRectangle",
+    "name": "RectangleToRectangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.RectangleToTriangle",
+    "name": "RectangleToTriangle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.RectangleToValues",
+    "name": "RectangleToValues"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.TriangleToCircle",
+    "name": "TriangleToCircle"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.TriangleToLine",
+    "name": "TriangleToLine"
+  },
+  {
+    "path": "window.Phaser.Geom.Intersects.TriangleToTriangle",
+    "name": "TriangleToTriangle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.DisplayList",
+    "name": "DisplayList"
+  },
+  {
+    "path": "window.Phaser.GameObjects.GameObjectCreator",
+    "name": "GameObjectCreator"
+  },
+  {
+    "path": "window.Phaser.GameObjects.GameObjectFactory",
+    "name": "GameObjectFactory"
+  },
+  {
+    "path": "window.Phaser.GameObjects.UpdateList",
+    "name": "UpdateList"
+  },
+  {
+    "path": "window.Phaser.GameObjects.GetCalcMatrix",
+    "name": "GetCalcMatrix"
+  },
+  {
+    "path": "window.Phaser.GameObjects.BuildGameObject",
+    "name": "BuildGameObject"
+  },
+  {
+    "path": "window.Phaser.GameObjects.BuildGameObjectAnimation",
+    "name": "BuildGameObjectAnimation"
+  },
+  {
+    "path": "window.Phaser.GameObjects.GameObject",
+    "name": "GameObject"
+  },
+  {
+    "path": "window.Phaser.GameObjects.BitmapText",
+    "name": "BitmapText"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Blitter",
+    "name": "Blitter"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Bob",
+    "name": "Bob"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Container",
+    "name": "Container"
+  },
+  {
+    "path": "window.Phaser.GameObjects.DOMElement",
+    "name": "DOMElement"
+  },
+  {
+    "path": "window.Phaser.GameObjects.DynamicBitmapText",
+    "name": "DynamicBitmapText"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Extern",
+    "name": "Extern"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Graphics",
+    "name": "Graphics"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Group",
+    "name": "Group"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Image",
+    "name": "Image"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Layer",
+    "name": "Layer"
+  },
+  {
+    "path": "window.Phaser.GameObjects.PathFollower",
+    "name": "PathFollower"
+  },
+  {
+    "path": "window.Phaser.GameObjects.RenderTexture",
+    "name": "RenderTexture"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Rope",
+    "name": "Rope"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Sprite",
+    "name": "Sprite"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Text",
+    "name": "Text"
+  },
+  {
+    "path": "window.Phaser.GameObjects.GetTextSize",
+    "name": "GetTextSize"
+  },
+  {
+    "path": "window.Phaser.GameObjects.MeasureText",
+    "name": "MeasureText"
+  },
+  {
+    "path": "window.Phaser.GameObjects.TextStyle",
+    "name": "TextStyle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.TileSprite",
+    "name": "TileSprite"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Zone",
+    "name": "Zone"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Video",
+    "name": "Video"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Shape",
+    "name": "Shape"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Arc",
+    "name": "Arc"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Curve",
+    "name": "Curve"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Ellipse",
+    "name": "Ellipse"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Grid",
+    "name": "Grid"
+  },
+  {
+    "path": "window.Phaser.GameObjects.IsoBox",
+    "name": "IsoBox"
+  },
+  {
+    "path": "window.Phaser.GameObjects.IsoTriangle",
+    "name": "IsoTriangle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Line",
+    "name": "Line"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Polygon",
+    "name": "Polygon"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Rectangle",
+    "name": "Rectangle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Star",
+    "name": "Star"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Triangle",
+    "name": "Triangle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Shader",
+    "name": "Shader"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Mesh",
+    "name": "Mesh"
+  },
+  {
+    "path": "window.Phaser.GameObjects.NineSlice",
+    "name": "NineSlice"
+  },
+  {
+    "path": "window.Phaser.GameObjects.PointLight",
+    "name": "PointLight"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Plane",
+    "name": "Plane"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Light",
+    "name": "Light"
+  },
+  {
+    "path": "window.Phaser.GameObjects.LightsManager",
+    "name": "LightsManager"
+  },
+  {
+    "path": "window.Phaser.GameObjects.LightsPlugin",
+    "name": "LightsPlugin"
+  },
+  {
+    "path": "window.Phaser.GameObjects.RetroFont.Parse",
+    "name": "ParseRetroFont"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.EmitterColorOp",
+    "name": "EmitterColorOp"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.EmitterOp",
+    "name": "EmitterOp"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.GravityWell",
+    "name": "GravityWell"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.Particle",
+    "name": "Particle"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.ParticleBounds",
+    "name": "ParticleBounds"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.ParticleEmitter",
+    "name": "ParticleEmitter"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.ParticleProcessor",
+    "name": "ParticleProcessor"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.Zones.DeathZone",
+    "name": "DeathZone"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.Zones.EdgeZone",
+    "name": "EdgeZone"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Particles.Zones.RandomZone",
+    "name": "RandomZone"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Components.FX",
+    "name": "FX"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Components.ToJSON",
+    "name": "ToJSON"
+  },
+  {
+    "path": "window.Phaser.GameObjects.Components.TransformMatrix",
+    "name": "TransformMatrix"
+  },
+  {
+    "path": "window.Phaser.FX.Barrel",
+    "name": "Barrel"
+  },
+  {
+    "path": "window.Phaser.FX.Controller",
+    "name": "Controller"
+  },
+  {
+    "path": "window.Phaser.FX.Bloom",
+    "name": "Bloom"
+  },
+  {
+    "path": "window.Phaser.FX.Blur",
+    "name": "Blur"
+  },
+  {
+    "path": "window.Phaser.FX.Bokeh",
+    "name": "Bokeh"
+  },
+  {
+    "path": "window.Phaser.FX.Circle",
+    "name": "Circle"
+  },
+  {
+    "path": "window.Phaser.FX.ColorMatrix",
+    "name": "ColorMatrix"
+  },
+  {
+    "path": "window.Phaser.FX.Displacement",
+    "name": "Displacement"
+  },
+  {
+    "path": "window.Phaser.FX.Glow",
+    "name": "Glow"
+  },
+  {
+    "path": "window.Phaser.FX.Gradient",
+    "name": "Gradient"
+  },
+  {
+    "path": "window.Phaser.FX.Pixelate",
+    "name": "Pixelate"
+  },
+  {
+    "path": "window.Phaser.FX.Shadow",
+    "name": "Shadow"
+  },
+  {
+    "path": "window.Phaser.FX.Shine",
+    "name": "Shine"
+  },
+  {
+    "path": "window.Phaser.FX.Vignette",
+    "name": "Vignette"
+  },
+  {
+    "path": "window.Phaser.FX.Wipe",
+    "name": "Wipe"
+  },
+  {
+    "path": "window.Phaser.Events.EventEmitter",
+    "name": "EventEmitter"
+  },
+  {
+    "path": "window.Phaser.DOM.AddToDOM",
+    "name": "AddToDOM"
+  },
+  {
+    "path": "window.Phaser.DOM.DOMContentLoaded",
+    "name": "DOMContentLoaded"
+  },
+  {
+    "path": "window.Phaser.DOM.GetInnerHeight",
+    "name": "GetInnerHeight"
+  },
+  {
+    "path": "window.Phaser.DOM.GetScreenOrientation",
+    "name": "GetScreenOrientation"
+  },
+  {
+    "path": "window.Phaser.DOM.GetTarget",
+    "name": "GetTarget"
+  },
+  {
+    "path": "window.Phaser.DOM.ParseXML",
+    "name": "ParseXML"
+  },
+  {
+    "path": "window.Phaser.DOM.RemoveFromDOM",
+    "name": "RemoveFromDOM"
+  },
+  {
+    "path": "window.Phaser.DOM.RequestAnimationFrame",
+    "name": "RequestAnimationFrame"
+  },
+  {
+    "path": "window.Phaser.Display.BaseShader",
+    "name": "BaseShader"
+  },
+  {
+    "path": "window.Phaser.Display.Color",
+    "name": "Color"
+  },
+  {
+    "path": "window.Phaser.Display.ColorMatrix",
+    "name": "ColorMatrix"
+  },
+  {
+    "path": "window.Phaser.Display.RGB",
+    "name": "RGB"
+  },
+  {
+    "path": "window.Phaser.Display.Masks.BitmapMask",
+    "name": "BitmapMask"
+  },
+  {
+    "path": "window.Phaser.Display.Masks.GeometryMask",
+    "name": "GeometryMask"
+  },
+  {
+    "path": "window.Phaser.Display.Canvas.TouchAction",
+    "name": "TouchAction"
+  },
+  {
+    "path": "window.Phaser.Display.Canvas.UserSelect",
+    "name": "UserSelect"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.CenterOn",
+    "name": "CenterOn"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetBottom",
+    "name": "GetBottom"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetBounds",
+    "name": "GetBounds"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetCenterX",
+    "name": "GetCenterX"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetCenterY",
+    "name": "GetCenterY"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetLeft",
+    "name": "GetLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetOffsetX",
+    "name": "GetOffsetX"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetOffsetY",
+    "name": "GetOffsetY"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetRight",
+    "name": "GetRight"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.GetTop",
+    "name": "GetTop"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetBottom",
+    "name": "SetBottom"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetCenterX",
+    "name": "SetCenterX"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetCenterY",
+    "name": "SetCenterY"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetLeft",
+    "name": "SetLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetRight",
+    "name": "SetRight"
+  },
+  {
+    "path": "window.Phaser.Display.Bounds.SetTop",
+    "name": "SetTop"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.BottomCenter",
+    "name": "BottomCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.BottomLeft",
+    "name": "BottomLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.BottomRight",
+    "name": "BottomRight"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.LeftBottom",
+    "name": "LeftBottom"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.LeftCenter",
+    "name": "LeftCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.LeftTop",
+    "name": "LeftTop"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.QuickSet",
+    "name": "QuickSet"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.RightBottom",
+    "name": "RightBottom"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.RightCenter",
+    "name": "RightCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.RightTop",
+    "name": "RightTop"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.TopCenter",
+    "name": "TopCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.TopLeft",
+    "name": "TopLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Align.To.TopRight",
+    "name": "TopRight"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.BottomCenter",
+    "name": "BottomCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.BottomLeft",
+    "name": "BottomLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.BottomRight",
+    "name": "BottomRight"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.Center",
+    "name": "Center"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.LeftCenter",
+    "name": "LeftCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.QuickSet",
+    "name": "QuickSet"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.RightCenter",
+    "name": "RightCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.TopCenter",
+    "name": "TopCenter"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.TopLeft",
+    "name": "TopLeft"
+  },
+  {
+    "path": "window.Phaser.Display.Align.In.TopRight",
+    "name": "TopRight"
+  },
+  {
+    "path": "window.Phaser.Data.DataManager",
+    "name": "DataManager"
+  },
+  {
+    "path": "window.Phaser.Data.DataManagerPlugin",
+    "name": "DataManagerPlugin"
+  },
+  {
+    "path": "window.Phaser.Curves.Path",
+    "name": "Path"
+  },
+  {
+    "path": "window.Phaser.Curves.MoveTo",
+    "name": "MoveTo"
+  },
+  {
+    "path": "window.Phaser.Curves.CubicBezier",
+    "name": "CubicBezierCurve"
+  },
+  {
+    "path": "window.Phaser.Curves.Curve",
+    "name": "Curve"
+  },
+  {
+    "path": "window.Phaser.Curves.Ellipse",
+    "name": "EllipseCurve"
+  },
+  {
+    "path": "window.Phaser.Curves.Line",
+    "name": "LineCurve"
+  },
+  {
+    "path": "window.Phaser.Curves.QuadraticBezier",
+    "name": "QuadraticBezier"
+  },
+  {
+    "path": "window.Phaser.Curves.Spline",
+    "name": "SplineCurve"
+  },
+  {
+    "path": "window.Phaser.Create.GenerateTexture",
+    "name": "GenerateTexture"
+  },
+  {
+    "path": "window.Phaser.Core.Config",
+    "name": "Config"
+  },
+  {
+    "path": "window.Phaser.Core.CreateRenderer",
+    "name": "CreateRenderer"
+  },
+  {
+    "path": "window.Phaser.Core.DebugHeader",
+    "name": "DebugHeader"
+  },
+  {
+    "path": "window.Phaser.Core.TimeStep",
+    "name": "TimeStep"
+  },
+  {
+    "path": "window.Phaser.Core.VisibilityHandler",
+    "name": "VisibilityHandler"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Camera",
+    "name": "Camera"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.BaseCamera",
+    "name": "BaseCamera"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.CameraManager",
+    "name": "CameraManager"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.Fade",
+    "name": "Fade"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.Flash",
+    "name": "Flash"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.Pan",
+    "name": "Pan"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.Shake",
+    "name": "Shake"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.RotateTo",
+    "name": "RotateTo"
+  },
+  {
+    "path": "window.Phaser.Cameras.Scene2D.Effects.Zoom",
+    "name": "Zoom"
+  },
+  {
+    "path": "window.Phaser.Cameras.Controls.FixedKeyControl",
+    "name": "FixedKeyControl"
+  },
+  {
+    "path": "window.Phaser.Cameras.Controls.SmoothedKeyControl",
+    "name": "SmoothedKeyControl"
+  },
+  {
+    "path": "window.Phaser.Cache.BaseCache",
+    "name": "BaseCache"
+  },
+  {
+    "path": "window.Phaser.Cache.CacheManager",
+    "name": "CacheManager"
+  },
+  {
+    "path": "window.Phaser.Animations.Animation",
+    "name": "Animation"
+  },
+  {
+    "path": "window.Phaser.Animations.AnimationFrame",
+    "name": "AnimationFrame"
+  },
+  {
+    "path": "window.Phaser.Animations.AnimationManager",
+    "name": "AnimationManager"
+  },
+  {
+    "path": "window.Phaser.Animations.AnimationState",
+    "name": "AnimationState"
+  },
+  {
+    "path": "window.Phaser.Actions.AlignTo",
+    "name": "AlignTo"
+  },
+  {
+    "path": "window.Phaser.Actions.Angle",
+    "name": "Angle"
+  },
+  {
+    "path": "window.Phaser.Actions.Call",
+    "name": "Call"
+  },
+  {
+    "path": "window.Phaser.Actions.GetFirst",
+    "name": "GetFirst"
+  },
+  {
+    "path": "window.Phaser.Actions.GetLast",
+    "name": "GetLast"
+  },
+  {
+    "path": "window.Phaser.Actions.GridAlign",
+    "name": "GridAlign"
+  },
+  {
+    "path": "window.Phaser.Actions.IncAlpha",
+    "name": "IncAlpha"
+  },
+  {
+    "path": "window.Phaser.Actions.IncX",
+    "name": "IncX"
+  },
+  {
+    "path": "window.Phaser.Actions.IncXY",
+    "name": "IncXY"
+  },
+  {
+    "path": "window.Phaser.Actions.IncY",
+    "name": "IncY"
+  },
+  {
+    "path": "window.Phaser.Actions.PlaceOnCircle",
+    "name": "PlaceOnCircle"
+  },
+  {
+    "path": "window.Phaser.Actions.PlaceOnEllipse",
+    "name": "PlaceOnEllipse"
+  },
+  {
+    "path": "window.Phaser.Actions.PlaceOnLine",
+    "name": "PlaceOnLine"
+  },
+  {
+    "path": "window.Phaser.Actions.PlaceOnRectangle",
+    "name": "PlaceOnRectangle"
+  },
+  {
+    "path": "window.Phaser.Actions.PlaceOnTriangle",
+    "name": "PlaceOnTriangle"
+  },
+  {
+    "path": "window.Phaser.Actions.PlayAnimation",
+    "name": "PlayAnimation"
+  },
+  {
+    "path": "window.Phaser.Actions.PropertyValueInc",
+    "name": "PropertyValueInc"
+  },
+  {
+    "path": "window.Phaser.Actions.PropertyValueSet",
+    "name": "PropertyValueSet"
+  },
+  {
+    "path": "window.Phaser.Actions.RandomCircle",
+    "name": "RandomCircle"
+  },
+  {
+    "path": "window.Phaser.Actions.RandomEllipse",
+    "name": "RandomEllipse"
+  },
+  {
+    "path": "window.Phaser.Actions.RandomLine",
+    "name": "RandomLine"
+  },
+  {
+    "path": "window.Phaser.Actions.RandomRectangle",
+    "name": "RandomRectangle"
+  },
+  {
+    "path": "window.Phaser.Actions.RandomTriangle",
+    "name": "RandomTriangle"
+  },
+  {
+    "path": "window.Phaser.Actions.Rotate",
+    "name": "Rotate"
+  },
+  {
+    "path": "window.Phaser.Actions.RotateAround",
+    "name": "RotateAround"
+  },
+  {
+    "path": "window.Phaser.Actions.RotateAroundDistance",
+    "name": "RotateAroundDistance"
+  },
+  {
+    "path": "window.Phaser.Actions.ScaleX",
+    "name": "ScaleX"
+  },
+  {
+    "path": "window.Phaser.Actions.ScaleXY",
+    "name": "ScaleXY"
+  },
+  {
+    "path": "window.Phaser.Actions.ScaleY",
+    "name": "ScaleY"
+  },
+  {
+    "path": "window.Phaser.Actions.SetAlpha",
+    "name": "SetAlpha"
+  },
+  {
+    "path": "window.Phaser.Actions.SetBlendMode",
+    "name": "SetBlendMode"
+  },
+  {
+    "path": "window.Phaser.Actions.SetDepth",
+    "name": "SetDepth"
+  },
+  {
+    "path": "window.Phaser.Actions.SetHitArea",
+    "name": "SetHitArea"
+  },
+  {
+    "path": "window.Phaser.Actions.SetOrigin",
+    "name": "SetOrigin"
+  },
+  {
+    "path": "window.Phaser.Actions.SetRotation",
+    "name": "SetRotation"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScale",
+    "name": "SetScale"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScaleX",
+    "name": "SetScaleX"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScaleY",
+    "name": "SetScaleY"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScrollFactor",
+    "name": "SetScrollFactor"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScrollFactorX",
+    "name": "SetScrollFactorX"
+  },
+  {
+    "path": "window.Phaser.Actions.SetScrollFactorY",
+    "name": "SetScrollFactorY"
+  },
+  {
+    "path": "window.Phaser.Actions.SetTint",
+    "name": "SetTint"
+  },
+  {
+    "path": "window.Phaser.Actions.SetVisible",
+    "name": "SetVisible"
+  },
+  {
+    "path": "window.Phaser.Actions.SetX",
+    "name": "SetX"
+  },
+  {
+    "path": "window.Phaser.Actions.SetXY",
+    "name": "SetXY"
+  },
+  {
+    "path": "window.Phaser.Actions.SetY",
+    "name": "SetY"
+  },
+  {
+    "path": "window.Phaser.Actions.ShiftPosition",
+    "name": "ShiftPosition"
+  },
+  {
+    "path": "window.Phaser.Actions.Shuffle",
+    "name": "Shuffle"
+  },
+  {
+    "path": "window.Phaser.Actions.SmootherStep",
+    "name": "SmootherStep"
+  },
+  {
+    "path": "window.Phaser.Actions.SmoothStep",
+    "name": "SmoothStep"
+  },
+  {
+    "path": "window.Phaser.Actions.Spread",
+    "name": "Spread"
+  },
+  {
+    "path": "window.Phaser.Actions.ToggleVisible",
+    "name": "ToggleVisible"
+  },
+  {
+    "path": "window.Phaser.Actions.WrapInRectangle",
+    "name": "WrapInRectangle"
+  }
+]
