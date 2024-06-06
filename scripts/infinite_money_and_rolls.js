@@ -1,3 +1,4 @@
+// CAN STILL CRASH THE GAME WHEN LEAVING THE BATTLE, STILL SEARCHING FOR THE CAUSE!
 (function () {
     // Global boolean values
     window.MONEY = true;
@@ -35,7 +36,6 @@
                     // Call maxTeamLuck if MAX_LUCK is true
                     if (window.MAX_LUCK) {
                         maxTeamLuck();
-                        scene.updateAndShowLuckText();
                         showLuckText();
                     }
                 } else {
@@ -61,7 +61,7 @@
 
         const rerollHandler2 =
             Phaser.Display.Canvas.CanvasPool.pool[50]?.parent?.parentContainer
-                ?.handlers[6];
+                ?.handlers?.[6];
         if (rerollHandler2) {
             rerollHandler2.setRerollCost(0);
             rerollHandler2.updateCostText();
@@ -128,7 +128,6 @@
             .gameMode.modeId !== 3
     ) {
         maxTeamLuck();
-        scene.updateAndShowLuckText();
         showLuckText();
     }
 })();
