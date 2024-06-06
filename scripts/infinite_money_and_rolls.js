@@ -1,133 +1,166 @@
-// CAN STILL CRASH THE GAME WHEN LEAVING THE BATTLE, STILL SEARCHING FOR THE CAUSE!
-(function () {
-    // Global boolean values
-    window.MONEY = true;
-    window.FREE_ROLL = true;
-    window.MAX_LUCK = true;
+let RollTiers = {
+    COMMON: 0,
+    GREAT: 1,
+    ULTRA: 2,
+    ROGUE: 3,
+    MASTER: 4,
+};
 
-    // Define a function to set up the custom setter
-    function watchProperty(obj, property, path) {
-        let value = obj[property];
-        Object.defineProperty(obj, property, {
-            get() {
-                return value;
-            },
-            set(newValue) {
-                if (
-                    window.gameInfo &&
-                    window.gameInfo.wave > 0 &&
-                    Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene
-                        .keys.battle.gameMode.modeId !== 3
-                ) {
-                    if (window.MONEY) {
-                        value = 999999999999999; // Ensure the money value is always set to this
-                        obj.updateMoneyText();
-                        console.log(`Value of ${property} reset to ${value}!`);
-                    } else {
-                        value = newValue; // Use regular logic
-                        obj.updateMoneyText();
-                    }
-
-                    // Introduce a delay and call the function to reset the reroll cost if FREE_ROLL is true
-                    if (window.FREE_ROLL) {
-                        setTimeout(resetRerollCost, 0);
-                    }
-
-                    // Call maxTeamLuck if MAX_LUCK is true
-                    if (window.MAX_LUCK) {
-                        maxTeamLuck();
-                        showLuckText();
-                    }
-                } else {
-                    value = newValue; // Use regular logic when wave is 0 or less
-                    obj.updateMoneyText();
-                }
-            },
-            configurable: true,
-            enumerable: true,
-        });
+class BaseScene {
+    constructor() {
+        this.minInt = -Math.pow(2, 31);
+        this.maxInt = Math.pow(2, 31) - 1;
+        this.maxMoneyInt = Number.MAX_SAFE_INTEGER - this.maxInt;
     }
 
-    // Function to reset the reroll cost
-    function resetRerollCost() {
-        // Access and modify the reroll cost
-        const rerollHandler1 =
-            Phaser.Display.Canvas.CanvasPool.pool[1]?.parent?.scene
-                ?.currentPhase?.rerollCount;
-        if (rerollHandler1 !== undefined) {
-            Phaser.Display.Canvas.CanvasPool.pool[1].parent.scene.currentPhase.rerollCount =
-                -99;
+    get scenes() {
+        return Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene
+            .scenes;
+    }
+
+    get currentScene() {
+        // Always get the latest index of the scenes array
+        return this.scenes[this.scenes.length > 1 ? this.scenes.length - 1 : 0];
+    }
+
+    get currentPhase() {
+        return this.currentScene.currentPhase;
+    }
+
+    get currentPhaseName() {
+        return this.currentPhase.constructor.name;
+    }
+
+    maxTeamLuck() {
+        this.currentPhase.scene.getParty().forEach((pokemon) => {
+            pokemon.luck = 11;
+        });
+        console.log("Set all player Pokémon luck to 11!");
+    }
+
+    setMoney(value) {
+        this.currentPhase.scene.money = value;
+        this.currentPhase.scene.updateMoneyText();
+        this.currentPhase.scene.animateMoneyChanged(false);
+    }
+
+    playBuySound(sound_name) {
+        this.currentPhase.scene.playSound(sound_name);
+    }
+
+    clearUI() {
+        this.currentPhase.scene.ui.clearText();
+    }
+
+    setUIMode(mode) {
+        return this.currentPhase.scene.ui.setMode(mode);
+    }
+}
+
+class SelectModifierPhaseScene extends BaseScene {
+    constructor() {
+        super();
+    }
+
+    rerollPhase(tier, lock) {
+        console.log("tier", tier);
+        console.log("lock", lock);
+
+        let modifierTiers = this.currentPhase.modifierTiers;
+
+        if (
+            modifierTiers === undefined ||
+            modifierTiers === null ||
+            (lock === false && tier === null)
+        ) {
+            this.currentScene.lockModifierTiers = false;
         }
 
-        const rerollHandler2 =
-            Phaser.Display.Canvas.CanvasPool.pool[50]?.parent?.parentContainer
-                ?.handlers?.[6];
-        if (rerollHandler2) {
-            rerollHandler2.setRerollCost(0);
-            rerollHandler2.updateCostText();
+        if (modifierTiers === undefined || modifierTiers === null) {
+            console.log("modifierTiers === undefined");
+            this.currentPhase.modifierTiers =
+                tier === null
+                    ? this.currentPhase
+                          .getModifierTypeOptions(maxSlots)
+                          .map((o) => o.type.tier)
+                    : [tier, tier, tier, tier, tier, tier];
         }
 
-        console.log("Disabled Rollcost!");
+        console.log(
+            "this.currentPhase.modifierTiers",
+            this.currentPhase.modifierTiers
+        );
+
+        const maxSlots = 6; // Later get the slot by 3 + slot expand item (max +3 slots)
+
+        let newModifierTiers =
+            lock === true && tier === null
+                ? this.currentPhase.modifierTiers
+                : tier === null
+                ? this.currentPhase
+                      .getModifierTypeOptions(maxSlots)
+                      .map((o) => o.type.tier)
+                : [tier, tier, tier, tier, tier, tier];
+
+        console.log("newModifierTiers", newModifierTiers);
+
+        this.currentScene.lockModifierTiers = lock;
+
+        console.log(
+            "this.currentPhase.lockModifierTiers",
+            this.currentPhase.lockModifierTiers
+        );
+
+        // Update Lock text
+        // let uiHandler = this.currentPhase.scene.ui.getHandler();
+        // uiHandler?.updateLockRaritiesText();
+
+        // DEMO: set cursor row:
+        // uiHandler.setRowCursor(0)
+
+        this.currentPhase.scene.reroll = true;
+        this.currentPhase.scene.unshiftPhase(
+            new this.currentPhase.constructor(
+                this.currentScene,
+                this.minInt,
+                newModifierTiers
+            )
+        );
     }
 
-    // Function to access the active list
-    function getActiveList() {
-        return Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys
-            .battle.sys.make.updateList._active;
-    }
-
-    // Function to categorize active list objects into specific lists by class names
-    function categorizeActiveList(activeList) {
-        const playerPokemonList = [];
-        for (let i = 0; i < activeList.length; i++) {
-            const obj = activeList[i];
-            if (obj && obj.parentContainer && obj.parentContainer.constructor) {
-                if (obj.parentContainer.constructor.name === "PlayerPokemon") {
-                    playerPokemonList.push(obj.parentContainer);
-                }
-            }
+    execute(tier, lock) {
+        if (this.currentPhaseName === "SelectModifierPhase") {
+            this.rerollPhase(tier, lock);
+            this.clearUI();
+            this.setUIMode(0).then(() => this.currentPhase.end());
+            this.maxTeamLuck();
+            this.setMoney(this.maxMoneyInt);
+            this.playBuySound("buy");
+        } else {
+            console.log("Not in a roll phase.");
         }
-        return playerPokemonList;
+    }
+}
+
+class Hack {
+    constructor() {
+        this.selectModifierPhaseScene = new SelectModifierPhaseScene();
     }
 
-    // Function to set luck value of all player Pokémon to 99
-    function maxTeamLuck() {
-        const activeList = getActiveList();
-        const playerPokemonList = categorizeActiveList(activeList);
-        playerPokemonList.forEach((pokemon) => {
-            pokemon.luck = 99;
-        });
-        console.log("Set all player Pokémon luck to 99!");
+    roll(tier = null, lock = true) {
+        this.selectModifierPhaseScene.execute(tier, lock);
     }
+}
 
-    let scene =
-        Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.scenes[1];
+// Add Hack to window and make it accessible as HACK
+window.HACK = new Hack();
+const HACK = window.HACK;
 
-    // Show Existing Luck Text Elements
-    const showLuckText = () => {
-        const elements = [scene.luckLabelText, scene.luckText];
-
-        // Stop any tweens affecting these elements
-        elements.forEach((element) => {
-            scene.tweens.killTweensOf(element); // Stop any existing tweens on the element
-            element.setAlpha(1); // Set alpha to 1 to make it fully visible
-            element.setVisible(true); // Set visibility to true
-        });
-    };
-
-    // Set up the watcher on the specific property
-    const scenePath =
-        "Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.scenes[1]";
-    watchProperty(scene, "money", scenePath);
-    // Call maxTeamLuck to set the initial luck values if MAX_LUCK is true and wave is greater than 0
-    if (
-        window.MAX_LUCK &&
-        window.gameInfo &&
-        window.gameInfo.wave > 0 &&
-        Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle
-            .gameMode.modeId !== 3
-    ) {
-        maxTeamLuck();
-        showLuckText();
-    }
-})();
+// Example usage
+// HACK.roll(null, false); // Roll without locked shop
+// HACK.roll(RollTiers.COMMON); // Set shop tier to Common
+// HACK.roll(RollTiers.GREAT); // Set shop tier to Great
+// HACK.roll(RollTiers.ULTRA); // Set shop tier to Ultra
+// HACK.roll(RollTiers.ROGUE); // Set shop tier to Rogue
+// HACK.roll(RollTiers.MASTER); // Set shop tier to Master
+// HACK.roll(); // Roll with locked shop
