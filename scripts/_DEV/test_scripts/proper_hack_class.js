@@ -51,3 +51,11 @@ Collected Phases:
 //     currentPhase.scene.animateMoneyChanged(false);
 //     currentPhase.scene.playSound("buy");
 // }
+
+
+// // Update Lock text
+// let uiHandler = this.currentPhase.scene.ui.getHandler();
+// uiHandler?.updateLockRaritiesText();
+// // DEMO: set cursor row:
+// // uiHandler.setCursor(2)  // for lock tiers button
+// // uiHandler.setRowCursor(0)
