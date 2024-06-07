@@ -119,16 +119,21 @@ class SelectModifierPhaseScene extends BaseScene {
 
     execute(tier, lock) {
         if (
-            this.currentPhaseName === "SelectModifierPhase" &&
-            Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys
-                .battle.gameMode.modeId !== 3
+            this.currentPhaseName === "SelectModifierPhase"
         ) {
-            this.rerollPhase(tier, lock);
-            this.clearUI();
-            this.setUIMode(0).then(() => this.currentPhase.end());
-            this.maxTeamLuck();
-            this.setMoney(this.maxMoneyInt);
-            this.playBuySound("buy");
+            if (
+                Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys
+                    .battle.gameMode.modeId !== 3
+            ) {
+                this.rerollPhase(tier, lock);
+                this.clearUI();
+                this.setUIMode(0).then(() => this.currentPhase.end());
+                this.maxTeamLuck();
+                this.setMoney(this.maxMoneyInt);
+                this.playBuySound("buy");
+            } else {
+                console.log("You cant cheat in daily run!");
+            }
         } else {
             console.log("Not in a roll phase.");
         }
