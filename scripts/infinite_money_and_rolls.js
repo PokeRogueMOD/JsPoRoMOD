@@ -6,6 +6,184 @@ let Rarities = {
     MASTER: 4,
 };
 
+let Mode = {
+    MESSAGE: 0,
+    TITLE: 1,
+    COMMAND: 2,
+    FIGHT: 3,
+    BALL: 4,
+    TARGET_SELECT: 5,
+    MODIFIER_SELECT: 6,
+    SAVE_SLOT: 7,
+    PARTY: 8,
+    SUMMARY: 9,
+    STARTER_SELECT: 10,
+    EVOLUTION_SCENE: 11,
+    EGG_HATCH_SCENE: 12,
+    CONFIRM: 13,
+    OPTION_SELECT: 14,
+    MENU: 15,
+    MENU_OPTION_SELECT: 16,
+    SETTINGS: 17,
+    SETTINGS_DISPLAY: 18,
+    SETTINGS_AUDIO: 19,
+    SETTINGS_GAMEPAD: 20,
+    GAMEPAD_BINDING: 21,
+    SETTINGS_KEYBOARD: 22,
+    KEYBOARD_BINDING: 23,
+    ACHIEVEMENTS: 24,
+    GAME_STATS: 25,
+    VOUCHERS: 26,
+    EGG_LIST: 27,
+    EGG_GACHA: 28,
+    LOGIN_FORM: 29,
+    REGISTRATION_FORM: 30,
+    LOADING: 31,
+    SESSION_RELOAD: 32,
+    UNAVAILABLE: 33,
+    OUTDATED: 34,
+};
+
+class Phase {
+    constructor(scene) {
+        this.scene = scene;
+    }
+
+    start() {
+        console.log(`%cStart Phase ${this.constructor.name}`, "color:green;");
+        if (this.scene.abilityBar.shown) {
+            this.scene.abilityBar.resetAutoHideTimer();
+        }
+    }
+
+    end() {
+        this.scene.shiftPhase();
+    }
+}
+
+class BattlePhase extends Phase {
+    constructor(scene) {
+        super(scene);
+    }
+
+    showEnemyTrainer(trainerSlot = TrainerSlot.NONE) {
+        const sprites = this.scene.currentBattle.trainer.getSprites();
+        const tintSprites = this.scene.currentBattle.trainer.getTintSprites();
+        for (let i = 0; i < sprites.length; i++) {
+            const visible =
+                !trainerSlot ||
+                !i === (trainerSlot === TrainerSlot.TRAINER) ||
+                sprites.length < 2;
+            [sprites[i], tintSprites[i]].map((sprite) => {
+                if (visible) {
+                    sprite.x =
+                        trainerSlot || sprites.length < 2 ? 0 : i ? 16 : -16;
+                }
+                sprite.setVisible(visible);
+                sprite.clearTint();
+            });
+            sprites[i].setVisible(visible);
+            tintSprites[i].setVisible(visible);
+            sprites[i].clearTint();
+            tintSprites[i].clearTint();
+        }
+        this.scene.tweens.add({
+            targets: this.scene.currentBattle.trainer,
+            x: "-=16",
+            y: "+=16",
+            alpha: 1,
+            ease: "Sine.easeInOut",
+            duration: 750,
+        });
+    }
+
+    hideEnemyTrainer() {
+        this.scene.tweens.add({
+            targets: this.scene.currentBattle.trainer,
+            x: "+=16",
+            y: "-=16",
+            alpha: 0,
+            ease: "Sine.easeInOut",
+            duration: 750,
+        });
+    }
+}
+
+class NewBattlePhase extends BattlePhase {
+    start() {
+        super.start();
+
+        this.scene.newBattle();
+
+        this.end();
+    }
+}
+
+class BattleEndPhase extends BattlePhase {
+    start() {
+        super.start();
+
+        this.scene.currentBattle.addBattleScore(this.scene);
+
+        this.scene.gameData.gameStats.battles++;
+        if (this.scene.currentBattle.trainer) {
+            this.scene.gameData.gameStats.trainersDefeated++;
+        }
+        if (
+            this.scene.gameMode.isEndless &&
+            this.scene.currentBattle.waveIndex + 1 >
+                this.scene.gameData.gameStats.highestEndlessWave
+        ) {
+            this.scene.gameData.gameStats.highestEndlessWave =
+                this.scene.currentBattle.waveIndex + 1;
+        }
+
+        // Endless graceful end
+        if (
+            this.scene.gameMode.isEndless &&
+            this.scene.currentBattle.waveIndex >= 5850
+        ) {
+            this.scene.clearPhaseQueue();
+            this.scene.unshiftPhase(new GameOverPhase(this.scene, true));
+        }
+
+        for (const pokemon of this.scene.getField()) {
+            if (pokemon) {
+                pokemon.resetBattleSummonData();
+            }
+        }
+
+        for (const pokemon of this.scene
+            .getParty()
+            .filter((p) => !p.isFainted())) {
+            applyPostBattleAbAttrs(PostBattleAbAttr, pokemon);
+        }
+
+        if (this.scene.currentBattle.moneyScattered) {
+            this.scene.currentBattle.pickUpScatteredMoney(this.scene);
+        }
+
+        this.scene.clearEnemyHeldItemModifiers();
+
+        const lapsingModifiers = this.scene.findModifiers(
+            (m) =>
+                m.constructor.name === "LapsingPersistentModifier" ||
+                m.constructor.name === "LapsingPokemonHeldItemModifier"
+        );
+        for (const m of lapsingModifiers) {
+            const args = [];
+            if (m.constructor.name === "LapsingPokemonHeldItemModifier") {
+                args.push(this.scene.getPokemonById(m.pokemonId));
+            }
+            if (!m.lapse(args)) {
+                this.scene.removeModifier(m);
+            }
+        }
+
+        this.scene.updateModifiers().then(() => this.end());
+    }
+}
+
 class BaseScene {
     constructor() {
         this.minInt = -Math.pow(2, 31);
@@ -144,13 +322,32 @@ class SelectModifierPhaseScene extends BaseScene {
     }
 }
 
+class BattleSkip extends BaseScene {
+    constructor() {
+        super();
+    }
+
+    execute() {
+        this.currentScene.clearPhaseQueue();
+        // this.currentScene.unshiftPhase(new BattleEndPhase());
+        this.currentScene.unshiftPhase(new BattleEndPhase(this.currentScene));
+        this.currentScene.unshiftPhase(new NewBattlePhase(this.currentScene));
+    }
+}
+
+// Integrate the ReloadSessionPhase with your Hack class
 class Hack {
     constructor() {
         this.selectModifierPhaseScene = new SelectModifierPhaseScene();
+        this.battleskip = new BattleSkip();
     }
 
     roll(tier = null, lock = true) {
         this.selectModifierPhaseScene.execute(tier, lock);
+    }
+
+    nextWave() {
+        this.battleskip.execute();
     }
 }
 
@@ -159,6 +356,8 @@ window.HACK = new Hack();
 const HACK = window.HACK;
 
 // Example usage
+// HACK.nextWave(); // Skip to the next wave (NOT WORKING!)
+
 // HACK.roll(null, false); // Roll without locked shop
 // HACK.roll(Rarities.COMMON); // Set shop tier to Common
 // HACK.roll(Rarities.GREAT); // Set shop tier to Great
