@@ -1,4 +1,4 @@
-let RollTiers = {
+let Rarities = {
     COMMON: 0,
     GREAT: 1,
     ULTRA: 2,
@@ -63,59 +63,48 @@ class SelectModifierPhaseScene extends BaseScene {
     }
 
     rerollPhase(tier, lock) {
-        console.log("tier", tier);
-        console.log("lock", lock);
-
-        let modifierTiers = this.currentPhase.modifierTiers;
-
-        if (
-            modifierTiers === undefined ||
-            modifierTiers === null ||
-            (lock === false && tier === null)
-        ) {
-            this.currentScene.lockModifierTiers = false;
-        }
-
-        if (modifierTiers === undefined || modifierTiers === null) {
-            console.log("modifierTiers === undefined");
-            this.currentPhase.modifierTiers =
-                tier === null
-                    ? this.currentPhase
-                          .getModifierTypeOptions(maxSlots)
-                          .map((o) => o.type.tier)
-                    : [tier, tier, tier, tier, tier, tier];
-        }
-
+        // Src Extra Items: https://github.com/pagefaultgames/pokerogue/blob/209a69d098375dcb1f5f5be4be1d674e3b3d585f/src/modifier/modifier.ts#L2063
         console.log(
-            "this.currentPhase.modifierTiers",
+            "this.currentPhase.modifierTiers: ",
             this.currentPhase.modifierTiers
         );
 
-        const maxSlots = 6; // Later get the slot by 3 + slot expand item (max +3 slots)
+        const stackCount =
+            3 +
+                HACK.selectModifierPhaseScene.currentScene.modifiers.find(
+                    (o) => o.constructor.name === "ExtraModifierModifier"
+                )?.stackCount ?? 0;
 
-        let newModifierTiers =
-            lock === true && tier === null
-                ? this.currentPhase.modifierTiers
-                : tier === null
-                ? this.currentPhase
-                      .getModifierTypeOptions(maxSlots)
-                      .map((o) => o.type.tier)
-                : [tier, tier, tier, tier, tier, tier];
-
-        console.log("newModifierTiers", newModifierTiers);
+        let itemsRef =
+            Phaser.Display.Canvas.CanvasPool.pool[1].parent.parentContainer
+                .parentContainer.displayList.list;
+        let currentItems = itemsRef[itemsRef.length - 1].list[3].list[17].list
+            .slice(0, 6)
+            .map((o) => o.modifierTypeOption);
+        let currentItemsTiers = currentItems.map((o) => o.type.tier);
 
         this.currentScene.lockModifierTiers = lock;
 
-        console.log(
-            "this.currentPhase.lockModifierTiers",
-            this.currentPhase.lockModifierTiers
-        );
+        let newModifierTiers =
+            lock === true && tier === null
+                ? currentItemsTiers
+                : tier === null
+                ? this.currentPhase
+                      .getModifierTypeOptions(stackCount)
+                      .map((o) => o.type.tier)
+                : [tier, tier, tier, tier, tier, tier];
+
+        console.log("newModifierTiers: ", newModifierTiers);
+
+        console.log("stackCount: ", stackCount);
+        console.log("tier: ", tier);
+        console.log("lock: ", lock);
 
         // Update Lock text
-        // let uiHandler = this.currentPhase.scene.ui.getHandler();
-        // uiHandler?.updateLockRaritiesText();
-
+        let uiHandler = this.currentPhase.scene.ui.getHandler();
+        uiHandler?.updateLockRaritiesText();
         // DEMO: set cursor row:
+        // uiHandler.setCursor(2)  // for lock tiers button
         // uiHandler.setRowCursor(0)
 
         this.currentPhase.scene.reroll = true;
@@ -158,9 +147,9 @@ const HACK = window.HACK;
 
 // Example usage
 // HACK.roll(null, false); // Roll without locked shop
-// HACK.roll(RollTiers.COMMON); // Set shop tier to Common
-// HACK.roll(RollTiers.GREAT); // Set shop tier to Great
-// HACK.roll(RollTiers.ULTRA); // Set shop tier to Ultra
-// HACK.roll(RollTiers.ROGUE); // Set shop tier to Rogue
-// HACK.roll(RollTiers.MASTER); // Set shop tier to Master
+// HACK.roll(Rarities.COMMON); // Set shop tier to Common
+// HACK.roll(Rarities.GREAT); // Set shop tier to Great
+// HACK.roll(Rarities.ULTRA); // Set shop tier to Ultra
+// HACK.roll(Rarities.ROGUE); // Set shop tier to Rogue
+// HACK.roll(Rarities.MASTER); // Set shop tier to Master
 // HACK.roll(); // Roll with locked shop
