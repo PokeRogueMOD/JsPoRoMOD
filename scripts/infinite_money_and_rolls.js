@@ -329,9 +329,7 @@ class BattleSkip extends BaseScene {
 
     execute() {
         this.currentScene.clearPhaseQueue();
-        // this.currentScene.unshiftPhase(new BattleEndPhase());
-        this.currentScene.unshiftPhase(new BattleEndPhase(this.currentScene));
-        this.currentScene.unshiftPhase(new NewBattlePhase(this.currentScene));
+        this.currentScene.unshiftPhase(new NewBattlePhase());
     }
 }
 
