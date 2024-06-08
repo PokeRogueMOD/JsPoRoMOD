@@ -368,24 +368,35 @@ const HACK = window.HACK;
     titleBar.innerText = "MPB Hack Client";
     overlay.appendChild(titleBar);
 
-    // Drag and Drop functionality
-    titleBar.onmousedown = function (e) {
-        var offsetX = e.clientX - overlay.offsetLeft;
-        var offsetY = e.clientY - overlay.offsetTop;
+    function onMouseOrTouchDown(e) {
+        e.preventDefault();
+        var startX = e.touches ? e.touches[0].clientX : e.clientX;
+        var startY = e.touches ? e.touches[0].clientY : e.clientY;
+        var offsetX = startX - overlay.offsetLeft;
+        var offsetY = startY - overlay.offsetTop;
 
-        function mouseMoveHandler(e) {
-            overlay.style.left = e.clientX - offsetX + "px";
-            overlay.style.top = e.clientY - offsetY + "px";
+        function onMouseOrTouchMove(e) {
+            var moveX = e.touches ? e.touches[0].clientX : e.clientX;
+            var moveY = e.touches ? e.touches[0].clientY : e.clientY;
+            overlay.style.left = moveX - offsetX + "px";
+            overlay.style.top = moveY - offsetY + "px";
         }
 
-        function mouseUpHandler() {
-            document.removeEventListener("mousemove", mouseMoveHandler);
-            document.removeEventListener("mouseup", mouseUpHandler);
+        function onMouseOrTouchEnd() {
+            document.removeEventListener("mousemove", onMouseOrTouchMove);
+            document.removeEventListener("mouseup", onMouseOrTouchEnd);
+            document.removeEventListener("touchmove", onMouseOrTouchMove);
+            document.removeEventListener("touchend", onMouseOrTouchEnd);
         }
 
-        document.addEventListener("mousemove", mouseMoveHandler);
-        document.addEventListener("mouseup", mouseUpHandler);
-    };
+        document.addEventListener("mousemove", onMouseOrTouchMove);
+        document.addEventListener("mouseup", onMouseOrTouchEnd);
+        document.addEventListener("touchmove", onMouseOrTouchMove);
+        document.addEventListener("touchend", onMouseOrTouchEnd);
+    }
+
+    titleBar.addEventListener("mousedown", onMouseOrTouchDown);
+    titleBar.addEventListener("touchstart", onMouseOrTouchDown);
 
     // Create the Roll section header
     var rollHeader = document.createElement("h3");
