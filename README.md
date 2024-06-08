@@ -10,6 +10,9 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ## Feature
 
+> `(P)` = Partially implemented.<br>
+> `(N)` = Not implemented.
+-   **hack.js**: All currently maintained hacks bundled in a GUI `(P)`.
 -   **infinite_money_and_rolls.js**: Unlimited Rerolls with Max Cash and Max Luck.
 -   **max_reroll_luck.js**: Sets the reroll luck to max and prevents the text from disappearing. (Runs once)
 -   **enemy_team.js**: View both teams with name, stats and moves and get all the important battle data. (Runs once)
