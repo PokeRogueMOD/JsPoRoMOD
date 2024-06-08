@@ -15,6 +15,8 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   **enemy_team.js**: View both teams with name, stats and moves and get all the important battle data. (Runs once)
 -   **and more...**
 
+[NEW GUI](./resources/all_achv_hack.png)
+
 ## [Video Tutorial](https://youtu.be/768219MdFjA)
 
 [![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/768219MdFjA)
