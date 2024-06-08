@@ -44,6 +44,76 @@ let Mode = {
     OUTDATED: 34,
 };
 
+const Achievements = {
+    _10K_MONEY: 0,
+    _100K_MONEY: 1,
+    _1M_MONEY: 2,
+    _10M_MONEY: 3,
+    _250_DMG: 4,
+    _1000_DMG: 5,
+    _2500_DMG: 6,
+    _10000_DMG: 7,
+    _250_HEAL: 8,
+    _1000_HEAL: 9,
+    _2500_HEAL: 10,
+    _10000_HEAL: 11,
+    LV_100: 12,
+    LV_250: 13,
+    LV_1000: 14,
+    _10_RIBBONS: 15,
+    _25_RIBBONS: 16,
+    _50_RIBBONS: 17,
+    _75_RIBBONS: 18,
+    _100_RIBBONS: 19,
+    TRANSFER_MAX_BATTLE_STAT: 20,
+    MAX_FRIENDSHIP: 21,
+    MEGA_EVOLVE: 22,
+    GIGANTAMAX: 23,
+    TERASTALLIZE: 24,
+    STELLAR_TERASTALLIZE: 25,
+    SPLICE: 26,
+    MINI_BLACK_HOLE: 27,
+    CATCH_MYTHICAL: 28,
+    CATCH_SUB_LEGENDARY: 29,
+    CATCH_LEGENDARY: 30,
+    SEE_SHINY: 31,
+    SHINY_PARTY: 32,
+    HATCH_MYTHICAL: 33,
+    HATCH_SUB_LEGENDARY: 34,
+    HATCH_LEGENDARY: 35,
+    HATCH_SHINY: 36,
+    HIDDEN_ABILITY: 37,
+    PERFECT_IVS: 38,
+    CLASSIC_VICTORY: 39,
+    MONO_GEN_ONE_VICTORY: 40,
+    MONO_GEN_TWO_VICTORY: 41,
+    MONO_GEN_THREE_VICTORY: 42,
+    MONO_GEN_FOUR_VICTORY: 43,
+    MONO_GEN_FIVE_VICTORY: 44,
+    MONO_GEN_SIX_VICTORY: 45,
+    MONO_GEN_SEVEN_VICTORY: 46,
+    MONO_GEN_EIGHT_VICTORY: 47,
+    MONO_GEN_NINE_VICTORY: 48,
+    MONO_NORMAL: 49,
+    MONO_FIGHTING: 50,
+    MONO_FLYING: 51,
+    MONO_POISON: 52,
+    MONO_GROUND: 53,
+    MONO_ROCK: 54,
+    MONO_BUG: 55,
+    MONO_GHOST: 56,
+    MONO_STEEL: 57,
+    MONO_FIRE: 58,
+    MONO_WATER: 59,
+    MONO_GRASS: 60,
+    MONO_ELECTRIC: 61,
+    MONO_PSYCHIC: 62,
+    MONO_ICE: 63,
+    MONO_DRAGON: 64,
+    MONO_DARK: 65,
+    MONO_FAIRY: 66,
+};
+
 class Phase {
     constructor(scene) {
         this.scene = scene;
@@ -322,14 +392,55 @@ class SelectModifierPhaseScene extends BaseScene {
     }
 }
 
-class BattleSkip extends BaseScene {
+class DataResetter extends BaseScene {
     constructor() {
         super();
     }
 
     execute() {
-        this.currentScene.clearPhaseQueue();
-        this.currentScene.unshiftPhase(new NewBattlePhase());
+        if (this.currentPhaseName === "TitlePhase") {
+            this.currentScene.gameData
+                .saveAll(this.currentScene, true, true, true)
+                .then((success) => {
+                    if (!success) {
+                        return this.currentScene.reset(true);
+                    }
+                    this.currentScene.gameData
+                        .tryClearSession(
+                            this.currentScene,
+                            this.currentScene.sessionSlotId
+                        )
+                        .then((success) => {
+                            if (!success[0]) {
+                                return this.currentScene.reset(true);
+                            }
+                            this.currentScene.reset();
+                            this.currentScene.unshiftPhase(
+                                new this.currentScene.constructor(this.scene)
+                            );
+                            this.currentPhase.end();
+                        });
+                });
+        } else {
+            console.log("Go back to Title Screen first!");
+        }
+    }
+}
+
+class AchvUnlocker extends BaseScene {
+    constructor() {
+        super();
+    }
+
+    execute(hours, minutes, seconds) {
+        const currentTimestamp =
+            Date.now() - (hours * 3600 - minutes * 60 - seconds) * 1000;
+        this.currentScene.gameData.achvUnlocks = Object.keys(
+            Achievements
+        ).reduce((acc, key) => {
+            acc[key] = currentTimestamp;
+            return acc;
+        }, {});
     }
 }
 
@@ -337,15 +448,20 @@ class BattleSkip extends BaseScene {
 class Hack {
     constructor() {
         this.selectModifierPhaseScene = new SelectModifierPhaseScene();
-        this.battleskip = new BattleSkip();
+        this.dataResetter = new DataResetter();
+        this.achvUnlocker = new AchvUnlocker();
     }
 
     roll(tier = null, lock = true) {
         this.selectModifierPhaseScene.execute(tier, lock);
     }
 
-    nextWave() {
-        this.battleskip.execute();
+    allAchievements(hours = 0, minutes = 0, seconds = 0) {
+        this.achvUnlocker.execute(hours, minutes, seconds);
+    }
+
+    RESET() {
+        this.dataResetter.execute();
     }
 }
 
@@ -354,7 +470,9 @@ window.HACK = new Hack();
 const HACK = window.HACK;
 
 // Example usage
-// HACK.nextWave(); // Skip to the next wave (NOT WORKING!)
+// HACK.RESET(); // Reset data and reload it from server! (Experimental!)
+
+// HACK.allAchievements(48, 30, 10);  // Unlocks all achievements as 48 hours, 30 minutes and 10 seconds in the past
 
 // HACK.roll(null, false); // Roll without locked shop
 // HACK.roll(Rarities.COMMON); // Set shop tier to Common
@@ -363,3 +481,87 @@ const HACK = window.HACK;
 // HACK.roll(Rarities.ROGUE); // Set shop tier to Rogue
 // HACK.roll(Rarities.MASTER); // Set shop tier to Master
 // HACK.roll(); // Roll with locked shop
+(function () {
+    // Create the overlay div
+    var overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "10px";
+    overlay.style.right = "10px";
+    overlay.style.width = "220px";
+    overlay.style.padding = "10px";
+    overlay.style.backgroundColor = "white";
+    overlay.style.border = "1px solid black";
+    overlay.style.zIndex = 10000;
+    overlay.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
+    document.body.appendChild(overlay);
+
+    // Create the title bar
+    var titleBar = document.createElement("div");
+    titleBar.style.backgroundColor = "#ccc";
+    titleBar.style.padding = "5px";
+    titleBar.style.cursor = "move";
+    titleBar.style.textAlign = "center";
+    titleBar.innerText = "MPB Hack Client";
+    overlay.appendChild(titleBar);
+
+    // Drag and Drop functionality
+    titleBar.onmousedown = function (e) {
+        var offsetX = e.clientX - overlay.offsetLeft;
+        var offsetY = e.clientY - overlay.offsetTop;
+
+        function mouseMoveHandler(e) {
+            overlay.style.left = e.clientX - offsetX + "px";
+            overlay.style.top = e.clientY - offsetY + "px";
+        }
+
+        function mouseUpHandler() {
+            document.removeEventListener("mousemove", mouseMoveHandler);
+            document.removeEventListener("mouseup", mouseUpHandler);
+        }
+
+        document.addEventListener("mousemove", mouseMoveHandler);
+        document.addEventListener("mouseup", mouseUpHandler);
+    };
+
+    // Create a container for the options
+    var optionsContainer = document.createElement("div");
+    optionsContainer.style.display = "flex";
+    optionsContainer.style.gap = "10px";
+    optionsContainer.style.alignItems = "center";
+    optionsContainer.style.justifyContent = "space-between";
+    overlay.appendChild(optionsContainer);
+
+    // Create the roll button
+    var rollButton = document.createElement("button");
+    rollButton.innerText = "Roll";
+    rollButton.onclick = function () {
+        var lock = lockCheckbox.checked;
+        var rarity =
+            dropdown.value === "NONE" ? null : parseInt(dropdown.value);
+        HACK.roll(rarity, lock);
+    };
+    optionsContainer.appendChild(rollButton);
+
+    // Create the lock checkbox
+    var lockLabel = document.createElement("label");
+    lockLabel.innerText = "Lock";
+    var lockCheckbox = document.createElement("input");
+    lockCheckbox.type = "checkbox";
+    lockLabel.appendChild(lockCheckbox);
+    optionsContainer.appendChild(lockLabel);
+
+    // Create the dropdown
+    var dropdown = document.createElement("select");
+    for (var key in Rarities) {
+        var option = document.createElement("option");
+        option.value = Rarities[key];
+        option.innerText = key;
+        dropdown.appendChild(option);
+    }
+    var noneOption = document.createElement("option");
+    noneOption.value = "NONE";
+    noneOption.innerText = "NONE";
+    noneOption.selected = true;
+    dropdown.appendChild(noneOption);
+    optionsContainer.appendChild(dropdown);
+})();
