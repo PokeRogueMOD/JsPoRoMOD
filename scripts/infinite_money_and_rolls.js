@@ -441,6 +441,7 @@ class AchvUnlocker extends BaseScene {
             acc[key] = currentTimestamp;
             return acc;
         }, {});
+        console.log("All achievements unlocked!");
     }
 }
 
@@ -487,20 +488,23 @@ const HACK = window.HACK;
     overlay.style.position = "fixed";
     overlay.style.top = "10px";
     overlay.style.right = "10px";
-    overlay.style.width = "220px";
+    overlay.style.width = "300px";
     overlay.style.padding = "10px";
-    overlay.style.backgroundColor = "white";
-    overlay.style.border = "1px solid black";
+    overlay.style.backgroundColor = "#121212";
+    overlay.style.border = "1px solid #e0681a";
+    overlay.style.color = "#ffffff";
+    overlay.style.fontFamily = "Roboto, sans-serif";
     overlay.style.zIndex = 10000;
     overlay.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
     document.body.appendChild(overlay);
 
     // Create the title bar
     var titleBar = document.createElement("div");
-    titleBar.style.backgroundColor = "#ccc";
+    titleBar.style.backgroundColor = "#1e1e1e";
     titleBar.style.padding = "5px";
     titleBar.style.cursor = "move";
     titleBar.style.textAlign = "center";
+    titleBar.style.color = "#ffffff";
     titleBar.innerText = "MPB Hack Client";
     overlay.appendChild(titleBar);
 
@@ -523,35 +527,50 @@ const HACK = window.HACK;
         document.addEventListener("mouseup", mouseUpHandler);
     };
 
-    // Create a container for the options
-    var optionsContainer = document.createElement("div");
-    optionsContainer.style.display = "flex";
-    optionsContainer.style.gap = "10px";
-    optionsContainer.style.alignItems = "center";
-    optionsContainer.style.justifyContent = "space-between";
-    overlay.appendChild(optionsContainer);
+    // Create the Roll section header
+    var rollHeader = document.createElement("h3");
+    rollHeader.innerText = "Roll";
+    rollHeader.style.color = "#ffffff";
+    overlay.appendChild(rollHeader);
+
+    // Create a container for the Roll options
+    var rollOptionsContainer = document.createElement("div");
+    rollOptionsContainer.style.display = "flex";
+    rollOptionsContainer.style.gap = "10px";
+    rollOptionsContainer.style.alignItems = "center";
+    rollOptionsContainer.style.justifyContent = "space-between";
+    overlay.appendChild(rollOptionsContainer);
 
     // Create the roll button
     var rollButton = document.createElement("button");
     rollButton.innerText = "Roll";
+    rollButton.style.backgroundColor = "#e0681a";
+    rollButton.style.color = "#ffffff";
+    rollButton.style.border = "none";
+    rollButton.style.padding = "5px 10px";
+    rollButton.style.cursor = "pointer";
     rollButton.onclick = function () {
         var lock = lockCheckbox.checked;
         var rarity =
             dropdown.value === "NONE" ? null : parseInt(dropdown.value);
         HACK.roll(rarity, lock);
     };
-    optionsContainer.appendChild(rollButton);
+    rollOptionsContainer.appendChild(rollButton);
 
     // Create the lock checkbox
     var lockLabel = document.createElement("label");
     lockLabel.innerText = "Lock";
+    lockLabel.style.color = "#ffffff";
     var lockCheckbox = document.createElement("input");
     lockCheckbox.type = "checkbox";
     lockLabel.appendChild(lockCheckbox);
-    optionsContainer.appendChild(lockLabel);
+    rollOptionsContainer.appendChild(lockLabel);
 
     // Create the dropdown
     var dropdown = document.createElement("select");
+    dropdown.style.backgroundColor = "#1e1e1e";
+    dropdown.style.color = "#ffffff";
+    dropdown.style.border = "1px solid #e0681a";
     for (var key in Rarities) {
         var option = document.createElement("option");
         option.value = Rarities[key];
@@ -563,5 +582,72 @@ const HACK = window.HACK;
     noneOption.innerText = "NONE";
     noneOption.selected = true;
     dropdown.appendChild(noneOption);
-    optionsContainer.appendChild(dropdown);
+    rollOptionsContainer.appendChild(dropdown);
+
+    // Create the Achievements section header
+    var achievementsHeader = document.createElement("h3");
+    achievementsHeader.innerText = "Achievements";
+    achievementsHeader.style.color = "#ffffff";
+    overlay.appendChild(achievementsHeader);
+
+    // Create a container for the Achievements options
+    var achievementsOptionsContainer = document.createElement("div");
+    achievementsOptionsContainer.style.display = "flex";
+    achievementsOptionsContainer.style.flexDirection = "column";
+    achievementsOptionsContainer.style.gap = "10px";
+    achievementsOptionsContainer.style.alignItems = "center";
+    achievementsOptionsContainer.style.justifyContent = "space-between";
+    overlay.appendChild(achievementsOptionsContainer);
+
+    // Create the unlock achievements button
+    var unlockButton = document.createElement("button");
+    unlockButton.innerText = "Unlock ALL";
+    unlockButton.style.backgroundColor = "#e0681a";
+    unlockButton.style.color = "#ffffff";
+    unlockButton.style.border = "none";
+    unlockButton.style.padding = "5px 10px";
+    unlockButton.style.cursor = "pointer";
+    unlockButton.onclick = function () {
+        var hours = parseInt(hoursInput.value) || 0;
+        var minutes = parseInt(minutesInput.value) || 0;
+        var seconds = parseInt(secondsInput.value) || 0;
+        HACK.allAchievements(hours, minutes, seconds);
+    };
+    achievementsOptionsContainer.appendChild(unlockButton);
+
+    // Create a container for the time inputs
+    var timeInputsContainer = document.createElement("div");
+    timeInputsContainer.style.display = "flex";
+    timeInputsContainer.style.gap = "5px";
+    achievementsOptionsContainer.appendChild(timeInputsContainer);
+
+    // Create the hours input
+    var hoursInput = document.createElement("input");
+    hoursInput.type = "number";
+    hoursInput.placeholder = "Hours";
+    hoursInput.style.width = "60px";
+    hoursInput.style.backgroundColor = "#1e1e1e";
+    hoursInput.style.color = "#ffffff";
+    hoursInput.style.border = "1px solid #e0681a";
+    timeInputsContainer.appendChild(hoursInput);
+
+    // Create the minutes input
+    var minutesInput = document.createElement("input");
+    minutesInput.type = "number";
+    minutesInput.placeholder = "Minutes";
+    minutesInput.style.width = "60px";
+    minutesInput.style.backgroundColor = "#1e1e1e";
+    minutesInput.style.color = "#ffffff";
+    minutesInput.style.border = "1px solid #e0681a";
+    timeInputsContainer.appendChild(minutesInput);
+
+    // Create the seconds input
+    var secondsInput = document.createElement("input");
+    secondsInput.type = "number";
+    secondsInput.placeholder = "Seconds";
+    secondsInput.style.width = "60px";
+    secondsInput.style.backgroundColor = "#1e1e1e";
+    secondsInput.style.color = "#ffffff";
+    secondsInput.style.border = "1px solid #e0681a";
+    timeInputsContainer.appendChild(secondsInput);
 })();
