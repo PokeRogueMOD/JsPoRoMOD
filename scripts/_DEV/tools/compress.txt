@@ -1,0 +1,1 @@
+PokeRogue\JsPoRoMOD\scripts> uglifyjs infinite_money_and_rolls.js -o hack.js --compress --mangle
