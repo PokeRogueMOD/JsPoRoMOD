@@ -24,9 +24,9 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ![NEW GUI](./resources/all_achv_hack.png)
 
-## [Video Tutorial](https://youtu.be/768219MdFjA)
+## [Video Tutorial](https://youtu.be/e-Dvv_VS-kY)
 
-[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/768219MdFjA)
+[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/e-Dvv_VS-kY)
 
 ## Contact
 
