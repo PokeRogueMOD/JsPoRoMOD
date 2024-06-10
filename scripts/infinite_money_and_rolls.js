@@ -225,7 +225,7 @@ class SelectModifierPhaseScene extends BaseScene {
         this.currentPhase.scene.unshiftPhase(
             new this.currentPhase.constructor(
                 this.currentScene,
-                this.minInt,
+                99,
                 newModifierTiers
             )
         );
