@@ -49,4 +49,5 @@ button {
     z-index: 10000;
     width: auto;
     max-width: 100%;
+    pointer-events: none; /* Prevent interaction with the toast container */
 }

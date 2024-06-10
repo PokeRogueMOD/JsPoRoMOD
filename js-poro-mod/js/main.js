@@ -21,6 +21,11 @@ function loadMinimalMaterialize() {
                 max-width: 100%;
                 margin: 0 auto;
                 display: inline-block;
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10000;
             }
         `;
         document.head.appendChild(materializeCSS);
