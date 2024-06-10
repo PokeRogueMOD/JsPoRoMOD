@@ -1,7 +1,6 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     mode: "production",
@@ -34,6 +33,7 @@ module.exports = {
                             limit: 8192, // Limit in bytes. Files smaller than this will be converted to Data URI.
                             fallback: "file-loader",
                             name: "[name].[hash].[ext]",
+                            esModule: false, // Disable ES modules for compatibility
                         },
                     },
                 ],
@@ -61,9 +61,4 @@ module.exports = {
             new CssMinimizerPlugin(),
         ],
     },
-    plugins: [
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ["mod.min.js"],
-        }),
-    ],
 };
