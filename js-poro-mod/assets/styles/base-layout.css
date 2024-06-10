@@ -47,7 +47,16 @@ button {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
-    width: auto;
-    max-width: 100%;
-    pointer-events: none; /* Prevent interaction with the toast container */
+    width: 100%;
+    gap: 4px;
+}
+
+.toast {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #e0681a;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 4px;
+    align-content: center;
 }

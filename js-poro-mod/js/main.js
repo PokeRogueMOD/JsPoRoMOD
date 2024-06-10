@@ -8,28 +8,6 @@ function loadMinimalMaterialize() {
             'link[href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]'
         )
     ) {
-        const materializeCSS = document.createElement("style");
-        materializeCSS.innerHTML = `
-            /* Toast specific styles */
-            .toast {
-                background-color: #323232;
-                color: #fff;
-                border-radius: 4px;
-                padding: 8px 12px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-                min-width: 100px;
-                max-width: 100%;
-                margin: 0 auto;
-                display: inline-block;
-                position: fixed;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: 10000;
-            }
-        `;
-        document.head.appendChild(materializeCSS);
-
         const materializeJS = document.createElement("script");
         materializeJS.src =
             "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
