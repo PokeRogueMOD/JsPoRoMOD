@@ -1,3 +1,5 @@
+/* popup.css */
+
 .popup-container {
     position: fixed;
     top: 10%;
@@ -9,20 +11,47 @@
     min-width: 60px; /* Ensure minimum width matches logo */
 }
 
-.row-container {
-    display: flex;
-    align-items: center;
+.popup-table {
+    border-collapse: collapse;
+    width: auto;
 }
 
-.logo-container {
-    width: 66px; /* Fixed width */
-    height: 62px; /* Fixed height */
-    display: flex;
-    align-items: center;
-    flex-shrink: 0; /* Prevent shrinking */
-    cursor: grab;
+.popup-table td {
+    padding: 0;
+    border: none;
+    vertical-align: top; /* Align cells to the top */
+    text-align: center;
 }
 
+.logo-cell {
+    width: 66px;
+    height: 62px;
+    vertical-align: middle; /* Align the logo cell vertically */
+}
+
+.action-toggle-cell {
+    width: auto;
+    vertical-align: middle; /* Align the action toggle cell vertically */
+}
+
+.feature-buttons-cell {
+    text-align: left; /* Align the feature buttons cell to the left */
+    vertical-align: middle; /* Vertically center the feature buttons cell */
+}
+
+.social-cell {
+    width: 66px;
+    vertical-align: top; /* Align the social cell to the top */
+}
+
+.settings-cell {
+    width: auto;
+    text-align: left; /* Align the settings cell to the left */
+    vertical-align: top; /* Align the settings cell to the top */
+    display: none; /* Hide settings cell by default */
+}
+
+/* Logo styles */
 .logo {
     background-color: rgba(0, 0, 0, .8);
     border: 2px solid #e0681a;
@@ -33,10 +62,16 @@
     border-radius: 50%;
     width: 100%;
     height: 100%;
-    user-select: none; /* Prevent selection */
+    cursor: grab;
+    user-select: none;
 }
 
 .logo img {
     width: 40px;
-    pointer-events: none; /* Prevent dragging */
+    pointer-events: none;
+}
+
+/* Prevent elements from being highlighted */
+* {
+    -webkit-tap-highlight-color: transparent;
 }

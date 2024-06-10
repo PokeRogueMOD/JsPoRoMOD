@@ -1,6 +1,17 @@
 import { loadRollScreen } from "./rollScreen.js";
 import { loadAccountScreen } from "./accountScreen.js";
 import { loadDataScreen } from "./dataScreen.js";
+import "./generalLayout.js";
+
+let currentLayout = 0; // 0 for roll, 1 for account, 2 for data
+
+function appendToastContainer() {
+    if (!document.getElementById("toast-container")) {
+        const toastContainer = document.createElement("div");
+        toastContainer.id = "toast-container";
+        document.body.appendChild(toastContainer);
+    }
+}
 
 export function initPopup() {
     console.log("Initializing popup");
@@ -16,17 +27,36 @@ export function initPopup() {
         console.error("Failed to load Material Icons stylesheet.");
     document.head.appendChild(materialIconsLink);
 
-    document
-        .getElementById("rollButton")
-        .addEventListener("click", loadRollScreen);
-    document
-        .getElementById("accountButton")
-        .addEventListener("click", loadAccountScreen);
-    document
-        .getElementById("dataButton")
-        .addEventListener("click", loadDataScreen);
+    // Append toast container
+    appendToastContainer();
 
+    // Load all layouts initially
     loadRollScreen();
+    loadAccountScreen();
+    loadDataScreen();
+
+    // Show the roll layout and hide the others
+    document.getElementById("rollScreen").style.display = "block";
+    document.getElementById("accountScreen").style.display = "none";
+    document.getElementById("dataScreen").style.display = "none";
+    document.getElementById("settingsContainer").style.display = "none"; // Hide settings container initially
+
+    // Event listeners for action buttons
+    document.getElementById("rollButton").addEventListener("click", () => {
+        currentLayout = 0;
+        updateSelectedButton("rollButton");
+        showLayout("rollScreen");
+    });
+    document.getElementById("accountButton").addEventListener("click", () => {
+        currentLayout = 1;
+        updateSelectedButton("accountButton");
+        showLayout("accountScreen");
+    });
+    document.getElementById("dataButton").addEventListener("click", () => {
+        currentLayout = 2;
+        updateSelectedButton("dataButton");
+        showLayout("dataScreen");
+    });
 
     const popupContainer = document.getElementById("popupContainer");
     const logoContainer = document.getElementById("logoContainer");
@@ -106,12 +136,20 @@ export function initPopup() {
     const featureButtons = document.getElementById("featureButtons");
     const socialToggle = document.getElementById("socialToggle");
     const socialLinks = document.getElementById("socialLinks");
+    const settingsContainer = document.getElementById("settingsContainer");
 
     actionToggle.addEventListener("click", () => {
-        featureButtons.classList.toggle("active");
-        actionToggle.innerHTML = featureButtons.classList.contains("active")
+        const isActive = featureButtons.classList.toggle("active");
+        settingsContainer.style.display = isActive ? "block" : "none";
+        actionToggle.innerHTML = isActive
             ? '<span class="material-icons-outlined">chevron_left</span>'
             : '<span class="material-icons-outlined">chevron_right</span>';
+
+        if (isActive) {
+            showLayoutByCurrent();
+        } else {
+            hideAllLayouts();
+        }
     });
 
     socialToggle.addEventListener("click", () => {
@@ -133,5 +171,47 @@ export function initPopup() {
         window.open("https://www.twitch.tv/meshpaintbytes", "_blank");
     });
 
+    // Set the roll button as selected by default
+    updateSelectedButton("rollButton");
+
     console.log("Popup initialized");
 }
+
+function showLayout(layoutId) {
+    hideAllLayouts();
+    document.getElementById(layoutId).style.display = "block";
+}
+
+function showLayoutByCurrent() {
+    switch (currentLayout) {
+        case 0:
+            showLayout("rollScreen");
+            break;
+        case 1:
+            showLayout("accountScreen");
+            break;
+        case 2:
+            showLayout("dataScreen");
+            break;
+    }
+}
+
+function hideAllLayouts() {
+    document.getElementById("rollScreen").style.display = "none";
+    document.getElementById("accountScreen").style.display = "none";
+    document.getElementById("dataScreen").style.display = "none";
+}
+
+function updateSelectedButton(buttonId) {
+    // Remove selected class from all buttons
+    document.querySelectorAll(".icon-button").forEach((button) => {
+        button.classList.remove("selected");
+    });
+    // Add selected class to the specified button
+    document.getElementById(buttonId).classList.add("selected");
+}
+
+// Ensure DOM is fully loaded before accessing elements
+document.addEventListener("DOMContentLoaded", () => {
+    initPopup();
+});

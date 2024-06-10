@@ -1,10 +1,4 @@
-.action-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Flexible width */
-}
-
+/* actions.css */
 .action-toggle {
     display: flex;
     align-items: center;
@@ -14,18 +8,16 @@
     border: none;
     outline: none;
     height: 60px; /* Same height as logo */
-    flex-shrink: 0; /* Prevent shrinking */
     color: #e0681a;
     padding: 4px;
 }
 
 .feature-buttons {
     display: none;
-    position: absolute;
-    left: 32px; /* Adjusted to align with the toggle button */
     flex-direction: row;
     gap: 6px;
     align-items: center;
+    justify-content: center; /* Ensure buttons are centered */
 }
 
 .feature-buttons.active {
@@ -34,7 +26,7 @@
 
 .icon-button,
 .social-button {
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #e0681a;
     backdrop-filter: blur(3px);
     border-radius: 50%;
@@ -56,7 +48,7 @@
 .social-button .tooltip {
     visibility: hidden;
     width: 80px;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #e0681a;
     backdrop-filter: blur(3px);
     color: #e0681a;
@@ -88,4 +80,12 @@
 .social-button:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+.icon-button.selected {
+    background-color: rgba(224, 104, 26, 0.8);
+}
+
+.icon-button.selected .material-icons-outlined {
+    color: #000;
 }

@@ -1,4 +1,66 @@
-<!-- Dummy rollScreen layout -->
-<div id="rollScreen">
-    <!-- Content for roll screen goes here -->
+<div id="rollScreen" class="container">
+    <h2>Roll MOD</h2>
+    <table class="input-table">
+        <tr class="input-row">
+            <td class="label-cell">
+                <label for="luckInput" class="label">Luck:</label>
+            </td>
+            <td class="checkbox-cell">
+                <input type="checkbox" id="luckCheckbox" class="toggle-checkbox" />
+            </td>
+            <td class="input-cell">
+                <input type="text" id="luckInput" class="number-input" />
+                <button id="setLuckButton" class="set-button">Set</button>
+            </td>
+        </tr>
+        <tr class="input-row">
+            <td class="label-cell">
+                <label for="moneyInput" class="label">Money:</label>
+            </td>
+            <td class="checkbox-cell">
+                <input type="checkbox" id="moneyCheckbox" class="toggle-checkbox" />
+            </td>
+            <td class="input-cell">
+                <input type="text" id="moneyInput" class="number-input" />
+                <button id="setMoneyButton" class="set-button">Set</button>
+            </td>
+        </tr>
+        <tr class="input-row">
+            <td class="label-cell">
+                <label for="rollCountInput" class="label">Roll Count:</label>
+            </td>
+            <td class="checkbox-cell">
+                <input type="checkbox" id="rollCountCheckbox" class="toggle-checkbox" />
+            </td>
+            <td class="input-cell">
+                <input type="text" id="rollCountInput" class="number-input" />
+                <button id="setRollCountButton" class="set-button">Set</button>
+            </td>
+        </tr>
+        <tr class="input-row">
+            <td class="label-cell">
+                <label for="itemTierSelect" class="label">Item Tier:</label>
+            </td>
+            <td class="checkbox-cell">
+                <input type="checkbox" id="itemTierCheckbox" class="toggle-checkbox" />
+            </td>
+            <td class="input-cell">
+                <select id="itemTierSelect" class="dropdown">
+                    <option value="No">No</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </td>
+        </tr>
+        <tr class="input-row">
+            <td class="label-cell">
+                <label for="lockShopToggle" class="label">Lock Shop:</label>
+            </td>
+            <td class="checkbox-cell">
+                <input type="checkbox" id="lockShopToggle" class="toggle-checkbox" />
+            </td>
+            <td class="input-cell">
+                <button id="rollActionButton" class="roll-button">Roll</button>
+            </td>
+        </tr>
+    </table>
 </div>
