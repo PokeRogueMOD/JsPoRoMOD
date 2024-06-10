@@ -39,3 +39,14 @@ button {
     color: black;
     cursor: pointer;
 }
+
+/* Ensure toast container is fixed at the bottom */
+#toast-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    width: auto;
+    max-width: 100%;
+}
