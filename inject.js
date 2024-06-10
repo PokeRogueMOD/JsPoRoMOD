@@ -1,6 +1,6 @@
 (function() {
     var script = document.createElement('script');
-    script.src = 'https://path.to.your.repo/js-poro-mod/dist/mod.min.js';
+    script.src = 'https://github.com/PokeRogueMOD/JsPoRoMOD/blob/main/js-poro-mod/mod.min.js';
     script.type = 'text/javascript';
     document.head.appendChild(script);
 })();
