@@ -2,7 +2,7 @@ import { sanitizeNumberInput, clampNumber } from "../utils/numberInput.js";
 import rollScreen from "../../layouts/rollScreen.html"; // Make sure the path is correct
 import { showToast } from "../utils/showToast.js";
 import { Rarities } from "../constants/rarities";
-import { Hack } from "../actions/hack"; // Ensure correct path
+import hackInstance from "../actions/hack"; // Import the instance instead of the class
 
 export function loadRollScreen() {
     document.getElementById("rollScreen").innerHTML = rollScreen;
@@ -26,6 +26,14 @@ export function loadRollScreen() {
         rollCountInput.dataset.min = -Math.pow(2, 31);
         rollCountInput.dataset.max = Math.pow(2, 31) - 1;
         rollCountInput.value = rollCountInput.dataset.max; // Set default value to max
+    }
+
+    const itemTierSelect = document.getElementById("itemTierSelect");
+    for (var key in Rarities) {
+        var option = document.createElement("option");
+        option.value = Rarities[key];
+        option.innerText = key;
+        itemTierSelect.appendChild(option);
     }
 
     const checkboxes = document.querySelectorAll(".toggle-checkbox");
@@ -70,14 +78,14 @@ export function loadRollScreen() {
 
     document.getElementById("setLuckButton").addEventListener("click", () => {
         const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
-        showToast(`Set Luck: ${luck}`);
-        // Add your logic to set luck here
+
+        hackInstance.setTeamLuck(luck);
     });
 
     document.getElementById("setMoneyButton").addEventListener("click", () => {
         const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
-        showToast(`Set Money: ${money}`);
-        // Add your logic to set money here
+
+        hackInstance.setMoney(money);
     });
 
     document
@@ -87,30 +95,41 @@ export function loadRollScreen() {
                 sanitizeNumberInput(rollCountInput.value),
                 10
             );
-            showToast(`Set Roll Count: ${rollCount}`);
-            // Add your logic to set roll count here
+            
+            hackInstance.setRollCount(rollCount);
         });
 
-    document.getElementById("rollActionButton").addEventListener("click", () => {
-        const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
-        const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
-        const rollCount = parseInt(
-            sanitizeNumberInput(rollCountInput.value),
-            10
-        );
-        const itemTier = document.getElementById("itemTierSelect").value;
+    document
+        .getElementById("rollActionButton")
+        .addEventListener("click", () => {
+            const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
+            const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
+            const rollCount = parseInt(
+                sanitizeNumberInput(rollCountInput.value),
+                10
+            );
+            const itemTier = parseInt(document.getElementById("itemTierSelect").value);
 
-        showToast(
-            `Luck: ${luck}, Money: ${money}, Roll Count: ${rollCount}, Item Tier: ${itemTier}`
-        );
-        Hack.roll(itemTier === "null" ? null : Rarities[itemTier], true);
-        // Add your roll logic here
-    });
+            const itemTierChecked = document.getElementById("itemTierCheckbox").checked;
+            const lockChecked = document.getElementById("lockShopToggle").checked;
+            const moneyChecked = document.getElementById("moneyCheckbox").checked;
+            const rollChecked = document.getElementById("rollCountCheckbox").checked;
+            const luckChecked = document.getElementById("luckCheckbox").checked;
+
+            hackInstance.roll(
+                itemTierChecked ? itemTier : null, // Rarities[itemTier]
+                lockChecked,
+                moneyChecked ? money : null,
+                rollChecked ? rollCount : null,
+                luckChecked ? luck : null
+            );
+        });
 
     const lockShopToggle = document.getElementById("lockShopToggle");
     lockShopToggle.addEventListener("change", () => {
         const lockShop = lockShopToggle.checked;
-        showToast(`Lock Shop: ${lockShop}`);
+        hackInstance.setLockRarities(lockShop)
+        showToast(`${lockShop ? 'Locked' : 'Unlocked'} Shop! `);
     });
 }
 

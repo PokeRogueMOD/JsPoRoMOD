@@ -1,5 +1,13 @@
-/* popup.css */
+/* Import Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+/* Apply Roboto font to the whole overlay and toasts */
+.popup-container,
+.toast {
+    font-family: "Roboto", sans-serif;
+}
+
+/* popup-container styles */
 .popup-container {
     position: fixed;
     top: 10%;
@@ -53,7 +61,7 @@
 
 /* Logo styles */
 .logo {
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
     border: 2px solid #e0681a;
     backdrop-filter: blur(3px);
     display: flex;
