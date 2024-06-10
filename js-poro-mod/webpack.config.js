@@ -8,7 +8,7 @@ module.exports = {
     entry: "./js/main.js",
     output: {
         filename: "mod.min.js",
-        path: path.resolve(__dirname, "js-poro-mod"),
+        path: path.resolve(__dirname),
     },
     module: {
         rules: [

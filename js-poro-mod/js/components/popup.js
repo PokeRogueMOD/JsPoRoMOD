@@ -3,6 +3,8 @@ import { loadAccountScreen } from "./accountScreen.js";
 import { loadDataScreen } from "./dataScreen.js";
 
 export function initPopup() {
+    console.log("Initializing popup");
+
     // Dynamically add Google Material Icons stylesheet
     const materialIconsLink = document.createElement("link");
     materialIconsLink.rel = "stylesheet";
@@ -130,4 +132,6 @@ export function initPopup() {
     document.getElementById("twitchButton").addEventListener("click", () => {
         window.open("https://www.twitch.tv", "_blank");
     });
+
+    console.log("Popup initialized");
 }
