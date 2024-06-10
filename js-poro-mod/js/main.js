@@ -10,6 +10,6 @@ function startPopup() {
   console.log('initPopup called');
 }
 
-window.addEventListener('load', startPopup);
+window.startPopup = startPopup;
 
 export { initPopup, startPopup };
