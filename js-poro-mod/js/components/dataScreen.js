@@ -1,10 +1,8 @@
-
-// dataScreen.js
 export function loadDataScreen() {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-        <h3>Data Management</h3>
-        <p>Import, export, and save your data here...</p>
-        <!-- Add your data management UI elements here -->
-    `;
+    fetch('layouts/dataScreen.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('settings-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading data screen:', error));
 }

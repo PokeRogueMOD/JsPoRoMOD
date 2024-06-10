@@ -1,10 +1,8 @@
-
-// accountScreen.js
 export function loadAccountScreen() {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-        <h3>Account Data</h3>
-        <p>Edit your account data here...</p>
-        <!-- Add your account data management UI elements here -->
-    `;
+    fetch('layouts/accountScreen.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('settings-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading account screen:', error));
 }

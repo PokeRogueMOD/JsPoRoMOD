@@ -1,0 +1,49 @@
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 66px; /* Same width as logo */
+}
+
+.social-toggle-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #e0681a;
+    padding: 6px;
+}
+
+.social-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #e0681a;
+    padding: 4px;
+}
+
+.social-links {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    width: 100%;
+}
+
+.social-links.active {
+    display: flex;
+}
+
+.social-button img {
+    max-width: 20px;
+    max-height: 20px;
+}
