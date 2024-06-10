@@ -1,6 +1,8 @@
-import { sanitizeNumberInput, clampNumber } from "./generalLayout.js";
+import { sanitizeNumberInput, clampNumber } from "../utils/numberInput.js";
 import rollScreen from "../../layouts/rollScreen.html"; // Make sure the path is correct
-import { showToast } from "./showToast.js";
+import { showToast } from "../utils/showToast.js";
+import { Rarities } from "../constants/rarities";
+import { Hack } from "../actions/hack"; // Ensure correct path
 
 export function loadRollScreen() {
     document.getElementById("rollScreen").innerHTML = rollScreen;
@@ -101,6 +103,7 @@ export function loadRollScreen() {
         showToast(
             `Luck: ${luck}, Money: ${money}, Roll Count: ${rollCount}, Item Tier: ${itemTier}`
         );
+        Hack.roll(itemTier === "null" ? null : Rarities[itemTier], true);
         // Add your roll logic here
     });
 
