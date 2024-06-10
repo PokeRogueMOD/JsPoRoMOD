@@ -12,4 +12,4 @@ function startPopup() {
 
 window.startPopup = startPopup;
 
-export { initPopup, startPopup };
+export { startPopup };
