@@ -27,7 +27,16 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|svg)$/i,
-                type: "asset/resource",
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            limit: 8192, // Limit in bytes. Files smaller than this will be converted to Data URI.
+                            fallback: "file-loader",
+                            name: "[name].[hash].[ext]",
+                        },
+                    },
+                ],
             },
         ],
     },

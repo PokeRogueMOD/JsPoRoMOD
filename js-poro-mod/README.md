@@ -16,7 +16,7 @@ This project is a lightweight web mod with a modern Material Design UI. It inclu
 
 2. Install:
    `npm init -y`
-   `npm install webpack@latest webpack-cli@latest css-minimizer-webpack-plugin@latest terser-webpack-plugin@latest clean-webpack-plugin@latest css-loader@latest style-loader@latest raw-loader@latest --save-dev`
+   `npm install webpack@latest webpack-cli@latest css-minimizer-webpack-plugin@latest terser-webpack-plugin@latest clean-webpack-plugin@latest css-loader@latest style-loader@latest raw-loader@latest url-loader file-loader --save-dev`
 
 3. Compile to single file:
    `npx webpack --config webpack.config.js`
