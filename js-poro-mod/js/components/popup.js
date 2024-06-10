@@ -122,15 +122,15 @@ export function initPopup() {
     });
 
     document.getElementById("videoButton").addEventListener("click", () => {
-        window.open("https://www.youtube.com", "_blank");
+        window.open("https://youtu.be/e-Dvv_VS-kY", "_blank");
     });
 
     document.getElementById("codeButton").addEventListener("click", () => {
-        window.open("https://example.com/repo", "_blank");
+        window.open("https://github.com/PokeRogueMOD/JsPoRoMOD", "_blank");
     });
 
     document.getElementById("twitchButton").addEventListener("click", () => {
-        window.open("https://www.twitch.tv", "_blank");
+        window.open("https://www.twitch.tv/meshpaintbytes", "_blank");
     });
 
     console.log("Popup initialized");
