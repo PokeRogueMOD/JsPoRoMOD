@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         filename: "mod.min.js",
-        path: path.resolve(__dirname, "js-poro-mod"),
+        path: path.resolve(__dirname),
         library: "PokeRogueMOD",
         libraryTarget: "umd",
         globalObject: "this",
