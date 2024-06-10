@@ -16,7 +16,7 @@ export class SelectModifierPhaseScene extends BaseScene {
                     pokemon.luck = luck;
                 });
                 // this.currentScene.hideLuckText(250); // Since i cant update the text properly atm!
-                showToast(`Set Luck to ${luck}`);
+                showToast(`Set Luck to ${luck} (Won't update the luck Text!)`);
             } else {
                 showToast("[ERROR] You cant cheat in daily run!");
             }
