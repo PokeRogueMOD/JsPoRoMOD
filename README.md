@@ -10,9 +10,9 @@
 
 Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript Hacks and tools.
 
-## [Video Tutorial](https://youtu.be/e-Dvv_VS-kY)
+## [Video Tutorial](https://youtu.be/PAlSXXpj1LQ)
 
-[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/e-Dvv_VS-kY)
+[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/PAlSXXpj1LQ)
 
 ## Feature
 
