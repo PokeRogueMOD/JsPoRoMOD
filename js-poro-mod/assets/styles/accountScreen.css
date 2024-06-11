@@ -52,14 +52,16 @@
 }
 
 #accountScreen .unlock-button {
-    background-color: #e0681a;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #e0681a;
+    backdrop-filter: blur(3px);
+    color: #e0681a;
     cursor: pointer;
     width: auto; /* Allow button to resize based on content */
     flex-shrink: 0;
     padding: 8px;
-    border: 1px solid #e0681a;
     border-radius: 4px;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
+    font-weight: bold;
 }
