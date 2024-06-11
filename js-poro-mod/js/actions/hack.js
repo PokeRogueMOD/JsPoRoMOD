@@ -29,8 +29,8 @@ class Hack {
         this.selectModifierPhaseScene.lockRarities(value);
     }
 
-    allAchievements(hours = 0, minutes = 0, seconds = 0) {
-        this.achvUnlocker.execute(hours, minutes, seconds);
+    allAchievements() {
+        this.achvUnlocker.execute();
     }
 
     RESET() {

@@ -76,32 +76,37 @@ export function loadRollScreen() {
     );
     rollCountInput.addEventListener("keydown", handleNumberInput);
 
-    document.getElementById("setLuckButton").addEventListener("click", () => {
-        const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
+    document
+        .getElementById("setLuckButton")
+        .addEventListener("click", function () {
+            this.blur();
+            const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
+            hackInstance.setTeamLuck(luck);
+        });
 
-        hackInstance.setTeamLuck(luck);
-    });
-
-    document.getElementById("setMoneyButton").addEventListener("click", () => {
-        const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
-
-        hackInstance.setMoney(money);
-    });
+    document
+        .getElementById("setMoneyButton")
+        .addEventListener("click", function () {
+            this.blur();
+            const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
+            hackInstance.setMoney(money);
+        });
 
     document
         .getElementById("setRollCountButton")
-        .addEventListener("click", () => {
+        .addEventListener("click", function () {
+            this.blur();
             const rollCount = parseInt(
                 sanitizeNumberInput(rollCountInput.value),
                 10
             );
-
             hackInstance.setRollCount(rollCount);
         });
 
     document
         .getElementById("rollActionButton")
-        .addEventListener("click", async () => {
+        .addEventListener("click", async function () {
+            this.blur();
             const button = document.getElementById("rollActionButton");
             button.disabled = true; // Disable the button when clicked
 
@@ -141,7 +146,7 @@ export function loadRollScreen() {
                 // If the command runs to the end without an error, keep the button locked for 2 more seconds
                 setTimeout(() => {
                     button.disabled = false;
-                }, 2000);
+                }, 1250);
             } catch (error) {
                 // If an error occurs, re-enable the button instantly
                 console.error(error);

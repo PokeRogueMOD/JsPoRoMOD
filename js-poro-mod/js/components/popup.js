@@ -42,21 +42,32 @@ export function initPopup() {
     document.getElementById("settingsContainer").style.display = "none"; // Hide settings container initially
 
     // Event listeners for action buttons
-    document.getElementById("rollButton").addEventListener("click", () => {
-        currentLayout = 0;
-        updateSelectedButton("rollButton");
-        showLayout("rollScreen");
-    });
-    document.getElementById("accountButton").addEventListener("click", () => {
-        currentLayout = 1;
-        updateSelectedButton("accountButton");
-        showLayout("accountScreen");
-    });
-    document.getElementById("dataButton").addEventListener("click", () => {
-        currentLayout = 2;
-        updateSelectedButton("dataButton");
-        showLayout("dataScreen");
-    });
+    document
+        .getElementById("rollButton")
+        .addEventListener("click", function () {
+            this.blur();
+            currentLayout = 0;
+            updateSelectedButton("rollButton");
+            showLayout("rollScreen");
+        });
+
+    document
+        .getElementById("accountButton")
+        .addEventListener("click", function () {
+            this.blur();
+            currentLayout = 1;
+            updateSelectedButton("accountButton");
+            showLayout("accountScreen");
+        });
+
+    document
+        .getElementById("dataButton")
+        .addEventListener("click", function () {
+            this.blur();
+            currentLayout = 2;
+            updateSelectedButton("dataButton");
+            showLayout("dataScreen");
+        });
 
     const popupContainer = document.getElementById("popupContainer");
     const logoContainer = document.getElementById("logoContainer");
@@ -138,7 +149,8 @@ export function initPopup() {
     const socialLinks = document.getElementById("socialLinks");
     const settingsContainer = document.getElementById("settingsContainer");
 
-    actionToggle.addEventListener("click", () => {
+    actionToggle.addEventListener("click", function () {
+        this.blur();
         const isActive = featureButtons.classList.toggle("active");
         settingsContainer.style.display = isActive ? "block" : "none";
         actionToggle.innerHTML = isActive
@@ -152,24 +164,34 @@ export function initPopup() {
         }
     });
 
-    socialToggle.addEventListener("click", () => {
+    socialToggle.addEventListener("click", function () {
+        this.blur();
         socialLinks.classList.toggle("active");
         socialToggle.innerHTML = socialLinks.classList.contains("active")
             ? '<span class="material-icons-outlined">keyboard_arrow_up</span>'
             : '<span class="material-icons-outlined">keyboard_arrow_down</span>';
     });
 
-    document.getElementById("videoButton").addEventListener("click", () => {
-        window.open("https://youtu.be/e-Dvv_VS-kY", "_blank");
-    });
+    document
+        .getElementById("videoButton")
+        .addEventListener("click", function () {
+            this.blur();
+            window.open("https://youtu.be/e-Dvv_VS-kY", "_blank");
+        });
 
-    document.getElementById("codeButton").addEventListener("click", () => {
-        window.open("https://github.com/PokeRogueMOD/JsPoRoMOD", "_blank");
-    });
+    document
+        .getElementById("codeButton")
+        .addEventListener("click", function () {
+            this.blur();
+            window.open("https://github.com/PokeRogueMOD/JsPoRoMOD", "_blank");
+        });
 
-    document.getElementById("twitchButton").addEventListener("click", () => {
-        window.open("https://www.twitch.tv/meshpaintbytes", "_blank");
-    });
+    document
+        .getElementById("twitchButton")
+        .addEventListener("click", function () {
+            this.blur();
+            window.open("https://www.titch.tv/meshpaintbytes", "_blank");
+        });
 
     // Set the roll button as selected by default
     updateSelectedButton("rollButton");

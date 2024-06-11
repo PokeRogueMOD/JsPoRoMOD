@@ -29,40 +29,36 @@ function loadMinimalMaterialize() {
     }
 }
 
-function disableKeyboardInteraction(popupSelector) {
-    const popupElements = document.querySelectorAll(`${popupSelector} *`);
+// function disableKeyboardInteraction(popupSelector) {
+//     const popupElements = document.querySelectorAll(`${popupSelector} *`);
 
-    popupElements.forEach((element) => {
-        // Disable keyboard interactions for buttons and other non-input elements
-        if (element.tagName !== "INPUT" && element.tagName !== "TEXTAREA") {
-            element.addEventListener("keydown", function (event) {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                }
-            });
-        }
-        // Disable space and enter actions for input fields
-        else {
-            element.addEventListener("keydown", function (event) {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                }
-            });
-        }
-    });
-}
+//     popupElements.forEach((element) => {
+//         // Disable keyboard interactions for buttons and other non-input elements
+//         if (element.tagName !== "INPUT" && element.tagName !== "TEXTAREA") {
+//             element.addEventListener("keydown", function (event) {
+//                 if (event.key === "Enter" || event.key === " ") {
+//                     event.preventDefault();
+//                 }
+//             });
+//         }
+//         // Disable space and enter actions for input fields
+//         else {
+//             element.addEventListener("keydown", function (event) {
+//                 if (event.key === "Enter" || event.key === " ") {
+//                     event.preventDefault();
+//                 }
+//             });
+//         }
+//     });
+// }
 
 function startPopup() {
-    console.log("Loading popup HTML");
     document.body.insertAdjacentHTML("beforeend", popupHtml);
-    console.log("Popup HTML injected");
-    loadMinimalMaterialize(); // Load minimal Materialize styles
     initPopup();
     console.log("initPopup called");
-    disableKeyboardInteraction(".popup"); // Disable keyboard interactions for the popup
+    // disableKeyboardInteraction(".popup"); // Disable keyboard interactions for the popup
 }
 
-window.startPopup = startPopup;
-
+loadMinimalMaterialize(); // Load minimal Materialize styles
 loadRobotoFont(); // Load Roboto font
 startPopup();

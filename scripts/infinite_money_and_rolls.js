@@ -260,7 +260,7 @@ class DataResetter extends BaseScene {
     execute() {
         if (this.currentPhaseName === "TitlePhase") {
             this.currentScene.gameData
-                .saveAll(this.currentScene, true, true, true)
+                .saveAll(this.currentScene, false, true, false, false)  // https://github.com/pagefaultgames/pokerogue/blob/8d75670a8146d94cd2c7ca46f18fb612d0760125/src/system/game-data.ts#L1099
                 .then((success) => {
                     if (!success) {
                         return this.currentScene.reset(true);

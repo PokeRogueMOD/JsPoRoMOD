@@ -31,7 +31,7 @@
 .input-cell {
     padding: 8px;
     border: none;
-    vertical-align: middle; /* Vertically center the content */
+    vertical-align: middle !important; /* Vertically center the content */
 }
 
 .label-cell {
@@ -72,14 +72,17 @@
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
+.roll-button {
+    color: #e0681a;
+}
 
 .set-button {
     flex-shrink: 0;
     padding: 8px;
     border: 1px solid #e0681a;
     border-radius: 4px;
-    background-color: #e0681a;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     cursor: pointer;
     min-width: 60px;
     height: 36px; /* Set consistent height for inputs and buttons */
@@ -105,7 +108,7 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.8);
     vertical-align: middle;
     box-sizing: border-box;
 }

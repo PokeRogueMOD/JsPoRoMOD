@@ -1,0 +1,65 @@
+#accountScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+}
+
+#accountScreen h2 {
+    width: 100%;
+    text-align: center; /* Center the header */
+    margin-bottom: 16px; /* Adjust space below the header if needed */
+}
+
+#accountScreen .input-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0 4px; /* Add 4px spacing between rows */
+}
+
+#accountScreen .input-row {
+    display: flex;
+    width: 100%;
+    height: 40px; /* Adjust height to ensure proper vertical alignment */
+}
+
+#accountScreen .label-cell,
+#accountScreen .input-cell {
+    padding: 8px;
+    border: none;
+    vertical-align: middle; /* Vertically center the content */
+}
+
+#accountScreen .label-cell {
+    text-align: left; /* Align the text label to the left */
+    white-space: nowrap; /* Prevent line break */
+    width: 30%; /* Adjust width as needed */
+}
+
+#accountScreen .input-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between inputs and buttons */
+    vertical-align: middle; /* Vertically center the input cell */
+    width: 35%; /* Adjust width as needed */
+}
+
+#accountScreen .label {
+    color: white;
+    text-align: left; /* Align text labels to the left */
+    display: block;
+}
+
+#accountScreen .unlock-button {
+    background-color: #e0681a;
+    color: black;
+    cursor: pointer;
+    width: auto; /* Allow button to resize based on content */
+    flex-shrink: 0;
+    padding: 8px;
+    border: 1px solid #e0681a;
+    border-radius: 4px;
+    height: 36px; /* Set consistent height for inputs and buttons */
+    box-sizing: border-box; /* Ensure padding and border are included in height */
+}

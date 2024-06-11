@@ -20,6 +20,11 @@
     justify-content: flex-start; /* Align buttons to the left */
 }
 
+.feature-buttons-cell {
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
 .feature-buttons.active {
     display: flex;
 }
