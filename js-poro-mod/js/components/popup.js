@@ -190,7 +190,7 @@ export function initPopup() {
         .getElementById("twitchButton")
         .addEventListener("click", function () {
             this.blur();
-            window.open("https://www.titch.tv/meshpaintbytes", "_blank");
+            window.open("https://www.twitch.tv/mpb_rip", "_blank");
         });
 
     // Set the roll button as selected by default
