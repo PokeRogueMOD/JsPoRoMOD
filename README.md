@@ -12,6 +12,10 @@
 
 Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript Hacks and tools.
 
+## [Video Tutorial](https://youtu.be/e-Dvv_VS-kY)
+
+[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/e-Dvv_VS-kY)
+
 ## Feature
 
 > `(P)` = Partially implemented.<br>
@@ -22,11 +26,9 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   **enemy_team.js**: View both teams with name, stats and moves and get all the important battle data. (Runs once)
 -   **and more...**
 
-![NEW GUI](./resources/all_achv_hack.png)
+![NEW GUI ALL ACHIVEMENTS](./resources/roll_hack.png)
 
-## [Video Tutorial](https://youtu.be/e-Dvv_VS-kY)
-
-[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/e-Dvv_VS-kY)
+![NEW GUI ROLL HACK](./resources/all_achv_hack.png)
 
 ## Contact
 
