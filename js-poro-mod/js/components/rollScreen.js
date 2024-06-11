@@ -95,41 +95,65 @@ export function loadRollScreen() {
                 sanitizeNumberInput(rollCountInput.value),
                 10
             );
-            
+
             hackInstance.setRollCount(rollCount);
         });
 
     document
         .getElementById("rollActionButton")
-        .addEventListener("click", () => {
-            const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
-            const money = parseInt(sanitizeNumberInput(moneyInput.value), 10);
-            const rollCount = parseInt(
-                sanitizeNumberInput(rollCountInput.value),
-                10
-            );
-            const itemTier = parseInt(document.getElementById("itemTierSelect").value);
+        .addEventListener("click", async () => {
+            const button = document.getElementById("rollActionButton");
+            button.disabled = true; // Disable the button when clicked
 
-            const itemTierChecked = document.getElementById("itemTierCheckbox").checked;
-            const lockChecked = document.getElementById("lockShopToggle").checked;
-            const moneyChecked = document.getElementById("moneyCheckbox").checked;
-            const rollChecked = document.getElementById("rollCountCheckbox").checked;
-            const luckChecked = document.getElementById("luckCheckbox").checked;
+            try {
+                const luck = parseInt(sanitizeNumberInput(luckInput.value), 10);
+                const money = parseInt(
+                    sanitizeNumberInput(moneyInput.value),
+                    10
+                );
+                const rollCount = parseInt(
+                    sanitizeNumberInput(rollCountInput.value),
+                    10
+                );
+                const itemTier = parseInt(
+                    document.getElementById("itemTierSelect").value
+                );
 
-            hackInstance.roll(
-                itemTierChecked ? itemTier : null, // Rarities[itemTier]
-                lockChecked,
-                moneyChecked ? money : null,
-                rollChecked ? rollCount : null,
-                luckChecked ? luck : null
-            );
+                const itemTierChecked =
+                    document.getElementById("itemTierCheckbox").checked;
+                const lockChecked =
+                    document.getElementById("lockShopToggle").checked;
+                const moneyChecked =
+                    document.getElementById("moneyCheckbox").checked;
+                const rollChecked =
+                    document.getElementById("rollCountCheckbox").checked;
+                const luckChecked =
+                    document.getElementById("luckCheckbox").checked;
+
+                await hackInstance.roll(
+                    itemTierChecked ? itemTier : null, // Rarities[itemTier]
+                    lockChecked,
+                    moneyChecked ? money : null,
+                    rollChecked ? rollCount : null,
+                    luckChecked ? luck : null
+                );
+
+                // If the command runs to the end without an error, keep the button locked for 2 more seconds
+                setTimeout(() => {
+                    button.disabled = false;
+                }, 2000);
+            } catch (error) {
+                // If an error occurs, re-enable the button instantly
+                console.error(error);
+                button.disabled = false;
+            }
         });
 
     const lockShopToggle = document.getElementById("lockShopToggle");
     lockShopToggle.addEventListener("change", () => {
         const lockShop = lockShopToggle.checked;
-        hackInstance.setLockRarities(lockShop)
-        showToast(`${lockShop ? 'Locked' : 'Unlocked'} Shop! `);
+        hackInstance.setLockRarities(lockShop);
+        showToast(`${lockShop ? "Locked" : "Unlocked"} Shop! `);
     });
 }
 
