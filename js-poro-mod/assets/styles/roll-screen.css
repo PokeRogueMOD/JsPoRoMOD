@@ -11,7 +11,7 @@
 #rollScreen h2 {
     width: 100%;
     text-align: center; /* Center the header */
-    margin-bottom: 16px; /* Adjust space below the header if needed */
+    margin-bottom: 8px; /* Adjust space below the header if needed */
 }
 
 .input-table {
@@ -68,10 +68,12 @@
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    width: 140px;
+    width: 175px;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
+    font-size: 16px !important;
 }
+
 .roll-button {
     color: #e0681a;
     font-weight: bold;
@@ -89,6 +91,7 @@
     align-items: center;
     max-width: 36px;
     max-height: 36px;
+    justify-content: center;
 }
 
 .toggle-checkbox {
