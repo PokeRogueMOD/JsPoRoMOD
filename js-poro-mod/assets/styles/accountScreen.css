@@ -14,7 +14,7 @@
 
 #achvDate {
     font-family: "Roboto", sans-serif !important;
-    font-size: 16px !important;
+    font-size: 14px !important;
     width: 110px;
     height: 34px;
     border: 1px solid black;
@@ -75,7 +75,7 @@
     color: white;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
-    font-size: 16px !important;
+    font-size: 14px !important;
 }
 
 .unlock-button {
