@@ -49,7 +49,7 @@
 .input-cell {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between inputs and buttons */
+    gap: 4px; /* Space between inputs and buttons */
     vertical-align: middle; /* Vertically center the input cell */
 }
 
@@ -68,7 +68,7 @@
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    min-width: 100px;
+    min-width: 75px;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
@@ -81,13 +81,14 @@
     flex-shrink: 0;
     padding: 8px;
     border: 1px solid #e0681a;
-    border-radius: 4px;
+    border-radius: 99px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: #e0681a;
     cursor: pointer;
-    min-width: 60px;
-    height: 36px; /* Set consistent height for inputs and buttons */
-    box-sizing: border-box; /* Ensure padding and border are included in height */
+    display: flex;
+    align-items: center;
+    max-width: 36px;
+    max-height: 36px;
 }
 
 .toggle-checkbox {

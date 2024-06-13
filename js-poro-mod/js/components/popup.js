@@ -1,7 +1,7 @@
 import { loadRollScreen } from "./rollScreen.js";
 import { loadAccountScreen } from "./accountScreen.js";
 import { loadDataScreen } from "./dataScreen.js";
-import "./generalLayout.js";
+// import "./generalLayout.js";
 
 let currentLayout = 0; // 0 for roll, 1 for account, 2 for data
 
