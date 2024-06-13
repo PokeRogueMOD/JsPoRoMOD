@@ -68,7 +68,7 @@
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    min-width: 75px;
+    width: 140px;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
