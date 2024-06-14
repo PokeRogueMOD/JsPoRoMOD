@@ -1,7 +1,8 @@
 > [!IMPORTANT]  
 > **The content of this repo is a proof of concept and is for educational purposes only!**
 
-> [!CAUTION] > [**This tool can cause your account to be flagged, I have had no problems so far, but be warned!**](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)
+> [!CAUTION]
+> > [**This tool can cause your account to be flagged, I have had no problems so far, but be warned!**](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)
 
 > [!Note]
 > Since there was some unnecessary drama regarding the so-called `RogueEditor`, I decided to just make my own account modification tool from scratch, based only on the [source code](https://github.com/pagefaultgames/pokerogue). My goal is to focus on adding new features that do not exist yet, with a nice **Graphical User Interface** (**GUI**).
