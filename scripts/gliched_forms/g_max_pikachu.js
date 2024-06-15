@@ -27,7 +27,7 @@ const gMaxPikachuAttributes =
     DexAttributes.VARIANT_3;
 
 // Update the caught attributes of the Dex entry for Pikachu, allowing toggling
-dexEntryPikachu.caughtAttributes =
-    dexEntryPikachu.caughtAttributes !== gMaxPikachuAttributes
+dexEntryPikachu.caughtAttr =
+    dexEntryPikachu.caughtAttr !== gMaxPikachuAttributes
         ? gMaxPikachuAttributes
         : BigInt(Number.MAX_SAFE_INTEGER);

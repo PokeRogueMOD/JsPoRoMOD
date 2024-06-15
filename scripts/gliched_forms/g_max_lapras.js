@@ -17,7 +17,7 @@ const DexAttributes = {
 
 // Calculating the attributes for G-MAX Lapras with Shiny and various other attributes
 const gMaxLaprasAttributes =
-    (1n << 15n) + // G-MAX Form
+    (1n << 8n) + // G-MAX Form
     DexAttributes.SHINY +
     DexAttributes.NON_SHINY +
     DexAttributes.MALE +
@@ -27,7 +27,7 @@ const gMaxLaprasAttributes =
     DexAttributes.VARIANT_3;
 
 // Update the caught attributes of the Dex entry for Lapras, allowing toggling
-dexEntryLapras.caughtAttributes =
-    dexEntryLapras.caughtAttributes !== gMaxLaprasAttributes
+dexEntryLapras.caughtAttr =
+    dexEntryLapras.caughtAttr !== gMaxLaprasAttributes
         ? gMaxLaprasAttributes
         : BigInt(Number.MAX_SAFE_INTEGER);
