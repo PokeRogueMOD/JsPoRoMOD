@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Representation with Material-UI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      padding: 16px;
+      background-color: #121212;
+      color: #e0681a;
+      display: flex;
+      justify-content: center;
+      align-items: top;
+      min-height: 100vh;
+      margin: 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      text-align: center;
+      padding: 4px;
+      border: 1px solid #e0681a;
+      border-radius: 4px;
+    }
+    .checkbox {
+      padding: 0;
+      margin: 0;
+      border: none; /* Remove border from checkbox cells */
+    }
+    .binary-representation, .big-int-value {
+      margin-top: 20px;
+      word-break: break-all;
+      font-family: 'Courier New', Courier, monospace;
+      color: #e0681a;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .no-border {
+      border: none; /* Class to remove border */
+    }
+  </style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@mui/material@5.0.0/umd/material-ui.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  const { useState } = React;
+  const { Checkbox, Typography, Box, Tooltip, Button } = MaterialUI;
+  const { createRoot } = ReactDOM;
+
+  const labels = [
+    "NON_SHINY", "SHINY", "MALE", "FEMALE", "DEFAULT_VARIANT", "VARIANT_2", "VARIANT_3", "DEFAULT_FORM"
+  ];
+
+  const totalDigits = 53;
+
+  // Expand labels with "Form" strings
+  const expandedLabels = [...labels, ...Array(totalDigits - labels.length).fill(0).map((_, i) => `Form ${i + 1}`)].reverse();
+
+  const BinaryRepresentation = () => {
+    const [binaryDigits, setBinaryDigits] = useState(Array(totalDigits).fill(false));
+
+    const handleCheckboxChange = (index) => {
+      const newBinaryDigits = [...binaryDigits];
+      newBinaryDigits[index] = !newBinaryDigits[index];
+      setBinaryDigits(newBinaryDigits);
+    };
+
+    const flipAll = (state) => {
+      setBinaryDigits(Array(totalDigits).fill(state));
+    };
+
+    const getBinaryString = () => {
+      return binaryDigits.map(digit => (digit ? '1' : '0')).join('');
+    };
+
+    const getBigIntValue = () => {
+      const binaryString = getBinaryString();
+      let components = [];
+      for (let i = 0; i < binaryString.length; i++) {
+        if (binaryString[i] === '1') {
+          components.push(BigInt(2 ** (binaryString.length - 1 - i)) + 'n');
+        }
+      }
+      const bigIntSum = BigInt('0b' + binaryString);
+      return { components, sum: bigIntSum };
+    };
+
+    const { components, sum } = getBigIntValue();
+    const anySelected = binaryDigits.some(digit => digit);
+
+    return (
+      <Box className="container">
+        <Typography variant="h4" gutterBottom>Binary Representation with Checkboxes</Typography>
+        <table>
+          <tbody>
+            <tr className="no-border">
+              {binaryDigits.map((checked, index) => (
+                <td key={index} className="no-border">
+                  <Tooltip
+                    title={expandedLabels[index]}
+                    arrow
+                    placement="top"
+                  >
+                    <Checkbox
+                      checked={checked}
+                      onChange={() => handleCheckboxChange(index)}
+                      className="checkbox"
+                      size="small"
+                      style={{ padding: 0, margin: 0, color: "#e0681a" }}
+                    />
+                  </Tooltip>
+                </td>
+              ))}
+            </tr>
+            <tr>
+              {binaryDigits.map((_, index) => (
+                <td key={index}>
+                  <Tooltip title={`${expandedLabels[index]} - Bit ${totalDigits - index}`} arrow>
+                    <span>{binaryDigits[index] ? '1' : '0'}</span>
+                  </Tooltip>
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+        <Box className="buttons">
+          <Button variant="contained" color="primary" onClick={() => flipAll(true)}>Flip On</Button>
+          <Button variant="contained" color="secondary" onClick={() => flipAll(false)} style={{ marginLeft: 10 }}>Flip Off</Button>
+        </Box>
+        <Box className="binary-representation">
+          <Typography variant="h5">Binary Representation:</Typography>
+          <Typography variant="body1">
+            {getBinaryString()}
+          </Typography>
+        </Box>
+        <Box className="big-int-value">
+          <table className="no-border">
+            <tbody>
+              <tr className={`no-border ${!anySelected ? 'hidden' : ''}`}>
+                <td className="no-border">{components.join(' + ')}</td>
+              </tr>
+              <tr className="no-border">
+                <td className="no-border">=</td>
+              </tr>
+              <tr className="no-border">
+                <td className="no-border">{anySelected ? sum + 'n' : '0n'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </Box>
+      </Box>
+    );
+  };
+
+  const container = document.getElementById('root');
+  const root = createRoot(container);
+  root.render(<BinaryRepresentation />);
+</script>
+
+</body>
+</html>
