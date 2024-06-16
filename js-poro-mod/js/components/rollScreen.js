@@ -31,7 +31,8 @@ export function loadRollScreen() {
     };
 
     const sanitizeAndStripPlaceholders = (value) => {
-        return value.replace(/[^0-9]/g, "");
+        if (value === "-" || value === "") return value;
+        return value.replace(/(?!^-)[^0-9]/g, "");
     };
 
     const setInputDefaults = (inputElement, maxValue, defaultValue) => {
@@ -55,15 +56,24 @@ export function loadRollScreen() {
 
     function validateAndClamp(inputElement) {
         const cursorPosition = inputElement.selectionStart;
-        const sanitizedValue = sanitizeAndStripPlaceholders(inputElement.value);
+        let sanitizedValue = sanitizeAndStripPlaceholders(inputElement.value);
         const min = parseInt(inputElement.dataset.min, 10);
         const max = parseInt(inputElement.dataset.max, 10);
-        const clampedValue = clampNumber(
-            parseInt(sanitizedValue, 10),
-            min,
-            max
-        );
-        inputElement.value = formatWithDots(clampedValue.toString());
+        let clampedValue;
+
+        if (sanitizedValue === "" || sanitizedValue === "-") {
+            clampedValue = sanitizedValue;
+        } else {
+            clampedValue = clampNumber(
+                parseInt(sanitizedValue, 10),
+                min,
+                max
+            ).toString();
+        }
+
+        inputElement.value = clampedValue.startsWith("-")
+            ? `-${formatWithDots(clampedValue.substring(1))}`
+            : formatWithDots(clampedValue);
 
         // Update cursor position to be after the inserted dot
         let newCursorPosition = cursorPosition;
@@ -88,6 +98,15 @@ export function loadRollScreen() {
         ];
 
         if (
+            event.key === "-" &&
+            inputElement.selectionStart === 0 &&
+            inputElement.value.indexOf("-") === -1
+        ) {
+            // Allow '-' only as the first character if not already present
+            return;
+        }
+
+        if (
             !/[\d]/.test(event.key) &&
             !specialKeys.includes(event.key) &&
             !event.ctrlKey &&
@@ -107,15 +126,18 @@ export function loadRollScreen() {
         validateAndClamp(rollCountInput)
     );
     rollCountInput.addEventListener("keydown", handleNumberInput);
-    
+
     document
         .getElementById("setLuckButton")
         .addEventListener("click", function () {
             this.blur();
-            const luck = parseInt(
-                sanitizeAndStripPlaceholders(luckInput.value),
-                10
-            );
+            const luck =
+                luckInput.value === "" || luckInput.value === "-"
+                    ? 0
+                    : parseInt(
+                          sanitizeAndStripPlaceholders(luckInput.value),
+                          10
+                      );
             hackInstance.setTeamLuck(luck);
         });
 
@@ -123,10 +145,13 @@ export function loadRollScreen() {
         .getElementById("setMoneyButton")
         .addEventListener("click", function () {
             this.blur();
-            const money = parseInt(
-                sanitizeAndStripPlaceholders(moneyInput.value),
-                10
-            );
+            const money =
+                moneyInput.value === "" || moneyInput.value === "-"
+                    ? 0
+                    : parseInt(
+                          sanitizeAndStripPlaceholders(moneyInput.value),
+                          10
+                      );
             hackInstance.setMoney(money);
         });
 
@@ -134,10 +159,13 @@ export function loadRollScreen() {
         .getElementById("setRollCountButton")
         .addEventListener("click", function () {
             this.blur();
-            const rollCount = parseInt(
-                sanitizeAndStripPlaceholders(rollCountInput.value),
-                10
-            );
+            const rollCount =
+                rollCountInput.value === "" || rollCountInput.value === "-"
+                    ? 0
+                    : parseInt(
+                          sanitizeAndStripPlaceholders(rollCountInput.value),
+                          10
+                      );
             hackInstance.setRollCount(rollCount);
         });
 
@@ -149,18 +177,29 @@ export function loadRollScreen() {
             button.disabled = true; // Disable the button when clicked
 
             try {
-                const luck = parseInt(
-                    sanitizeAndStripPlaceholders(luckInput.value),
-                    10
-                );
-                const money = parseInt(
-                    sanitizeAndStripPlaceholders(moneyInput.value),
-                    10
-                );
-                const rollCount = parseInt(
-                    sanitizeAndStripPlaceholders(rollCountInput.value),
-                    10
-                );
+                const luck =
+                    luckInput.value === "" || luckInput.value === "-"
+                        ? 0
+                        : parseInt(
+                              sanitizeAndStripPlaceholders(luckInput.value),
+                              10
+                          );
+                const money =
+                    moneyInput.value === "" || moneyInput.value === "-"
+                        ? 0
+                        : parseInt(
+                              sanitizeAndStripPlaceholders(moneyInput.value),
+                              10
+                          );
+                const rollCount =
+                    rollCountInput.value === "" || rollCountInput.value === "-"
+                        ? 0
+                        : parseInt(
+                              sanitizeAndStripPlaceholders(
+                                  rollCountInput.value
+                              ),
+                              10
+                          );
                 const itemTier = parseInt(
                     document.getElementById("itemTierSelect").value
                 );
@@ -230,8 +269,7 @@ export function loadRollScreen() {
     //     this.blur();
     //     isDropdownOpen = false;
     // });
-    // Event listener for clicks outside the inputs
-    document.addEventListener("mousedown", function (event) {
+    function handleOutsideEvent(event) {
         if (
             !luckCheckbox.contains(event.target) &&
             !luckInput.contains(event.target) &&
@@ -262,8 +300,11 @@ export function loadRollScreen() {
             rollActionButton.blur();
             isDropdownOpen = false;
         }
-    });
-
+    }
+    
+    // Event listener for clicks outside the inputs
+    document.addEventListener("mousedown", handleOutsideEvent);
+    document.addEventListener("touchstart", handleOutsideEvent);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

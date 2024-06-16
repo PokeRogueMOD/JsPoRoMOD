@@ -121,6 +121,9 @@ export class SelectModifierPhaseScene extends BaseScene {
                 Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys
                     .battle.gameMode.modeId !== 3
             ) {
+                if (rollCount === null) {
+                    rollCount = (this.currentPhase.rerollCount ?? 0) + 1;
+                }
                 this.rerollPhase(tier, lock, rollCount);
                 this.clearUI();
                 this.setUIMode(0).then(() => this.currentPhase.end());
