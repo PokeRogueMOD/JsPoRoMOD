@@ -28,9 +28,9 @@ export function loadRollScreen() {
         }
     };
 
-    setInputDefaults(luckInput, Math.pow(2, 31) - 1);
-    setInputDefaults(moneyInput, Number.MAX_SAFE_INTEGER);
-    setInputDefaults(rollCountInput, Math.pow(2, 31) - 1);
+    setInputDefaults(luckInput, 99);
+    setInputDefaults(moneyInput, 10000);
+    setInputDefaults(rollCountInput, 10);
 
     const itemTierSelect = document.getElementById("itemTierSelect");
     for (var key in Rarities) {
@@ -39,11 +39,6 @@ export function loadRollScreen() {
         option.innerText = key;
         itemTierSelect.appendChild(option);
     }
-
-    const checkboxes = document.querySelectorAll(".toggle-checkbox");
-    checkboxes.forEach((checkbox) => {
-        checkbox.checked = true; // Enable all checkboxes
-    });
 
     function validateAndClamp(inputElement) {
         const cursorPosition = inputElement.selectionStart;
@@ -139,11 +134,15 @@ export function loadRollScreen() {
         }
     });
 
-    const lockShopToggle = document.getElementById("lockShopToggle");
-    lockShopToggle.addEventListener("change", () => {
+    document.getElementById("lockShopToggle").addEventListener("change", function () {
+        this.blur();
         const lockShop = lockShopToggle.checked;
         hackInstance.setLockRarities(lockShop);
         showToast(`${lockShop ? "Locked" : "Unlocked"} Shop! `);
+    });
+
+    itemTierSelect.addEventListener("change", function () {
+        this.blur();
     });
 }
 
