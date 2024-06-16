@@ -201,7 +201,7 @@ export function initPopup() {
 
 function showLayout(layoutId) {
     hideAllLayouts();
-    document.getElementById(layoutId).style.display = "block";
+    document.getElementById(layoutId).style.display = "flex";
 }
 
 function showLayoutByCurrent() {

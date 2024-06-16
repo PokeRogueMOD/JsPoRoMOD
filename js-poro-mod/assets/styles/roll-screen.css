@@ -4,25 +4,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    max-width: 600px; /* Adjust as needed */
 }
 
 #rollScreen h2 {
-    width: 100%;
     text-align: center; /* Center the header */
     margin-bottom: 8px; /* Adjust space below the header if needed */
 }
 
 .input-table {
-    width: 100%;
     border-collapse: collapse;
     border-spacing: 0 4px; /* Add 4px spacing between rows */
 }
 
 .input-row {
     display: table-row;
-    width: 100%;
     height: 40px; /* Adjust height to ensure proper vertical alignment */
 }
 

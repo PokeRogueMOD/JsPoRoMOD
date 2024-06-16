@@ -17,9 +17,10 @@
     top: 50%;
     left: 0%;
     z-index: 10000;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: flex-start;
+    flex: 1; /* or another suitable flex value */
 }
 
 .popup-table {
