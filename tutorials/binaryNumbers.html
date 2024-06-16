@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      padding: 16px;
+      margin: 64px;
       background-color: #121212;
       color: #e0681a;
       display: flex;
@@ -44,6 +44,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 128px;
     }
     .hidden {
       display: none;
@@ -53,6 +54,23 @@
     }
     .no-border {
       border: none; /* Class to remove border */
+    }
+    .css-sghohy-MuiButtonBase-root-MuiButton-root {
+      border: 1px solid #e0681a !important;
+      border-radius: 4px;
+      background-color: #121212 !important; /* Class to remove border */
+    }
+    .green-button {
+      color: green !important; /* Class to remove border */
+      border: 1px solid green !important;
+    }
+    .red-button {
+      color: red !important; /* Class to remove border */
+      border: 1px solid red !important;
+    }
+    .no-wrap {
+      white-space: pre-wrap;
+      word-break: keep-all;
     }
   </style>
 </head>
@@ -147,8 +165,8 @@
           </tbody>
         </table>
         <Box className="buttons">
-          <Button variant="contained" color="primary" onClick={() => flipAll(true)}>Flip On</Button>
-          <Button variant="contained" color="secondary" onClick={() => flipAll(false)} style={{ marginLeft: 10 }}>Flip Off</Button>
+          <Button variant="contained" className="green-button" onClick={() => flipAll(true)}>Flip On</Button>
+          <Button variant="contained" className="red-button" onClick={() => flipAll(false)} style={{ marginLeft: 10 }}>Flip Off</Button>
         </Box>
         <Box className="binary-representation">
           <Typography variant="h5">Binary Representation:</Typography>
@@ -160,13 +178,13 @@
           <table className="no-border">
             <tbody>
               <tr className={`no-border ${!anySelected ? 'hidden' : ''}`}>
-                <td className="no-border">{components.join(' + ')}</td>
+                <td className="no-border no-wrap">{components.join(' + ')}</td>
               </tr>
               <tr className="no-border">
                 <td className="no-border">=</td>
               </tr>
               <tr className="no-border">
-                <td className="no-border">{anySelected ? sum + 'n' : '0n'}</td>
+                <td className="no-border no-wrap">{anySelected ? sum + 'n' : '0n'}</td>
               </tr>
             </tbody>
           </table>
