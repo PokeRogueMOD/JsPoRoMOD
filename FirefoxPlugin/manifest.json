@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "PokeRogueMOD",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "https://pokerogue.net/*",
+        "https://api.pokerogue.net/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://pokerogue.net/*",
+                "https://api.pokerogue.net/*"
+            ],
+            "js": [
+                "injector.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        "mod.min.js"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "poke-rogue-mod@mpb.rip",
+            "strict_min_version": "42.0"
+        }
+    }
+}
