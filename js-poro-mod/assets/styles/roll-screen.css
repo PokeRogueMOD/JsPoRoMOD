@@ -1,14 +1,8 @@
 /* roll-screen.css */
 
 #rollScreen {
-    display: flex;
+    flex: 1;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-#rollScreen h2 {
-    text-align: center; /* Center the header */
-    margin-bottom: 8px; /* Adjust space below the header if needed */
 }
 
 .input-table {
@@ -22,8 +16,7 @@
 }
 
 .label-cell,
-.checkbox-cell,
-.input-cell {
+.checkbox-cell {
     padding: 8px;
     border: none;
     vertical-align: middle !important; /* Vertically center the content */
@@ -41,86 +34,14 @@
     white-space: nowrap; /* Prevent line break */
 }
 
-.input-cell {
-    display: flex;
-    align-items: center;
-    gap: 4px; /* Space between inputs and buttons */
-    vertical-align: middle; /* Vertically center the input cell */
-}
-
-.label {
-    color: white;
-    text-align: left; /* Align text labels to the left */
-    display: block;
-}
-
-.number-input,
-.dropdown,
-.roll-button {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #e0681a;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    width: 165px;
-    height: 36px; /* Set consistent height for inputs and buttons */
-    box-sizing: border-box; /* Ensure padding and border are included in height */
-    font-size: 14px !important;
-}
-
 .roll-button {
     color: #e0681a;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0px 2px;
     font-weight: bold;
-}
-
-.set-button {
-    flex-shrink: 0;
-    padding: 8px;
     border: 1px solid #e0681a;
-    border-radius: 99px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #e0681a;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    max-width: 36px;
-    max-height: 36px;
-    justify-content: center;
-}
-
-.toggle-checkbox {
-    flex-shrink: 0;
-    margin-right: 4px; /* Space between checkboxes and inputs */
-    vertical-align: middle; /* Vertically center the checkbox */
-    height: 36px; /* Set consistent height for inputs and buttons */
-    box-sizing: border-box; /* Ensure padding and border are included in height */
-}
-
-/* Ensure checkboxes are displayed correctly */
-.toggle-checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #e0681a;
-    border-radius: 3px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.8);
-    vertical-align: middle;
-    box-sizing: border-box;
-}
-
-.toggle-checkbox:checked::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 10px;
-    height: 10px;
-    background-color: #e0681a;
+    margin-top: 4px;
+    flex: 1;
 }
 
 button {
@@ -132,16 +53,4 @@ button {
     cursor: pointer;
     height: 36px; /* Set consistent height for inputs and buttons */
     box-sizing: border-box; /* Ensure padding and border are included in height */
-}
-
-/* Ensure item tier select option is visible */
-.dropdown {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #e0681a;
-    color: white;
-    border-radius: 4px;
-    padding: 8px;
-    min-width: 100px;
-    box-sizing: border-box;
 }

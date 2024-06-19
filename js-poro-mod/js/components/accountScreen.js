@@ -1,29 +1,92 @@
-import accountScreenHtml from "../../layouts/accountScreen.html"; // Ensure the path is correct
-import hackInstance from "../actions/hack"; // Import the instance instead of the class
+import { createDropdown } from "../../components/dropdown.js";
+import { loadAchievementsLayout } from "./accountLayouts/achievementsLayout.js";
+import { loadEggModLayout } from "./accountLayouts/eggModLayout.js";
+import { loadGamemodesLayout } from "./accountLayouts/gamemodesLayout.js";
+import { loadGamestatsLayout } from "./accountLayouts/gamestatsLayout.js";
+import { loadStartersLayout } from "./accountLayouts/startersLayout.js";
+import { loadVoucherUnlocksLayout } from "./accountLayouts/voucherUnlocksLayout.js";
+import { loadVouchersLayout } from "./accountLayouts/vouchersLayout.js";
 
 export function loadAccountScreen() {
-    document.getElementById("accountScreen").innerHTML = accountScreenHtml;
+    const settingsContainer = document.getElementById("layoutContainer");
+    if (!settingsContainer) {
+        console.error("Element with id 'settingsContainer' not found.");
+        return;
+    }
 
-    document
-        .getElementById("unlockAllButton")
-        .addEventListener("click", async function () {
-            this.blur();
-            const button = document.getElementById("unlockAllButton");
-            button.disabled = true; // Disable the button when clicked
+    // Create the accountScreen container
+    const accountScreenElement = document.createElement("div");
+    accountScreenElement.id = "accountScreen";
+    accountScreenElement.className = "container";
+    accountScreenElement.style.display = "none";
+    settingsContainer.appendChild(accountScreenElement);
 
-            try {
-                await hackInstance.allAchievements();
+    // Create Dropdown for selecting sublayout
+    const options = [
+        "Achievements",
+        "Starters",
+        "Gamemodes",
+        "Vouchers",
+        "Voucher Unlocks",
+        "Egg MOD",
+        "Gamestats",
+    ];
+    const dropdown = createDropdown(
+        options.map((option) => ({
+            value: option.toLowerCase(),
+            text: option,
+        })),
+        (value) => {
+            loadSubLayout(value);
+        },
+        "accountOptionsSelect"
+    );
 
-                // If the command runs to the end without an error, keep the button locked for 5 more seconds
-                setTimeout(() => {
-                    button.disabled = false;
-                }, 5000);
-            } catch (error) {
-                // If an error occurs, re-enable the button instantly
-                console.error(error);
-                button.disabled = false;
-            }
-        });
+    // Add dropdown to the accountScreen
+    accountScreenElement.appendChild(dropdown);
+
+    // Create a container for the sublayouts
+    const subLayoutContainer = document.createElement("div");
+    subLayoutContainer.id = "subLayoutContainer";
+    accountScreenElement.appendChild(subLayoutContainer);
+
+    // Function to load sublayouts based on selection
+    function loadSubLayout(layout) {
+        subLayoutContainer.innerHTML = ""; // Clear previous layout
+
+        switch (layout) {
+            case "achievements":
+                loadAchievementsLayout(subLayoutContainer);
+                break;
+            case "starters":
+                loadStartersLayout(subLayoutContainer);
+                break;
+            case "gamemodes":
+                loadGamemodesLayout(subLayoutContainer);
+                break;
+            case "vouchers":
+                loadVouchersLayout(subLayoutContainer);
+                break;
+            case "voucher unlocks":
+                loadVoucherUnlocksLayout(subLayoutContainer);
+                break;
+            case "egg mod":
+                loadEggModLayout(subLayoutContainer);
+                break;
+            case "gamestats":
+                loadGamestatsLayout(subLayoutContainer);
+                break;
+            default:
+                console.error("Unknown layout selected.");
+        }
+    }
+
+    console.log("Account screen initialized with dropdown and sublayouts.");
+
+    // Show the accountScreen element
+    accountScreenElement.style.display = "flex";
+
+    loadSubLayout("achievements");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

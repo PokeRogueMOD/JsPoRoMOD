@@ -1,0 +1,36 @@
+/* .number-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #e0681a;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 165px;
+    height: auto !important;
+    box-sizing: border-box;
+    font-size: 14px !important;
+    margin: 0px !important;
+    width: 165px;
+    border-bottom: 1px solid #e0681a !important;
+}
+
+.number-input:focus {
+    box-shadow: 0 1px 0 0 #e0681a !important;
+} */
+
+.date-component input {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 14px !important;
+    width: 105px !important;
+    height: 18px !important;
+    border: 1px solid black !important;
+    border-radius: 4px !important;
+    background-color: rgba(224, 104, 26, 1) !important;
+    color: black !important;
+    padding-left: 4px !important;
+    padding-right: 2px !important;
+}
+
+.date-component input:focus {
+    box-shadow: 0 1px 0 0 #e0681a !important;
+}

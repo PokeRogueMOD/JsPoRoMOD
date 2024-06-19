@@ -8,28 +8,9 @@
     font-size: 14px !important;
 }
 
-h2 {
-    color: #e0681a;
-    margin: 8px 0px;
-}
-
-.label {
-    color: white;
-}
-
 .input-row,
 .button-row {
     margin-bottom: 15px;
-}
-
-.number-input,
-.dropdown {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #e0681a;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
 }
 
 button {
@@ -41,23 +22,3 @@ button {
     cursor: pointer;
 }
 
-/* Ensure toast container is fixed at the bottom */
-#toast-container {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    width: 100%;
-    gap: 4px;
-}
-
-.toast {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #e0681a;
-    border-radius: 4px;
-    padding: 4px;
-    margin: 4px;
-    align-content: center;
-}

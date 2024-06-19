@@ -7,16 +7,49 @@
 
 .popup-container,
 .toast {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif !important;
+}
+.toast {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid #e0681a;
+    border-radius: 99px !important;
+    padding: 4px;
+    margin: 4px;
+    align-content: center;
+    z-index: 9999 !important;
+    pointer-events: none;
+    display: flex !important;
+    flex-direction: row !important;
+    flex: 0 !important;
+    font-size: 14px !important;
+    margin: 0px 8px !important;
+    margin-top: 0px !important;
+    justify-content: center !important;
 }
 
-/* popup-container styles */
+/* Ensure toast container is fixed at the bottom */
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 0% !important;
+    right: 0% !important;
+    z-index: 9998 !important;
+    max-height: 25% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    gap: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    overflow: hidden;
+}
 
 .popup-container {
     position: fixed;
-    top: 50%;
+    top: 0%;
     left: 0%;
-    z-index: 10000;
+    z-index: 10000 !important;
     display: flex !important;
     flex-direction: column;
     align-items: flex-start;
@@ -30,7 +63,7 @@
 
 .popup-table td {
     padding: 0;
-    border: none;
+    /* border: none; */
     vertical-align: top;
     /* Align cells to the top */
     text-align: center;
@@ -92,6 +125,53 @@
     width: 40px;
     height: 40px;
     pointer-events: none;
+}
+
+#settingsContainer {
+    flex: 1;
+}
+
+#layoutContainer {
+    display: flex;
+    flex: 1;
+}
+
+.ele-container {
+    display: flex;
+    flex: 1;
+}
+
+.set-button {
+    flex-shrink: 0;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #e0681a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    max-width: 18px;
+    max-height: 18px;
+    justify-content: center;
+}
+
+.flex-end {
+    display: flex;
+}
+
+.flex-lock {
+    display: flex;
+    flex: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-cell {
+    display: contents;
+    align-items: center;
+    gap: 4px; /* Space between inputs and buttons */
+    vertical-align: middle; /* Vertically center the input cell */
 }
 
 /* Prevent elements from being highlighted */

@@ -1,0 +1,29 @@
+
+/* Ensure checkboxes are displayed correctly */
+.toggle-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e0681a;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative !important;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    vertical-align: middle;
+    box-sizing: border-box;
+    opacity: 1 !important;
+    margin: 0 !important;
+    pointer-events: all !important;
+}
+
+.toggle-checkbox:checked::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #e0681a;
+}

@@ -1,0 +1,20 @@
+.number-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #e0681a;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 165px;
+    height: auto !important;
+    box-sizing: border-box;
+    font-size: 14px !important;
+    margin: 0px !important;
+    width: 165px;
+    border-bottom: 1px solid #e0681a !important;
+    /* box-sizing: border-box; */
+}
+
+.number-input:focus {
+    box-shadow: 0 1px 0 0 #e0681a !important;
+}

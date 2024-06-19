@@ -22,6 +22,12 @@ function loadMinimalMaterialize() {
             'link[href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]'
         )
     ) {
+        const materializeCSS = document.createElement("link");
+        materializeCSS.href =
+            "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+        materializeCSS.rel = "stylesheet";
+        document.head.appendChild(materializeCSS);
+
         const materializeJS = document.createElement("script");
         materializeJS.src =
             "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
@@ -29,36 +35,14 @@ function loadMinimalMaterialize() {
     }
 }
 
-// function disableKeyboardInteraction(popupSelector) {
-//     const popupElements = document.querySelectorAll(`${popupSelector} *`);
-
-//     popupElements.forEach((element) => {
-//         // Disable keyboard interactions for buttons and other non-input elements
-//         if (element.tagName !== "INPUT" && element.tagName !== "TEXTAREA") {
-//             element.addEventListener("keydown", function (event) {
-//                 if (event.key === "Enter" || event.key === " ") {
-//                     event.preventDefault();
-//                 }
-//             });
-//         }
-//         // Disable space and enter actions for input fields
-//         else {
-//             element.addEventListener("keydown", function (event) {
-//                 if (event.key === "Enter" || event.key === " ") {
-//                     event.preventDefault();
-//                 }
-//             });
-//         }
-//     });
-// }
-
 function startPopup() {
     document.body.insertAdjacentHTML("beforeend", popupHtml);
     initPopup();
     console.log("initPopup called");
-    // disableKeyboardInteraction(".popup"); // Disable keyboard interactions for the popup
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
 loadMinimalMaterialize(); // Load minimal Materialize styles
 loadRobotoFont(); // Load Roboto font
-startPopup();
+startPopup(); // Start popup after the DOM is fully loaded
+// });

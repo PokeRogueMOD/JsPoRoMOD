@@ -1,6 +1,6 @@
 import { BaseScene } from "../scenes/baseScene";
 import { Achievements } from "../constants/achievements";
-import { showToast } from "../utils/showToast.js";
+import { showToast } from "../../components/utils/showToast.js";
 
 export class AchvUnlocker extends BaseScene {
     constructor() {
@@ -8,7 +8,7 @@ export class AchvUnlocker extends BaseScene {
     }
 
     execute() {
-        const timestampInput = document.getElementById("achvDate");
+        const timestampInput = document.getElementById("achievementDate");
         const dateValue = timestampInput.value; // returns 2018-07-22 for example
         const dateObject = new Date(dateValue);
         const timestamp = dateObject.getTime(); // converts to timestamp in milliseconds

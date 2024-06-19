@@ -1,5 +1,5 @@
 import { BaseScene } from "./baseScene";
-import { showToast } from "../utils/showToast.js";
+import { showToast } from "../../components/utils/showToast.js";
 
 export class SelectModifierPhaseScene extends BaseScene {
     constructor() {
@@ -50,7 +50,7 @@ export class SelectModifierPhaseScene extends BaseScene {
                     .battle.gameMode.modeId !== 3
             ) {
                 this.currentPhase.rollCount = value;
-                showToast(`Set Roll Count to ${rollCount}`);
+                showToast(`Set Roll Count to ${value}`);
             } else {
                 showToast("[ERROR] You cant cheat in daily run!");
             }

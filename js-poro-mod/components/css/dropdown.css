@@ -1,0 +1,13 @@
+/* dropdown.css */
+.dropdown {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    color: white;
+    /* border-radius: 4px; */
+    padding: 0px !important;
+    min-width: 100px;
+    max-height: 18px;
+    box-sizing: border-box;
+    flex: 1;
+}

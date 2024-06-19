@@ -1,0 +1,8 @@
+fieldset {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #e0681a;
+    border-radius: 4px;
+    color: #e0681a;
+    flex: 1;
+    padding: 0px 4px 4px 4px !important;
+}

@@ -1,312 +1,203 @@
-// Roll Screen
-import { sanitizeNumberInput, clampNumber } from "../utils/numberInput.js";
-import rollScreen from "../../layouts/rollScreen.html"; // Make sure the path is correct
-import { showToast } from "../utils/showToast.js";
+import { DynamicTable } from "../../components/dynamicTable.js";
+import { DynamicFieldset } from "../../components/dynamicFieldset.js";
+import { createNumberInput } from "../../components/numberInput.js";
+import { createDropdown } from "../../components/dropdown.js";
+import { showToast } from "../../components/utils/showToast.js";
 import { Rarities } from "../constants/rarities";
-import hackInstance from "../actions/hack"; // Import the instance instead of the class
+import hackInstance from "../actions/hack";
+import { loadHeader } from "../../components/header.js";
+import { createCheckbox } from "../../components/checkbox.js"; // Import the new createCheckbox function
+import { SingleLineContainer } from "../../components/singleLineContainer.js"; // Import the new SingleLineContainer component
 
 export function loadRollScreen() {
-    document.getElementById("rollScreen").innerHTML = rollScreen;
-
-    const luckCheckbox = document.getElementById("luckCheckbox");
-    const luckInput = document.getElementById("luckInput");
-    const setLuckButton = document.getElementById("setLuckButton");
-
-    const moneyCheckbox = document.getElementById("moneyCheckbox");
-    const moneyInput = document.getElementById("moneyInput");
-    const setMoneyButton = document.getElementById("setMoneyButton");
-
-    const rollCountCheckbox = document.getElementById("rollCountInput");
-    const rollCountInput = document.getElementById("rollCountInput");
-    const setRollCountButton = document.getElementById("rollCountInput");
-
-    const itemTierCheckbox = document.getElementById("itemTierCheckbox");
-    const itemTierSelect = document.getElementById("itemTierSelect");
-
-    const lockShopToggle = document.getElementById("rollCountInput");
-    const rollActionButton = document.getElementById("rollCountInput");
-
-    const formatWithDots = (value) => {
-        return value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    };
-
-    const sanitizeAndStripPlaceholders = (value) => {
-        if (value === "-" || value === "") return value;
-        return value.replace(/(?!^-)[^0-9]/g, "");
-    };
-
-    const setInputDefaults = (inputElement, maxValue, defaultValue) => {
-        if (inputElement) {
-            inputElement.dataset.min = -Math.pow(2, 31);
-            inputElement.dataset.max = maxValue;
-            inputElement.value = formatWithDots(defaultValue.toString()); // Set default value to max and format it
-        }
-    };
-
-    setInputDefaults(luckInput, Math.pow(2, 31) - 1, 99);
-    setInputDefaults(moneyInput, Number.MAX_SAFE_INTEGER, 10000);
-    setInputDefaults(rollCountInput, Math.pow(2, 31) - 1, 10);
-
-    for (var key in Rarities) {
-        var option = document.createElement("option");
-        option.value = Rarities[key];
-        option.innerText = key;
-        itemTierSelect.appendChild(option);
+    const settingsContainer = document.getElementById("layoutContainer");
+    if (!settingsContainer) {
+        console.error("Element with id 'settingsContainer' not found.");
+        return;
     }
 
-    function validateAndClamp(inputElement) {
-        const cursorPosition = inputElement.selectionStart;
-        let sanitizedValue = sanitizeAndStripPlaceholders(inputElement.value);
-        const min = parseInt(inputElement.dataset.min, 10);
-        const max = parseInt(inputElement.dataset.max, 10);
-        let clampedValue;
+    // Create the rollScreen container
+    const rollScreenElement = document.createElement("div");
+    rollScreenElement.id = "rollScreen";
+    rollScreenElement.className = "container";
+    rollScreenElement.style.display = "none";
+    settingsContainer.appendChild(rollScreenElement);
 
-        if (sanitizedValue === "" || sanitizedValue === "-") {
-            clampedValue = sanitizedValue;
-        } else {
-            clampedValue = clampNumber(
-                parseInt(sanitizedValue, 10),
-                min,
-                max
-            ).toString();
-        }
+    // Load the header
+    loadHeader("rollScreen", "Roll MOD");
 
-        inputElement.value = clampedValue.startsWith("-")
-            ? `-${formatWithDots(clampedValue.substring(1))}`
-            : formatWithDots(clampedValue);
+    // Create Dynamic Table
+    const mainTable = new DynamicTable();
 
-        // Update cursor position to be after the inserted dot
-        let newCursorPosition = cursorPosition;
-        const sanitizedBeforeCursor = sanitizeAndStripPlaceholders(
-            inputElement.value.substring(0, cursorPosition)
+    const createSingleLineFieldset = (labelText, inputId, min, defaultVal, max, callback, checkboxId) => {
+        const fieldset = new DynamicFieldset(labelText);
+
+        const singleLineContainer = new SingleLineContainer();
+        
+        const checkbox = createCheckbox(checkboxId, false, (isChecked) => {
+            console.log(`${labelText} checkbox:`, isChecked);
+        });
+
+        const input = createNumberInput(
+            inputId,
+            min,
+            defaultVal,
+            max
         );
-        newCursorPosition =
-            sanitizedBeforeCursor.length +
-            Math.floor(sanitizedBeforeCursor.length / 3);
-        inputElement.setSelectionRange(newCursorPosition, newCursorPosition);
-    }
+        input.classList.add("ele-container");
 
-    function handleNumberInput(event) {
-        const inputElement = event.target;
-        const specialKeys = [
-            "Backspace",
-            "Delete",
-            "ArrowLeft",
-            "ArrowRight",
-            "Home",
-            "End",
-        ];
-
-        if (
-            event.key === "-" &&
-            inputElement.selectionStart === 0 &&
-            inputElement.value.indexOf("-") === -1
-        ) {
-            // Allow '-' only as the first character if not already present
-            return;
-        }
-
-        if (
-            !/[\d]/.test(event.key) &&
-            !specialKeys.includes(event.key) &&
-            !event.ctrlKey &&
-            !event.metaKey
-        ) {
-            event.preventDefault();
-        }
-    }
-
-    luckInput.addEventListener("input", () => validateAndClamp(luckInput));
-    luckInput.addEventListener("keydown", handleNumberInput);
-
-    moneyInput.addEventListener("input", () => validateAndClamp(moneyInput));
-    moneyInput.addEventListener("keydown", handleNumberInput);
-
-    rollCountInput.addEventListener("input", () =>
-        validateAndClamp(rollCountInput)
-    );
-    rollCountInput.addEventListener("keydown", handleNumberInput);
-
-    document
-        .getElementById("setLuckButton")
-        .addEventListener("click", function () {
-            this.blur();
-            const luck =
-                luckInput.value === "" || luckInput.value === "-"
-                    ? 0
-                    : parseInt(
-                          sanitizeAndStripPlaceholders(luckInput.value),
-                          10
-                      );
-            hackInstance.setTeamLuck(luck);
+        const setButton = document.createElement("button");
+        setButton.className = "set-button";
+        setButton.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+        
+        setButton.addEventListener("click", () => {
+            setButton.blur()
+            callback(input.firstChild.intValue);
         });
 
-    document
-        .getElementById("setMoneyButton")
-        .addEventListener("click", function () {
-            this.blur();
-            const money =
-                moneyInput.value === "" || moneyInput.value === "-"
-                    ? 0
-                    : parseInt(
-                          sanitizeAndStripPlaceholders(moneyInput.value),
-                          10
-                      );
-            hackInstance.setMoney(money);
-        });
+        singleLineContainer.addElement(checkbox);
+        singleLineContainer.addElement(input);
+        singleLineContainer.addElement(setButton);
 
-    document
-        .getElementById("setRollCountButton")
-        .addEventListener("click", function () {
-            this.blur();
-            const rollCount =
-                rollCountInput.value === "" || rollCountInput.value === "-"
-                    ? 0
-                    : parseInt(
-                          sanitizeAndStripPlaceholders(rollCountInput.value),
-                          10
-                      );
-            hackInstance.setRollCount(rollCount);
-        });
+        fieldset.addElement(singleLineContainer.getElement());
+        return fieldset;
+    };
 
-    document
-        .getElementById("rollActionButton")
-        .addEventListener("click", async function () {
-            this.blur();
-            const button = document.getElementById("rollActionButton");
-            button.disabled = true; // Disable the button when clicked
+    const minInt = -Math.pow(2, 31);
+    const maxInt = Math.pow(2, 31) - 1;
 
-            try {
-                const luck =
-                    luckInput.value === "" || luckInput.value === "-"
-                        ? 0
-                        : parseInt(
-                              sanitizeAndStripPlaceholders(luckInput.value),
-                              10
-                          );
-                const money =
-                    moneyInput.value === "" || moneyInput.value === "-"
-                        ? 0
-                        : parseInt(
-                              sanitizeAndStripPlaceholders(moneyInput.value),
-                              10
-                          );
-                const rollCount =
-                    rollCountInput.value === "" || rollCountInput.value === "-"
-                        ? 0
-                        : parseInt(
-                              sanitizeAndStripPlaceholders(
-                                  rollCountInput.value
-                              ),
-                              10
-                          );
-                const itemTier = parseInt(
-                    document.getElementById("itemTierSelect").value
-                );
+    const minBigInt = -Math.pow(2, 53);
+    const maxBigInt = Math.pow(2, 53) - 1;
 
-                const itemTierChecked =
-                    document.getElementById("itemTierCheckbox").checked;
-                const lockChecked =
-                    document.getElementById("lockShopToggle").checked;
-                const moneyChecked =
-                    document.getElementById("moneyCheckbox").checked;
-                const rollChecked =
-                    document.getElementById("rollCountCheckbox").checked;
-                const luckChecked =
-                    document.getElementById("luckCheckbox").checked;
+    const luckFieldset = createSingleLineFieldset("Luck", "luck-input", minInt, 99, maxInt, (value) => {
+        hackInstance.setTeamLuck(value);
+    }, "luckCheckbox");
 
-                await hackInstance.roll(
-                    itemTierChecked ? itemTier : null, // Rarities[itemTier]
-                    lockChecked,
-                    moneyChecked ? money : null,
-                    rollChecked ? rollCount : null,
-                    luckChecked ? luck : null
-                );
+    const moneyFieldset = createSingleLineFieldset("Money", "money-input", minBigInt, 10000, maxBigInt, (value) => {
+        hackInstance.setMoney(value);
+    }, "moneyCheckbox");
 
-                // If the command runs to the end without an error, keep the button locked for 2 more seconds
-                setTimeout(() => {
-                    button.disabled = false;
-                }, 1250);
-            } catch (error) {
-                // If an error occurs, re-enable the button instantly
-                console.error(error);
-                button.disabled = false;
-            }
-        });
+    const rollCountFieldset = createSingleLineFieldset("Count", "rollCount-input", minInt, 10, maxInt, (value) => {
+        hackInstance.setRollCount(value);
+    }, "rollCountCheckbox");
 
-    document
-        .getElementById("lockShopToggle")
-        .addEventListener("change", function () {
-            this.blur();
-            const lockShop = lockShopToggle.checked;
-            hackInstance.setLockRarities(lockShop);
-            showToast(`${lockShop ? "Locked" : "Unlocked"} Shop! `);
-        });
+    const tierLocksingleLineContainer = new SingleLineContainer();
+    const itemTierFieldset = new DynamicFieldset("Tier");
+    const itemTierDropdown = createDropdown(Object.keys(Rarities).map((key) => ({
+        value: Rarities[key],
+        text: key,
+    })), (value) => {
+        console.log("Selected item tier:", value);
+    },
+    "itemTierSelect");
 
-    // Variable to track if the dropdown is open
-    let isDropdownOpen = false;
+    const lockfieldset = new DynamicFieldset("Lock");
 
-    // // Event listener for clicks on the document
-    // document.addEventListener("mousedown", function (event) {
-    //     if (isDropdownOpen && !itemTierSelect.contains(event.target)) {
-    //         // If the dropdown is open and click is outside the select element, blur it
-    //         itemTierSelect.blur();
-    //     }
-    // });
+    const locksingleLineContainer = new SingleLineContainer();
+    
+    // Create Button Row
+    const buttonRow = document.createElement("div");
+    buttonRow.className = "single-line-container";
 
-    itemTierSelect.addEventListener("click", function (event) {
-        if (isDropdownOpen) {
-            // If the dropdown is already open and click happens on the select, do nothing special
-            this.blur();
-            isDropdownOpen = false;
-        } else {
-            isDropdownOpen = true;
-        }
+    const lockCheckbox = createCheckbox("lockShopToggle", false, (isChecked) => {
+        hackInstance.setLockRarities(isChecked);
+        showToast(`${isChecked ? "Locked" : "Unlocked"} Shop!`);
     });
 
-    // itemTierSelect.addEventListener("change", function () {
-    //     // When an option is selected, blur the select element and reset the state
-    //     this.blur();
-    //     isDropdownOpen = false;
-    // });
-    function handleOutsideEvent(event) {
-        if (
-            !luckCheckbox.contains(event.target) &&
-            !luckInput.contains(event.target) &&
-            !setLuckButton.contains(event.target) &&
-            !moneyCheckbox.contains(event.target) &&
-            !moneyInput.contains(event.target) &&
-            !setMoneyButton.contains(event.target) &&
-            !rollCountCheckbox.contains(event.target) &&
-            !rollCountInput.contains(event.target) &&
-            !setRollCountButton.contains(event.target) &&
-            !itemTierCheckbox.contains(event.target) &&
-            !itemTierSelect.contains(event.target) &&
-            !lockShopToggle.contains(event.target) &&
-            !rollActionButton.contains(event.target)
-        ) {
-            luckCheckbox.blur();
-            luckInput.blur();
-            setLuckButton.blur();
-            moneyCheckbox.blur();
-            moneyInput.blur();
-            setMoneyButton.blur();
-            rollCountCheckbox.blur();
-            rollCountInput.blur();
-            setRollCountButton.blur();
-            itemTierCheckbox.blur();
-            itemTierSelect.blur();
-            lockShopToggle.blur();
-            rollActionButton.blur();
-            isDropdownOpen = false;
-        }
-    }
-    
-    // Event listener for clicks outside the inputs
-    document.addEventListener("mousedown", handleOutsideEvent);
-    document.addEventListener("touchstart", handleOutsideEvent);
-}
+    locksingleLineContainer.addElement(lockCheckbox);
+    lockfieldset.addElement(locksingleLineContainer.getElement());
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadRollScreen(); // Ensure the roll screen is loaded when the DOM is ready
-});
+    const itemTierContainer = new SingleLineContainer();
+    const itemTierCheckbox = createCheckbox("itemTierCheckbox", false, (isChecked) => {
+        console.log("Item tier checkbox:", isChecked);
+    });
+
+    itemTierContainer.addElement(itemTierCheckbox);
+    itemTierContainer.addElement(itemTierDropdown);
+    itemTierFieldset.addElement(itemTierContainer.getElement());
+
+
+
+    const eleLocksingleLineContainer = lockfieldset.getElement();
+    eleLocksingleLineContainer.className = "flex-lock";
+
+
+
+    tierLocksingleLineContainer.addElement(eleLocksingleLineContainer)
+
+    tierLocksingleLineContainer.addElement(itemTierFieldset.getElement())
+
+    mainTable.addRow(luckFieldset.getElement());
+    mainTable.addRow(moneyFieldset.getElement());
+    mainTable.addRow(rollCountFieldset.getElement());
+
+    
+    const endSet = tierLocksingleLineContainer.getElement()
+    endSet.className = "flex-end";
+
+    mainTable.addRow(endSet);
+
+    const rollButton = document.createElement("button");
+    rollButton.id = "rollActionButton";
+    rollButton.className = "roll-button";
+    rollButton.textContent = "Roll";
+    buttonRow.appendChild(rollButton);
+
+    mainTable.addRow(buttonRow);
+
+    // Append elements to the roll screen
+    rollScreenElement.appendChild(mainTable.getElement());
+
+    console.log("Roll screen initialized with inputs and buttons.");
+
+    // Show the rollScreen element
+    rollScreenElement.style.display = "flex";
+
+    // Event Listeners
+    document.getElementById("rollActionButton").addEventListener("click", async function () {
+        this.blur();
+        const button = document.getElementById("rollActionButton");
+        button.disabled = true;
+
+        try {
+            const luckInput = document.getElementById("luck-input");
+            const moneyInput = document.getElementById("money-input");
+            const rollCountInput = document.getElementById("rollCount-input");
+            const itemTierSelect = document.getElementById("itemTierSelect");
+            console.dir(itemTierSelect)
+
+            const luck = parseInt(luckInput.intValue, 10) || 0;
+            const money = parseInt(moneyInput.intValue, 10) || 0;
+            const rollCount = parseInt(rollCountInput.intValue, 10) || 0;
+            const itemTier = parseInt(itemTierSelect.value);
+
+            const itemTierChecked = document.getElementById("itemTierCheckbox").checked;
+            const lockChecked = document.getElementById("lockShopToggle").checked;
+            const moneyChecked = document.getElementById("moneyCheckbox").checked;
+            const rollChecked = document.getElementById("rollCountCheckbox").checked;
+            const luckChecked = document.getElementById("luckCheckbox").checked;
+
+            console.log("Rolling with values:", {
+                luck,
+                money,
+                rollCount,
+                itemTier,
+            });
+
+            await hackInstance.roll(
+                itemTierChecked ? itemTier : null,
+                lockChecked,
+                moneyChecked ? money : null,
+                rollChecked ? rollCount : null,
+                luckChecked ? luck : null
+            );
+
+            setTimeout(() => {
+                button.disabled = false;
+            }, 1250);
+        } catch (error) {
+            console.error(error);
+            button.disabled = false;
+        }
+    });
+}

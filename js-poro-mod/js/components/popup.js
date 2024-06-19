@@ -1,17 +1,9 @@
-import { loadRollScreen } from "./rollScreen.js";
+import { loadRollScreen } from './rollScreen.js';
 import { loadAccountScreen } from "./accountScreen.js";
 import { loadDataScreen } from "./dataScreen.js";
 // import "./generalLayout.js";
 
 let currentLayout = 0; // 0 for roll, 1 for account, 2 for data
-
-function appendToastContainer() {
-    if (!document.getElementById("toast-container")) {
-        const toastContainer = document.createElement("div");
-        toastContainer.id = "toast-container";
-        document.body.appendChild(toastContainer);
-    }
-}
 
 export function initPopup() {
     console.log("Initializing popup");
@@ -27,19 +19,10 @@ export function initPopup() {
         console.error("Failed to load Material Icons stylesheet.");
     document.head.appendChild(materialIconsLink);
 
-    // Append toast container
-    appendToastContainer();
-
     // Load all layouts initially
     loadRollScreen();
     loadAccountScreen();
     loadDataScreen();
-
-    // Show the roll layout and hide the others
-    document.getElementById("rollScreen").style.display = "block";
-    document.getElementById("accountScreen").style.display = "none";
-    document.getElementById("dataScreen").style.display = "none";
-    document.getElementById("settingsContainer").style.display = "none"; // Hide settings container initially
 
     // Event listeners for action buttons
     document
@@ -152,7 +135,7 @@ export function initPopup() {
     actionToggle.addEventListener("click", function () {
         this.blur();
         const isActive = featureButtons.classList.toggle("active");
-        settingsContainer.style.display = isActive ? "block" : "none";
+        settingsContainer.style.display = isActive ? "flex" : "none";
         actionToggle.innerHTML = isActive
             ? '<span class="material-icons-outlined">chevron_left</span>'
             : '<span class="material-icons-outlined">chevron_right</span>';
