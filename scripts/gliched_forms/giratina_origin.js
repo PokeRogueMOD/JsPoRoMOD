@@ -1,7 +1,7 @@
 // Accessing the game data for the 890st Dex entry (Giratina)
 const dexEntryLapras =
     Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle
-        .gameData.dexData[890];
+        .gameData.dexData[487];
 
 // Defining constants for Dex Attributes using BigInt for bitwise operations
 const DexAttributes = {
