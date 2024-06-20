@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil
 import subprocess
+import zipfile
 
 
 class JSCompiler:
@@ -23,6 +24,8 @@ class JSCompiler:
     MIN_FILE: Path = BASE_DIR / MIN_NAME
     CHROME_DIR: Path = ROOT_DIR / "Chrome"
     FIREFOX_DIR: Path = ROOT_DIR / "Firefox"
+    CHROME_ZIP: Path = ROOT_DIR / "Chrome.zip"
+    FIREFOX_ZIP: Path = ROOT_DIR / "Firefox.zip"
 
     @classmethod
     def setup_directories(cls) -> None:
@@ -68,14 +71,40 @@ class JSCompiler:
         shutil.copy(cls.MIN_FILE, cls.FIREFOX_DIR / cls.MIN_NAME)
 
     @classmethod
+    def delete_old_zips(cls) -> None:
+        """
+        Deletes the old zip files if they exist.
+        """
+        if cls.CHROME_ZIP.exists():
+            cls.CHROME_ZIP.unlink()
+        if cls.FIREFOX_ZIP.exists():
+            cls.FIREFOX_ZIP.unlink()
+
+    @classmethod
+    def create_zips(cls) -> None:
+        """
+        Creates zip files for the Chrome and Firefox directories.
+        """
+        cls.delete_old_zips()
+
+        with zipfile.ZipFile(cls.CHROME_ZIP, "w", zipfile.ZIP_DEFLATED) as zipf:
+            for file in cls.CHROME_DIR.rglob("*"):
+                zipf.write(file, file.relative_to(cls.CHROME_DIR.parent))
+
+        with zipfile.ZipFile(cls.FIREFOX_ZIP, "w", zipfile.ZIP_DEFLATED) as zipf:
+            for file in cls.FIREFOX_DIR.rglob("*"):
+                zipf.write(file, file.relative_to(cls.FIREFOX_DIR.parent))
+
+    @classmethod
     def run(cls) -> None:
         """
         Runs the complete process of compiling JavaScript and copying the minified version
-        to the target directories.
+        to the target directories, then creating zip files of the directories.
         """
         cls.setup_directories()
         if cls.compile_js():
             cls.copy_minified_js()
+            cls.create_zips()
 
 
 if __name__ == "__main__":

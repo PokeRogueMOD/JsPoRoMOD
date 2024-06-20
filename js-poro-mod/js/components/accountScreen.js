@@ -6,6 +6,8 @@ import { loadGamestatsLayout } from "./accountLayouts/gamestatsLayout.js";
 import { loadStartersLayout } from "./accountLayouts/startersLayout.js";
 import { loadVoucherUnlocksLayout } from "./accountLayouts/voucherUnlocksLayout.js";
 import { loadVouchersLayout } from "./accountLayouts/vouchersLayout.js";
+import { loadEggPityLayout } from "./accountLayouts/eggPityLayout.js";
+import { loadUnlockPityLayout } from "./accountLayouts/unlockPityLayout.js";
 
 export function loadAccountScreen() {
     const settingsContainer = document.getElementById("layoutContainer");
@@ -30,6 +32,8 @@ export function loadAccountScreen() {
         "Voucher Unlocks",
         "Egg MOD",
         "Gamestats",
+        "Egg Pity",
+        "Unlock Pity",
     ];
     const dropdown = createDropdown(
         options.map((option) => ({
@@ -75,6 +79,12 @@ export function loadAccountScreen() {
                 break;
             case "gamestats":
                 loadGamestatsLayout(subLayoutContainer);
+                break;
+            case "egg pity":
+                loadEggPityLayout(subLayoutContainer);
+                break;
+            case "unlock pity":
+                loadUnlockPityLayout(subLayoutContainer);
                 break;
             default:
                 console.error("Unknown layout selected.");
