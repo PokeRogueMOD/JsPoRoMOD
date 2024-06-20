@@ -10,23 +10,27 @@ const UnlockablesReverse = Object.fromEntries(
     Object.entries(Unlockables).map(([key, value]) => [value, key])
 );
 
+// Function to convert enum key to title case string
+function formatLabel(enumKey) {
+    return enumKey
+        .toLowerCase()
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 export function loadGamemodesLayout(subLayoutContainer) {
     const gamemodesTable = new DynamicTable();
-    const gamemodeCounts =
-        hackInstance.achvUnlocker.currentScene.gameData.unlocks;
+    const gamemodeCounts = hackInstance.achvUnlocker.currentScene.gameData.unlocks;
 
     // Function to create a single row with a checkbox
     function createGamemodeRow(id, defaultValue) {
-        const fieldset = new DynamicFieldset(UnlockablesReverse[id]);
+        const fieldset = new DynamicFieldset(formatLabel(UnlockablesReverse[id]));
         const singleLineContainer = new SingleLineContainer();
 
-        const checkbox = createCheckbox(
-            `gamemodeCheckbox-${id}`,
-            defaultValue,
-            (isChecked) => {
-                gamemodeCounts[id] = isChecked; // Update the gamemodeCounts with the new value
-            }
-        );
+        const checkbox = createCheckbox(`gamemodeCheckbox-${id}`, defaultValue, (isChecked) => {
+            gamemodeCounts[id] = isChecked; // Update the gamemodeCounts with the new value
+        });
 
         singleLineContainer.addElement(checkbox);
         fieldset.addElement(singleLineContainer.getElement());

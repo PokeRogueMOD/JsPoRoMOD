@@ -10,13 +10,22 @@ const VoucherTypeReverse = Object.fromEntries(
     Object.entries(VoucherType).map(([key, value]) => [value, key])
 );
 
+// Function to convert enum key to title case string
+function formatLabel(enumKey) {
+    return enumKey
+        .toLowerCase()
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 export function loadVouchersLayout(subLayoutContainer) {
     const vouchersTable = new DynamicTable();
     const voucherCounts = hackInstance.achvUnlocker.currentScene.gameData.voucherCounts;
 
     // Function to create a single row with number input and set button
     function createVoucherRow(id, defaultValue) {
-        const fieldset = new DynamicFieldset(VoucherTypeReverse[id]);
+        const fieldset = new DynamicFieldset(formatLabel(VoucherTypeReverse[id]));
         const singleLineContainer = new SingleLineContainer();
 
         const numberInput = createNumberInput(`voucherNumberInput-${id}`, 0, defaultValue, Math.pow(2, 31) - 1);

@@ -9,12 +9,21 @@ const VoucherTypeReverse = Object.fromEntries(
     Object.entries(VoucherType).map(([key, value]) => [value, key])
 );
 
+// Function to convert enum key to title case string
+function formatLabel(enumKey) {
+    return enumKey
+        .toLowerCase()
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 export function loadEggPityLayout(subLayoutContainer) {
     const eggPity = hackInstance.achvUnlocker.currentScene.gameData.eggPity;
 
     // Function to create a single row with number input and set button
     function createEggRow(index, defaultValue) {
-        const fieldset = new DynamicFieldset(VoucherTypeReverse[index]);
+        const fieldset = new DynamicFieldset(formatLabel(VoucherTypeReverse[index]));
         const singleLineContainer = new SingleLineContainer();
 
         const numberInput = createNumberInput(
