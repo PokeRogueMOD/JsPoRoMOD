@@ -179,3 +179,7 @@
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
+tr {
+    border: none !important;
+}
