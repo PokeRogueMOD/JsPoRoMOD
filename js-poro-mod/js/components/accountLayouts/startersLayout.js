@@ -30,7 +30,7 @@ export function loadStartersLayout(subLayoutContainer) {
                 data.seenCount += 1;
                 data.caughtCount += 1;
                 data.hatchedCount += 1;
-                data.ivs = data.ivs.map(() => 31);
+                data.ivs = data.ivs.map(() => Number.MAX_SAFE_INTEGER); // Credit: My Community!
             });
 
             // Unlock all starter Pokémon
