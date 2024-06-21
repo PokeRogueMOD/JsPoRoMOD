@@ -39,7 +39,7 @@ export function loadStartersLayout(subLayoutContainer) {
                 const data = starterData[key];
                 data.moveset = speciesEggMoves[key] || null;
                 data.eggMoves = speciesEggMoves.hasOwnProperty(key) ? (1 << 4) - 1 : 0;
-                data.candyCount = 9999;
+                data.candyCount = 999;
                 data.friendship = Number.MAX_SAFE_INTEGER;
                 data.abilityAttr = AbilityAttr.ABILITY_1 | AbilityAttr.ABILITY_2 | AbilityAttr.ABILITY_HIDDEN;
                 data.passiveAttr = noPassive.includes(key) ? 0 : 3;
