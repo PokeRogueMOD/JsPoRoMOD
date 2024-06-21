@@ -19,8 +19,7 @@ export function loadStartersLayout(subLayoutContainer) {
 
         try {
             // Retrieve the current dexData
-            const { dexData, starterData } =
-                hackInstance.achvUnlocker.currentScene.gameData;
+            const { dexData, starterData } = hackInstance.achvUnlocker.currentScene.gameData;
 
             // Unlock all forms and variants for all Pokémon (shiny T3)
             Object.keys(dexData).forEach((key) => {
@@ -36,7 +35,7 @@ export function loadStartersLayout(subLayoutContainer) {
 
             // Unlock all starter Pokémon
             Object.keys(starterData).forEach((key) => {
-                const data = dexData[key];
+                const data = starterData[key];
                 data.moveset = speciesEggMoves[key] || null;
                 data.eggMoves = Number.MAX_SAFE_INTEGER;
                 data.candyCount = 9999;
@@ -44,7 +43,7 @@ export function loadStartersLayout(subLayoutContainer) {
                 data.abilityAttr = Number.MAX_SAFE_INTEGER;
                 data.passiveAttr = noPassive.includes(key) ? 0 : 3;
                 data.valueReduction = 10;
-                
+
                 // Check if classicWinCount is NaN, if so set it to 1, else add 1
                 if (isNaN(data.classicWinCount)) {
                     data.classicWinCount = 1;
