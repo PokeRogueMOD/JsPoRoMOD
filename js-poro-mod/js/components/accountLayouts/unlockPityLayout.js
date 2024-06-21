@@ -33,9 +33,6 @@ export function loadUnlockPityLayout(subLayoutContainer) {
             Math.pow(2, 31) - 1
         );
 
-        // Set the intValue property for the number input
-        numberInput.intValue = defaultValue;
-
         const setButton = document.createElement("button");
         setButton.className = "set-button";
         setButton.innerHTML =
