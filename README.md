@@ -17,7 +17,29 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 [![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/PAlSXXpj1LQ)
 
-## Feature
+## `Source Code`
+
+### [`PokéRogue`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
+
+## `My Tools / MODs`
+> _Remember to be alert at all times. Stay aware of your surroundings. :Aware: _
+
+### [`JsPoRoMOD - In Browser Overlay`](https://github.com/PokeRogueMOD/JsPoRoMOD)
+
+#### `Supported OS`
+- `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
+- `Android (?-14) Browser: [Kiwi]`
+- `iOS (15-17) [Safari]`
+- `Windows (10-11) [Chrome, Firefox]`
+> `(Other versions not tested, they may work, you can try them!)`
+
+### [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
+
+## `Other Hack / MODs`
+- https://github.com/MikeyTheA/PokeRogueExtra
+- https://github.com/MikeyTheA/PokeRogueModLoader
+
+### Feature
 
 > `(P)` = Partially implemented.<br> > `(N)` = Not implemented.
 
