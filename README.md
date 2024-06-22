@@ -8,8 +8,9 @@
 > Since there was some unnecessary drama regarding the so-called `RogueEditor`, I decided to just make my own account modification tool from scratch, based only on the [source code](https://github.com/pagefaultgames/pokerogue). My goal is to focus on adding new features that do not exist yet, with a nice **Graphical User Interface** (**GUI**).
 
 # JsPoRoAnal
+> Remember to be alert at all times. Stay aware of your surroundings.
 
-Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript Hacks and tools.
+Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript Hacks and tools. _(Readme needs to be updated soon...!)_
 
 ## [Discord Server](https://discord.gg/rsNPUcbrPT)
 
@@ -17,22 +18,18 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 [![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/PAlSXXpj1LQ)
 
-## `Source Code`
-
-### [`PokéRogue`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
-
-## `My Tools / MODs`
-> _Remember to be alert at all times. Stay aware of your surroundings. :Aware: _
-
-### [`JsPoRoMOD - In Browser Overlay`](https://github.com/PokeRogueMOD/JsPoRoMOD)
-
-#### `Supported OS`
+## `Supported OS`
 - `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
 - `Android (?-14) Browser: [Kiwi]`
 - `iOS (15-17) [Safari]`
 - `Windows (10-11) [Chrome, Firefox]`
 > `(Other versions not tested, they may work, you can try them!)`
 
+## `Source Code`
+
+### [`PokéRogue`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
+
+## `Other Tools / MODs`
 ### [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
 
 ## `Other Hack / MODs`
