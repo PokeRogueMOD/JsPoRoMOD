@@ -25,7 +25,7 @@ class JSCompiler:
     CHROME_DIR: Path = ROOT_DIR / "Chrome"
     FIREFOX_DIR: Path = ROOT_DIR / "Firefox"
     CHROME_ZIP: Path = ROOT_DIR / "Chrome.zip"
-    FIREFOX_ZIP: Path = ROOT_DIR / "Firefox.zip"
+    FIREFOX_XPI: Path = ROOT_DIR / "Firefox.xpi"
 
     @classmethod
     def setup_directories(cls) -> None:
@@ -77,8 +77,8 @@ class JSCompiler:
         """
         if cls.CHROME_ZIP.exists():
             cls.CHROME_ZIP.unlink()
-        if cls.FIREFOX_ZIP.exists():
-            cls.FIREFOX_ZIP.unlink()
+        if cls.FIREFOX_XPI.exists():
+            cls.FIREFOX_XPI.unlink()
 
     @classmethod
     def create_zips(cls) -> None:
@@ -89,11 +89,15 @@ class JSCompiler:
 
         with zipfile.ZipFile(cls.CHROME_ZIP, "w", zipfile.ZIP_DEFLATED) as zipf:
             for file in cls.CHROME_DIR.rglob("*"):
-                zipf.write(file, file.relative_to(cls.CHROME_DIR.parent))
+                if file.is_file():
+                    relative_path = file.relative_to(cls.CHROME_DIR)
+                    zipf.write(file, relative_path)
 
-        with zipfile.ZipFile(cls.FIREFOX_ZIP, "w", zipfile.ZIP_DEFLATED) as zipf:
+        with zipfile.ZipFile(cls.FIREFOX_XPI, "w", zipfile.ZIP_DEFLATED) as zipf:
             for file in cls.FIREFOX_DIR.rglob("*"):
-                zipf.write(file, file.relative_to(cls.FIREFOX_DIR.parent))
+                if file.is_file():
+                    relative_path = file.relative_to(cls.FIREFOX_DIR)
+                    zipf.write(file, relative_path)
 
     @classmethod
     def run(cls) -> None:

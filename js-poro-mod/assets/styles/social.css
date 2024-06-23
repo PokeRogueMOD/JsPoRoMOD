@@ -12,6 +12,21 @@
     padding: 4px;
 }
 
+/* Prevent background color change on click */
+.social-toggle:active {
+    background: transparent; /* Ensure background remains transparent */
+}
+
+/* If you want to prevent focus outline on click */
+.social-toggle:focus {
+    outline: none; /* Prevents focus outline */
+}
+
+/* Ensure hover state also remains transparent */
+.social-toggle:hover {
+    background: transparent;
+}
+
 .social-links {
     display: none;
     flex-direction: column;

@@ -10,6 +10,22 @@
     height: 48px; /* Same height as logo */
     color: #e0681a;
     padding: 4px;
+    transition: background-color 0.3s; /* Optional for smooth transitions */
+}
+
+/* Prevent background color change on click */
+.action-toggle:active {
+    background: transparent; /* Ensure background remains transparent */
+}
+
+/* If you want to prevent focus outline on click */
+.action-toggle:focus {
+    outline: none; /* Prevents focus outline */
+}
+
+/* Ensure hover state also remains transparent */
+.action-toggle:hover {
+    background: transparent;
 }
 
 .feature-buttons {
@@ -42,6 +58,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
+    transition: background-color 0.3s; /* Add transition for smooth background change */
 }
 
 .icon-button .material-icons-outlined,
@@ -85,6 +102,14 @@
 .social-button:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+/* Ensure hover and active state also remains transparent */
+.icon-button:hover, 
+.icon-button:active,
+.social-button:hover, 
+.social-button:active {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .icon-button.selected {

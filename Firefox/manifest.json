@@ -2,6 +2,9 @@
         "manifest_version": 2,
         "name": "PokeRogueMOD",
         "version": "1.1",   
+
+        "description": "An overlay with a lot of JavaScript MODs for the game PokéRogue.",
+
         "permissions": [
             "activeTab",
             "webRequest",
@@ -37,6 +40,5 @@
         "icons": {
             "48": "icons/plugin-logo-48.png",
             "96": "icons/plugin-logo-96.png"
-        },
-        "description": "An overlay with a lot of JavaScript MODs for the game PokéRogue."
+        }
     }
