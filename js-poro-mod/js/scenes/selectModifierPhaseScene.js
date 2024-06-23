@@ -69,26 +69,14 @@ export class SelectModifierPhaseScene extends BaseScene {
 
     rerollPhase(tier, lock, rollCount) {
         // Src Extra Items: https://github.com/pagefaultgames/pokerogue/blob/209a69d098375dcb1f5f5be4be1d674e3b3d585f/src/modifier/modifier.ts#L2063
-
         const stackCount =
             3 +
             (this.currentScene.modifiers.find(
                 (o) => o.constructor.name === "ExtraModifierModifier"
             )?.stackCount ?? 0);
 
-        let itemsRef =
-            Phaser.Display.Canvas.CanvasPool.pool[1].parent.parentContainer
-                .parentContainer.displayList.list;
-
-        let UIRef = itemsRef[itemsRef.length - 1].list.find(
-            (o) => o.constructor.name == "UI"
-        );
-
-        let currentItems = UIRef.list[17].list
-            .slice(0, stackCount)
-            .map((o) => o.modifierTypeOption);
-
-        let currentItemsTiers = currentItems.map((o) => o.type.tier);
+        let uiHandler = this.currentScene.ui.getHandler();
+        let currentItemsTiers = uiHandler.options.map(e => e.modifierTypeOption.type.tier);
 
         this.lockRarities(lock);
 

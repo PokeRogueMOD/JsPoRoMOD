@@ -164,7 +164,6 @@ export function loadRollScreen() {
             const moneyInput = document.getElementById("money-input");
             const rollCountInput = document.getElementById("rollCount-input");
             const itemTierSelect = document.getElementById("itemTierSelect");
-            console.dir(itemTierSelect)
 
             const luck = parseInt(luckInput.intValue, 10) || 0;
             const money = parseInt(moneyInput.intValue, 10) || 0;
