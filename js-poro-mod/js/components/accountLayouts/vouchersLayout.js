@@ -14,34 +14,39 @@ const VoucherTypeReverse = Object.fromEntries(
 function formatLabel(enumKey) {
     return enumKey
         .toLowerCase()
-        .split('_')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 }
 
 export function loadVouchersLayout(subLayoutContainer) {
     const vouchersTable = new DynamicTable();
-    const voucherCounts = hackInstance.achvUnlocker.currentScene.gameData.voucherCounts;
+    const scene = hackInstance.achvUnlocker.currentScene;
+    const voucherCounts = scene.gameData.voucherCounts;
 
-    // Function to create a single row with number input and set button
+    // Function to create a single row with number input
     function createVoucherRow(id, defaultValue) {
-        const fieldset = new DynamicFieldset(formatLabel(VoucherTypeReverse[id]));
+        const fieldset = new DynamicFieldset(
+            formatLabel(VoucherTypeReverse[id])
+        );
         const singleLineContainer = new SingleLineContainer();
 
-        const numberInput = createNumberInput(`voucherNumberInput-${id}`, 0, defaultValue, Math.pow(2, 31) - 1);
+        const numberInput = createNumberInput(
+            `voucherNumberInput-${id}`,
+            0,
+            defaultValue,
+            Math.pow(2, 31) - 1,
+            (newIntValue) => {
+                voucherCounts[id] = newIntValue; // Update the voucherCounts with the new value
 
-        const setButton = document.createElement("button");
-        setButton.className = "set-button";
-        setButton.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
-        
-        setButton.addEventListener("click", function () {
-            setButton.blur();
-            const inputValue = document.getElementById(`voucherNumberInput-${id}`).intValue;
-            voucherCounts[id] = inputValue;  // Update the voucherCounts with the new value
-        });
+                const uiHandler = scene.ui.getHandler();
+                if (uiHandler.constructor.name === "EggGachaUiHandler") {
+                    uiHandler.updateVoucherCounts();
+                }
+            }
+        );
 
         singleLineContainer.addElement(numberInput);
-        singleLineContainer.addElement(setButton);
         fieldset.addElement(singleLineContainer.getElement());
 
         return fieldset.getElement();

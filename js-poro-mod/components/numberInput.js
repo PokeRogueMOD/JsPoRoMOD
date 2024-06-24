@@ -1,10 +1,16 @@
-export function createNumberInput(id, minValue, defaultValue, maxValue) {
+export function createNumberInput(
+    id,
+    minValue,
+    defaultValue,
+    maxValue,
+    onChange = undefined
+) {
     const container = document.createElement("div");
 
     const inputElement = document.createElement("input");
     inputElement.type = "text";
     inputElement.className = "number-input";
-    inputElement.id = id;  // Use the provided id
+    inputElement.id = id; // Use the provided id
     container.appendChild(inputElement);
 
     const formatWithDots = (value) => {
@@ -20,7 +26,12 @@ export function createNumberInput(id, minValue, defaultValue, maxValue) {
         return Math.max(min, Math.min(max, value));
     };
 
-    const setInputDefaults = (inputElement, minValue, maxValue, defaultValue) => {
+    const setInputDefaults = (
+        inputElement,
+        minValue,
+        maxValue,
+        defaultValue
+    ) => {
         inputElement.dataset.min = minValue;
         inputElement.dataset.max = maxValue;
         inputElement.value = formatWithDots(defaultValue.toString());
@@ -61,10 +72,18 @@ export function createNumberInput(id, minValue, defaultValue, maxValue) {
             Math.floor(sanitizedBeforeCursor.length / 3);
         inputElement.setSelectionRange(newCursorPosition, newCursorPosition);
 
-        // Update custom property intValue
-        inputElement.intValue = sanitizedValue === "" || sanitizedValue === "-" 
-            ? 0 
-            : parseInt(sanitizedValue, 10);
+        // Update custom property intValue only if it has changed
+        const newIntValue =
+            sanitizedValue === "" || sanitizedValue === "-"
+                ? 0
+                : parseInt(sanitizedValue, 10);
+
+        if (inputElement.intValue !== newIntValue) {
+            inputElement.intValue = newIntValue;
+            if (onChange) {
+                onChange(newIntValue);
+            }
+        }
     }
 
     function handleNumberInput(event) {
@@ -108,18 +127,21 @@ export function createNumberInput(id, minValue, defaultValue, maxValue) {
                       sanitizeAndStripPlaceholders(inputElement.value),
                       10
                   );
-        // Update custom property intValue
-        inputElement.intValue = value;
+        // Update custom property intValue only if it has changed
+        if (inputElement.intValue !== value) {
+            inputElement.intValue = value;
+            if (onChange) {
+                onChange(value);
+            }
+        }
     });
 
     function handleOutsideEvent(event) {
-        if (
-            !inputElement.contains(event.target)
-        ) {
+        if (!inputElement.contains(event.target)) {
             inputElement.blur();
         }
     }
-    
+
     // Event listener for clicks outside the inputs
     document.addEventListener("mousedown", handleOutsideEvent);
     document.addEventListener("touchstart", handleOutsideEvent);

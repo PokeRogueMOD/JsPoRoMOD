@@ -9,7 +9,9 @@
   ],
   "host_permissions": [
     "https://pokerogue.net/*",
-    "https://api.pokerogue.net/*"
+    "https://api.pokerogue.net/*",
+    "https://mokerogue.net/*",
+    "https://api.mokerogue.net/*"
   ],
   "background": {
     "service_worker": "background.js"
