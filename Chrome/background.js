@@ -3,7 +3,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         changeInfo.status === "complete" &&
         tab.url !== undefined &&
         chrome.scripting !== undefined &&
-        tab.url.includes("https://pokerogue.net/")
+        (tab.url.includes("https://pokerogue.net/") ||
+            tab.url.includes("https://mokerogue.net/"))
     ) {
         chrome.scripting.executeScript({
             target: { tabId: tabId },
