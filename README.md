@@ -6,17 +6,17 @@
 > 
 > _Remember to be alert at all times. Stay aware of your surroundings._
 
-# JsPoRoAnal
+# `JsPoRoAnal`
 
 ## [`PokéRogue Source Code`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
 
 Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript PokéRogue Hacks and MODs.
 
-## [Discord Server](https://discord.gg/rsNPUcbrPT)
+## [`Discord Server`](https://discord.gg/rsNPUcbrPT)
 
-## [Video Tutorial](https://youtu.be/L_c9TXFbDIM)
+## [`Video Tutorial`](https://youtu.be/L_c9TXFbDIM)
 
-[![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/L_c9TXFbDIM)
+[![`Video Tutorial`](./resources/thumbnail.png)](https://youtu.be/L_c9TXFbDIM)
 
 ## `Supported OS`
 
@@ -60,14 +60,14 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ## [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
 
-# Contact
+# `Contact`
 
 If you have any questions, suggestions, or need further assistance, feel free to reach out (Discord: mpb.rip).
 
-# License
+# `License`
 
 This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.
 
-# Acknowledgments
+# `Acknowledgments`
 
--   This project uses [Loguru](https://github.com/Delgan/loguru) which is licensed under the MIT License.
+This project uses [Loguru](https://github.com/Delgan/loguru) which is licensed under the MIT License.
