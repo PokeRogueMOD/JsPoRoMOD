@@ -9,7 +9,7 @@
 
 ## [`PokéRogue Source Code`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
 
-Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript PokéRogue Hacks and MODs. _(Readme needs to be updated soon...!)_
+Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript PokéRogue Hacks and MODs.
 
 ## [Discord Server](https://discord.gg/rsNPUcbrPT)
 
