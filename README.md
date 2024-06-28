@@ -18,7 +18,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 [![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/L_c9TXFbDIM)
 
-### `Supported OS`
+## `Supported OS`
 
 -   `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
 -   `Android (?-14) Browser: [Kiwi]`
@@ -27,7 +27,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   `Linux(?) [Chrome, Firefox]`
 > **`(Other versions not tested, they may work, you can try them!)`**
 
-### `Features`
+## `Features`
 
 -   [x] **`Chrome, Kiwi & Firefox Plugins`**: All currently maintained hacks bundled in a GUI.
 -   [x] **`Overlay`**: Unlimited Rerolls with Max Cash and Max Luck.
@@ -45,29 +45,29 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ![NEW GUI ROLL HACK](./resources/all_achv_hack.png)
 
-## `My other Tools / MODs`
+# `My other Tools / MODs`
 
-### [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
+## [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
 
-## `Other Hack / MODs`
+# `Other Hack / MODs`
 
-### [`MikeyTheA - PokeRogueModLoader Plugin`](https://github.com/MikeyTheA/PokeRogueModLoader)
+## [`MikeyTheA - PokeRogueModLoader Plugin`](https://github.com/MikeyTheA/PokeRogueModLoader)
 
-### [`MikeyTheA - mokerogue.net (Private Server - No Rules)`](https://mokerogue.net/)
+## [`MikeyTheA - mokerogue.net (Private Server - No Rules)`](https://mokerogue.net/)
 
 > [!WARNING]  
 > I recommend that you do not reuse your account names and passwords from the original `pokerogue.net`, but just use completely new and random ones and save them with a password manager!
 
-### [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
+## [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
 
-## Contact
+# Contact
 
 If you have any questions, suggestions, or need further assistance, feel free to reach out (Discord: mpb.rip).
 
-## License
+# License
 
 This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.
 
-### Acknowledgments
+# Acknowledgments
 
 -   This project uses [Loguru](https://github.com/Delgan/loguru) which is licensed under the MIT License.
