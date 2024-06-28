@@ -159,7 +159,7 @@ export function initPopup() {
         .getElementById("videoButton")
         .addEventListener("click", function () {
             this.blur();
-            window.open("https://youtu.be/PAlSXXpj1LQ", "_blank");
+            window.open("https://youtu.be/L_c9TXFbDIM", "_blank");
         });
 
     document
