@@ -26,6 +26,24 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   `Linux(?) [Chrome, Firefox]`
     > `(Other versions not tested, they may work, you can try them!)`
 
+### `Features`
+
+-   [x] **`Chrome, Kiwi & Firefox Plugins`**: All currently maintained hacks bundled in a GUI.
+-   [x] **`Overlay`**: Unlimited Rerolls with Max Cash and Max Luck.
+-   [x] **`Reroll Hack`**: Reroll with a button in the overlay and lock the shop, select tiers, money, roll count and luck.
+-   [x] **`Starter MOD`**: Unlock all starters shiny t3 with all forms, even future ones! (If a new patch releases you have all the new forms unlocked!)
+-   [x] **`Voucher Editor`**: Modify all Voucher counts.
+-   [x] **`Voucher Unlocks`**: Unlock all Vouchers with a datepicker.
+-   [x] **`Achievement Unlocks`**: Unlock all Achievement with a datepicker.
+-   [ ] **`Single Starter MOD`**: Modify a single starter.
+-   [ ] **`.json Import and Export`**: Planned feature to upload and download the trainer and session data in your browser in `.json` format.
+-   [ ] **`New Egg generator`**: Since the Egg logic changed a bit, i wanted to rework my old code and implement the new version into the overlay.
+-   [ ] **`Account Stats MOD`**: Modify all Account Stats counts.
+
+![NEW GUI ALL ACHIVEMENTS](./resources/roll_hack.png)
+
+![NEW GUI ROLL HACK](./resources/all_achv_hack.png)
+
 ## `My other Tools / MODs`
 
 ### [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
@@ -37,24 +55,6 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 ### [`MikeyTheA - mokerogue.net`](https://mokerogue.net/)
 
 ### [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
-
-### Feature
-
--   [x] **Chrome, Kiwi & Firefox Plugins**: All currently maintained hacks bundled in a GUI.
--   [x] **Overlay**: Unlimited Rerolls with Max Cash and Max Luck.
--   [x] **Reroll Hack**: Reroll with a button in the overlay and lock the shop, select tiers, money, roll count and luck.
--   [x] **Starter MOD**: Unlock all starters shiny t3 with all forms, even future ones! (If a new patch releases you have all the new forms unlocked!)
--   [x] **Voucher Editor**: Modify all Voucher counts.
--   [x] **Voucher Unlocks**: Unlock all Vouchers with a datepicker.
--   [x] **Achievement Unlocks**: Unlock all Achievement with a datepicker.
--   [ ] **Single Starter MOD**: Modify a single starter.
--   [ ] **`.json` Import and Export**: Planned feature to upload and download the trainer and session data in your browser.
--   [ ] **New Egg generator**: Since the Egg logic changed a bit, i wanted to rework my old code and implement the new version into the overlay.
--   [ ] **Account Stats MOD**: Modify all Account Stats counts.
-
-![NEW GUI ALL ACHIVEMENTS](./resources/roll_hack.png)
-
-![NEW GUI ROLL HACK](./resources/all_achv_hack.png)
 
 ## Contact
 
