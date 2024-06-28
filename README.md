@@ -1,8 +1,8 @@
 > [!IMPORTANT]  
 > **The content of this repo is a proof of concept and is for educational purposes only!**
 
-> [!CAUTION] > **This tool can cause your account to be flagged, I have had no problems so far, but be warned, you can read about it [here](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)!**
->
+> [!CAUTION]
+> **This tool can cause your account to be flagged, I have had no problems so far, but be warned, you can read about it [here](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)!**
 > _Remember to be alert at all times. Stay aware of your surroundings._
 
 # JsPoRoAnal
@@ -24,7 +24,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   `iOS (15-17) [Safari]`
 -   `Windows (10-11) [Chrome, Firefox]`
 -   `Linux(?) [Chrome, Firefox]`
-    > `(Other versions not tested, they may work, you can try them!)`
+> **`(Other versions not tested, they may work, you can try them!)`**
 
 ### `Features`
 
