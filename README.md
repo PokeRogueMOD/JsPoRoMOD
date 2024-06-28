@@ -54,6 +54,9 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ### [`MikeyTheA - mokerogue.net (Private Server - No Rules)`](https://mokerogue.net/)
 
+> [!WARNING]  
+> I recommend that you do not reuse your account names and passwords from the original `pokerogue.net`, but just use completely new and random ones and save them with a password manager!
+
 ### [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
 
 ## Contact
