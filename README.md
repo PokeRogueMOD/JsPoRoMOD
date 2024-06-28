@@ -40,8 +40,6 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ### Feature
 
-> `(P)` = Partially implemented.<br> > `(N)` = Not implemented.
-
 -   [x] **Chrome, Kiwi & Firefox Plugins**: All currently maintained hacks bundled in a GUI.
 -   [x] **Overlay**: Unlimited Rerolls with Max Cash and Max Luck.
 -   [x] **Reroll Hack**: Reroll with a button in the overlay and lock the shop, select tiers, money, roll count and luck.
