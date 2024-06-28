@@ -52,7 +52,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ### [`MikeyTheA - PokeRogueModLoader Plugin`](https://github.com/MikeyTheA/PokeRogueModLoader)
 
-### [`MikeyTheA - mokerogue.net`](https://mokerogue.net/)
+### [`MikeyTheA - mokerogue.net (Private Server - No Rules)`](https://mokerogue.net/)
 
 ### [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
 
