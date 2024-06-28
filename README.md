@@ -1,14 +1,15 @@
 > [!IMPORTANT]  
 > **The content of this repo is a proof of concept and is for educational purposes only!**
 
-> [!CAUTION]
-> **This tool can cause your account to be flagged, I have had no problems so far, but be warned, you can read about it [here](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)!**
+> [!CAUTION] > **This tool can cause your account to be flagged, I have had no problems so far, but be warned, you can read about it [here](https://www.reddit.com/r/pokerogue/comments/1d8ldlw/a_cheating_and_account_deletionwipe_followup/)!**
 >
 > _Remember to be alert at all times. Stay aware of your surroundings._
 
 # JsPoRoAnal
 
-Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript Hacks and tools. _(Readme needs to be updated soon...!)_
+## [`PokéRogue Source Code`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
+
+Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaScript PokéRogue Hacks and MODs. _(Readme needs to be updated soon...!)_
 
 ## [Discord Server](https://discord.gg/rsNPUcbrPT)
 
@@ -16,33 +17,42 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 [![Video Tutorial](./resources/thumbnail.png)](https://youtu.be/L_c9TXFbDIM)
 
-## `Supported OS`
-- `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
-- `Android (?-14) Browser: [Kiwi]`
-- `iOS (15-17) [Safari]`
-- `Windows (10-11) [Chrome, Firefox]`
-> `(Other versions not tested, they may work, you can try them!)`
+### `Supported OS`
 
-## `Source Code`
+-   `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
+-   `Android (?-14) Browser: [Kiwi]`
+-   `iOS (15-17) [Safari]`
+-   `Windows (10-11) [Chrome, Firefox]`
+-   `Linux(?) [Chrome, Firefox]`
+    > `(Other versions not tested, they may work, you can try them!)`
 
-### [`PokéRogue`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
+## `My other Tools / MODs`
 
-## `Other Tools / MODs`
 ### [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
 
 ## `Other Hack / MODs`
-- https://github.com/MikeyTheA/PokeRogueExtra
-- https://github.com/MikeyTheA/PokeRogueModLoader
+
+### [`MikeyTheA - PokeRogueModLoader Plugin`](https://github.com/MikeyTheA/PokeRogueModLoader)
+
+### [`MikeyTheA - mokerogue.net`](https://mokerogue.net/)
+
+### [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
 
 ### Feature
 
 > `(P)` = Partially implemented.<br> > `(N)` = Not implemented.
 
--   **hack.js**: All currently maintained hacks bundled in a GUI `(P)`.
--   **infinite_money_and_rolls.js**: Unlimited Rerolls with Max Cash and Max Luck.
--   **max_reroll_luck.js**: Sets the reroll luck to max and prevents the text from disappearing. (Runs once)
--   **enemy_team.js**: View both teams with name, stats and moves and get all the important battle data. (Runs once)
--   **and more...**
+-   [x] **Chrome, Kiwi & Firefox Plugins**: All currently maintained hacks bundled in a GUI.
+-   [x] **Overlay**: Unlimited Rerolls with Max Cash and Max Luck.
+-   [x] **Reroll Hack**: Reroll with a button in the overlay and lock the shop, select tiers, money, roll count and luck.
+-   [x] **Starter MOD**: Unlock all starters shiny t3 with all forms, even future ones! (If a new patch releases you have all the new forms unlocked!)
+-   [x] **Voucher Editor**: Modify all Voucher counts.
+-   [x] **Voucher Unlocks**: Unlock all Vouchers with a datepicker.
+-   [x] **Achievement Unlocks**: Unlock all Achievement with a datepicker.
+-   [ ] **Single Starter MOD**: Modify a single starter.
+-   [ ] **`.json` Import and Export**: Planned feature to upload and download the trainer and session data in your browser.
+-   [ ] **New Egg generator**: Since the Egg logic changed a bit, i wanted to rework my old code and implement the new version into the overlay.
+-   [ ] **Account Stats MOD**: Modify all Account Stats counts.
 
 ![NEW GUI ALL ACHIVEMENTS](./resources/roll_hack.png)
 
