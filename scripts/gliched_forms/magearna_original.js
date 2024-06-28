@@ -43,5 +43,5 @@
     };
 
     // Call the function for the dex id and gliched form index
-    toggleAttributesAndCursor(487, 0);
+    toggleAttributesAndCursor(801, 0);
 })();

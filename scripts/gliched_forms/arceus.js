@@ -1,54 +1,68 @@
-const dexEntry =
-    Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle
-        .gameData.dexData[493];
+(function () {
+    const Type = {
+        NORMAL: 0,
+        FIGHTING: 1,
+        FLYING: 2,
+        POISON: 3,
+        GROUND: 4,
+        ROCK: 5,
+        BUG: 6,
+        GHOST: 7,
+        STEEL: 8,
+        FIRE: 9,
+        WATER: 10,
+        GRASS: 11,
+        ELECTRIC: 12,
+        PSYCHIC: 13,
+        ICE: 14,
+        DRAGON: 15,
+        DARK: 16,
+        FAIRY: 17,
+        UNKNOWN: 18,
+    };
 
-// Defining constants for Dex Attributes using BigInt for bitwise operations
-const DexAttributes = {
-    NON_SHINY: 1n,
-    SHINY: 2n,
-    MALE: 4n,
-    FEMALE: 8n,
-    DEFAULT_VARIANT: 16n,
-    VARIANT_2: 32n,
-    VARIANT_3: 64n,
-    DEFAULT_FORM: 128n,
-};
+    /**
+     * Toggles attributes and cursor in a game scene.
+     *
+     * This function alters the caught attributes of a dex entry and toggles the cursor
+     * to display the gliched form.
+     *
+     * @param {number} dexId - The dex entry ID to be modified.
+     * @param {number} glitchedFormIndex - The index for the glitched form to be toggled.
+     */
+    const toggleAttributesAndCursor = (dexId, type) => {
+        // Store repeated lookups in variables
+        const gameScene =
+            Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys
+                .battle;
+        const dexEntry = gameScene.gameData.dexData[dexId];
+        const uiHandler = gameScene.ui.getHandler();
 
-const Type = {
-    NORMAL: 0,
-    FIGHTING: 1,
-    FLYING: 2,
-    POISON: 3,
-    GROUND: 4,
-    ROCK: 5,
-    BUG: 6,
-    GHOST: 7,
-    STEEL: 8,
-    FIRE: 9,
-    WATER: 10,
-    GRASS: 11,
-    ELECTRIC: 12,
-    PSYCHIC: 13,
-    ICE: 14,
-    DRAGON: 15,
-    DARK: 16,
-    FAIRY: 17,
-    UNKNOWN: 18,
-};
+        // Create attributes mask based on glitchedFormIndex
+        const attributes = (1n << BigInt(7 + type)) | ((1n << 7n) - 1n);
 
-// Calculating the attributes for Eternamax Eternatus with Shiny and various other attributes
-const gMaxLaprasAttributes =
-    (1n << BigInt(7 + Type.NORMAL)) + // G-MAX Form
-    DexAttributes.SHINY +
-    DexAttributes.NON_SHINY +
-    DexAttributes.MALE +
-    DexAttributes.FEMALE +
-    DexAttributes.DEFAULT_VARIANT +
-    DexAttributes.VARIANT_2 +
-    DexAttributes.VARIANT_3;
+        // Toggle caught attributes
+        dexEntry.caughtAttr =
+            dexEntry.caughtAttr !== attributes
+                ? attributes
+                : BigInt(Number.MAX_SAFE_INTEGER);
 
-// Toggling between everything and gliched form
-dexEntry.caughtAttr =
-    dexEntry.caughtAttr !== gMaxLaprasAttributes
-        ? gMaxLaprasAttributes
-        : BigInt(Number.MAX_SAFE_INTEGER);
+        /**
+         * Toggles the cursor in the UI handler.
+         *
+         * This inner function toggles the cursor to display the gliched form.
+         */
+        const toggleCursor = () => {
+            const { cursor } = uiHandler;
+            const nextCursor = cursor === 0 ? 1 : cursor - 1;
+            uiHandler.setCursor(nextCursor);
+            uiHandler.setCursor(cursor);
+        };
+
+        // Invoke the cursor toggling function
+        toggleCursor();
+    };
+
+    // Call the function for the dex id and gliched form index
+    toggleAttributesAndCursor(493, Type.FAIRY);
+})();
