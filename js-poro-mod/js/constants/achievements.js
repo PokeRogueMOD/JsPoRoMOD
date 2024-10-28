@@ -1,3 +1,4 @@
+// https://github.com/pagefaultgames/pokerogue/blob/fe7d156d2d5c57fa8e4bb4e5d4971be2a132dfdf/src/system/achv.ts#L290-L362
 export const Achievements = {
     _10K_MONEY: 0,
     _100K_MONEY: 1,
@@ -66,4 +67,8 @@ export const Achievements = {
     MONO_DRAGON: 64,
     MONO_DARK: 65,
     MONO_FAIRY: 66,
+    UNEVOLVED_CLASSIC_VICTORY: 67,
+    FRESH_START: 68,
+    INVERSE_BATTLE: 69,
+    BREEDERS_IN_SPACE: 70,
 };
