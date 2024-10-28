@@ -67,8 +67,9 @@ export const Achievements = {
     MONO_DRAGON: 64,
     MONO_DARK: 65,
     MONO_FAIRY: 66,
-    UNEVOLVED_CLASSIC_VICTORY: 67,
-    FRESH_START: 68,
-    INVERSE_BATTLE: 69,
-    BREEDERS_IN_SPACE: 70,
+    UNEVOLVED_CLASSIC_VICTORY: 67, // Bring Your Child To Work Day
+    FRESH_START: 68, // First Try!
+    INVERSE_BATTLE: 69, // Mirror rorriM
+    BREEDERS_IN_SPACE: 70, // Hmmmmm?
+    TRANSFER_MAX_STAT_STAGE: 71, // Teamwork
 };
