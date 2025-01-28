@@ -72,4 +72,6 @@ export const Achievements = {
     INVERSE_BATTLE: 69, // Mirror rorriM
     BREEDERS_IN_SPACE: 70, // Hmmmmm?
     TRANSFER_MAX_STAT_STAGE: 71, // Teamwork
+    FLIP_STATS: 72,
+    FLIP_INVERSE: 73,
 };
