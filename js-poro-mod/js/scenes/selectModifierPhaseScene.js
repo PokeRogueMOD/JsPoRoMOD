@@ -63,7 +63,7 @@ export class SelectModifierPhaseScene extends BaseScene {
         this.currentScene.lockModifierTiers = value;
 
         // Update Lock text
-        let uiHandler = this.currentPhase.scene.ui.getHandler();
+        let uiHandler = this.currentScene.ui.getHandler();
         uiHandler?.updateLockRaritiesText();
     }
 
@@ -76,27 +76,51 @@ export class SelectModifierPhaseScene extends BaseScene {
             )?.stackCount ?? 0);
 
         let uiHandler = this.currentScene.ui.getHandler();
-        let currentItemsTiers = uiHandler.options.map(e => e.modifierTypeOption.type.tier);
+        let currentItemsTiers = uiHandler.options.map(
+            (e) => e.modifierTypeOption.type.tier
+        );
 
         this.lockRarities(lock);
 
+        // Define the ModifierTier enum as a plain JavaScript object:
+        const ModifierTier = {
+            COMMON: 0,
+            GREAT: 1,
+            ULTRA: 2,
+            ROGUE: 3,
+            MASTER: 4,
+            LUXURY: 5,
+        };
+
+        // Example input: An array with some objects missing certain tiers
+        const typeOptions = [
+            { type: { tier: ModifierTier.COMMON } }, // ModifierTier.COMMON
+            { type: { tier: ModifierTier.GREAT } }, // ModifierTier.GREAT
+            { type: { tier: ModifierTier.ULTRA } }, // ModifierTier.ULTRA
+            { type: { tier: ModifierTier.ROGUE } }, // ModifierTier.ROGUE
+            { type: { tier: ModifierTier.MASTER } }, // ModifierTier.LUXURY
+            { type: { tier: ModifierTier.LUXURY } }, // ModifierTier.LUXURY
+            { type: undefined }, // Missing type
+            // MASTER is not present
+        ];
+
+        // Old code
         let newModifierTiers =
             lock === true && tier === null
                 ? currentItemsTiers
                 : tier === null
                 ? this.currentPhase
                       .getModifierTypeOptions(stackCount)
-                      .map((o) => o.type.tier)
+                      .map((o) => o.type) // .tier
                 : new Array(stackCount).fill(tier);
 
         if (rollCount === null) {
             rollCount = this.currentPhase.rollCount + 1;
         }
 
-        this.currentPhase.scene.reroll = true;
-        this.currentPhase.scene.unshiftPhase(
+        this.currentScene.reroll = true;
+        this.currentScene.unshiftPhase(
             new this.currentPhase.constructor(
-                this.currentScene,
                 rollCount, // Bug Credit: https://www.youtube.com/@Odou
                 newModifierTiers
             )

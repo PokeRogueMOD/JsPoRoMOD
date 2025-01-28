@@ -5,13 +5,8 @@ export class BaseScene {
         this.maxMoneyInt = Number.MAX_SAFE_INTEGER - this.maxInt;
     }
 
-    get scenes() {
-        return Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene
-            .scenes;
-    }
-
     get currentScene() {
-        return this.scenes[this.scenes.length > 1 ? this.scenes.length - 1 : 0];
+        return Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle;
     }
 
     get currentPhase() {
