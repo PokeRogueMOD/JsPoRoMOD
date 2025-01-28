@@ -144,4 +144,12 @@ export const SignatureSpecies = {
     GHETSIS_2: 139,
     LYSANDRE: 140,
     LYSANDRE_2: 141,
+    GUZMA_2: 142,
+    ROSE_2: 143,
+    PENNY_2: 144,
+    MARNIE_ELITE: 145,
+    NESSA_ELITE: 146,
+    BEA_ELITE: 147,
+    ALLISTER_ELITE: 148,
+    RAIHAN_ELITE: 149,
 };
