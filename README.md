@@ -16,7 +16,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 ## [`Video Tutorial`](https://youtu.be/L_c9TXFbDIM)
 
-[![`Video Tutorial`](./resources/thumbnail.png)](https://youtu.be/L_c9TXFbDIM)
+[![`Video Tutorial`](./resources/thumbnail.png)](https://youtu.be/k6B4WqDGoxk)
 
 ## `Supported OS`
 
