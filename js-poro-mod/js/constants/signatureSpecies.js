@@ -153,4 +153,7 @@ export const SignatureSpecies = {
     ROSE_2: 147,
     PENNY: 148,
     PENNY_2: 149,
+
+    KUKUI: 150,
+    MUSTARD: 151,
 };
