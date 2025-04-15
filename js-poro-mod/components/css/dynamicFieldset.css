@@ -1,4 +1,6 @@
 fieldset {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #e0681a;
     border-radius: 4px;

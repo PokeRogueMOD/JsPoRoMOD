@@ -10,7 +10,12 @@ export function createNumberInput(
     const inputElement = document.createElement("input");
     inputElement.type = "text";
     inputElement.className = "number-input";
-    inputElement.id = id; // Use the provided id
+
+    if (id.startsWith("IV_")) {
+        inputElement.classList.add("iv-input"); // ✅ Only IV fields get this class
+    }
+
+    inputElement.id = id;
     container.appendChild(inputElement);
 
     const formatWithDots = (value) => {

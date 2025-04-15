@@ -16,74 +16,96 @@ import { Species } from "../../constants/species.js";
 export function loadStartersLayout(subLayoutContainer) {
     const achievementsTable = new DynamicTable();
 
-    // Function to create a single row with number input and set button
     function createUnlockRow(idName, minValue, defaultValue, maxValue) {
         const fieldset = new DynamicFieldset(idName);
         const singleLineContainer = new SingleLineContainer();
-
         const numberInput = createNumberInput(
             `${idName}Input`,
             minValue,
             defaultValue,
             maxValue
         );
-
         singleLineContainer.addElement(numberInput);
         fieldset.addElement(singleLineContainer.getElement());
-
         return fieldset.getElement();
     }
 
-    // Create Dropdown
+    // Create dropdown fieldset
+    const starterSelectFieldset = new DynamicFieldset("Select Starter");
     const options = ["All", ...Object.keys(starterCosts)];
-    // add Species keys to options
     const dropdown = createDropdown(
         options.map((option) => ({
             value: option.toLowerCase(),
             text: option,
         })),
         (value) => {
-            value;
+            if (value.toLowerCase() === "all") return;
+
+            const selectedKey = value.toUpperCase();
+            const speciesId = Species[selectedKey];
+            const key = speciesId.toString();
+            const { dexData, starterData } =
+                hackInstance.achvUnlocker.currentScene.gameData;
+
+            if (dexData[key]) {
+                const data = dexData[key];
+                const ivLabels = ["Hp", "Atk", "Def", "SpAtk", "SpDef", "Spd"];
+                ivLabels.forEach((label, index) => {
+                    const input = document.getElementById(`IV_${label}`);
+                    if (input && data.ivs?.[index] != null) {
+                        input.value = data.ivs[index];
+                    }
+                });
+                document.getElementById("SeenCountInput").intValue =
+                    data.seenCount ?? 0;
+                document.getElementById("CaughtCountInput").intValue =
+                    data.caughtCount ?? 0;
+                document.getElementById("HatchedCountInput").intValue =
+                    data.hatchedCount ?? 0;
+            }
+
+            if (starterData[key]) {
+                const data = starterData[key];
+                document.getElementById("CandysInput").intValue =
+                    data.candyCount ?? 0;
+                document.getElementById("FriendshipInput").intValue =
+                    data.friendship ?? 0;
+                document.getElementById("ValueReductionInput").intValue =
+                    data.valueReduction ?? 0;
+            }
         },
         "selectPokemonSpecies"
     );
+    starterSelectFieldset.addElement(dropdown);
 
-    /*
-    Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle.ui.getHandler().__proto__.constructor.name: 'StarterSelectUiHandler'
+    // Custom IV layout: one row per stat, full width, prefixed label
+    const createIVsFieldset = () => {
+        const labels = ["Hp", "Atk", "Def", "SpAtk", "SpDef", "Spd"];
+        const ivsFieldset = new DynamicFieldset("IVs"); // Main container for all IVs
 
-    Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle.ui.getHandler().lastSpecies: eY (PokemonSpecies)
-        ability1: 66
-        ability2: 66
-        abilityHidden: 94
-        baseExp: 62
-        baseFriendship: 50
-        baseStats: (6) [39, 52, 43, 60, 50, 65]
-        baseTotal: 309
-        canChangeForm: false
-        catchRate: 45
-        forms: []
-        genderDiffs: false
-        growthRate: 3
-        height: 0.6
-        isStarterSelectable: false
-        legendary: false
-        malePercent: 87.5
-        mythical: false
-        name: "Charmander"
-        species: "Lizard Pokémon"
-        speciesId: 4
-        subLegendary: false
-        type1: 9
-        type2: null
-        weight: 8.5
-        _formIndex: 0
-        _generation: 1
-        formIndex: (...)
-        generation: (...)
-    */
+        // Flex wrapper to arrange IV fields vertically
+        const ivList = document.createElement("div");
+        ivList.style.display = "flex";
+        ivList.style.flexDirection = "column";
+        ivList.style.gap = "4px";
 
-    // ivs, candys, friendship, value reduction, seen count cought count und hatched count
-    const setIVsInput = createUnlockRow("IVs", 0, 31, Number.MAX_SAFE_INTEGER);
+        labels.forEach((label) => {
+            const fieldset = new DynamicFieldset(label);
+            fieldset.getElement().style.maxWidth = "80px"; // Make compact
+
+            const line = new SingleLineContainer();
+            const input = createNumberInput(`IV_${label}`, 0, 31, 31);
+            line.addElement(input);
+            fieldset.addElement(line.getElement());
+
+            ivList.appendChild(fieldset.getElement());
+        });
+
+        ivsFieldset.addElement(ivList);
+        return ivsFieldset.getElement();
+    };
+
+    const setIVsInput = createIVsFieldset();
     const setCandyCountInput = createUnlockRow(
         "Candys",
         Number.MIN_SAFE_INTEGER,
@@ -108,15 +130,20 @@ export function loadStartersLayout(subLayoutContainer) {
 
     const unlockAllButton = document.createElement("button");
     unlockAllButton.id = "unlockAllButton";
-    unlockAllButton.textContent = "⚠️ Unlock ∞ ⚠️";
+    unlockAllButton.textContent = "⚠️ Save ⚠️";
 
     unlockAllButton.addEventListener("click", function () {
         unlockAllButton.blur();
         const button = document.getElementById("unlockAllButton");
-        button.disabled = true; // Disable the button when clicked
+        button.disabled = true;
 
         try {
-            const IVsInputValue = document.getElementById("IVsInput").intValue;
+            const ivLabels = ["Hp", "Atk", "Def", "SpAtk", "SpDef", "Spd"];
+            const IVsInputValue = ivLabels.map((label) => {
+                const input = document.getElementById(`IV_${label}`);
+                return input ? parseInt(input.value, 10) || 0 : 0;
+            });
+
             const CandysInputValue =
                 document.getElementById("CandysInput").intValue;
             const FriendshipInputValue =
@@ -131,16 +158,14 @@ export function loadStartersLayout(subLayoutContainer) {
             const HatchedCountInputValue =
                 document.getElementById("HatchedCountInput").intValue;
 
-            const selectedValue =
-                document.getElementById("selectPokemonSpecies").value; // lowercase value
-            const selectedKey = selectedValue.toUpperCase(); // matches Species key
-            console.log(selectedKey);
-
+            const selectedValue = document.getElementById(
+                "selectPokemonSpecies"
+            ).value;
+            const selectedKey = selectedValue.toUpperCase();
             const { dexData, starterData } =
                 hackInstance.achvUnlocker.currentScene.gameData;
 
             if (selectedKey === "ALL") {
-                // --- Unlock ALL starters
                 Object.keys(dexData).forEach((key) => {
                     const data = dexData[key];
                     data.seenAttr = BigInt(Number.MAX_SAFE_INTEGER);
@@ -149,7 +174,7 @@ export function loadStartersLayout(subLayoutContainer) {
                     data.seenCount = SeenCountInputValue;
                     data.caughtCount = CaughtCountInputValue;
                     data.hatchedCount = HatchedCountInputValue;
-                    data.ivs = data.ivs.map(() => IVsInputValue);
+                    data.ivs = [...IVsInputValue];
                 });
 
                 Object.keys(starterData).forEach((key) => {
@@ -173,8 +198,7 @@ export function loadStartersLayout(subLayoutContainer) {
 
                 showToast("All starters modded!");
             } else {
-                // --- Unlock ONLY selected Pokémon
-                const speciesId = Species[selectedKey]; // numeric ID
+                const speciesId = Species[selectedKey];
                 const key = speciesId.toString();
 
                 if (dexData[key]) {
@@ -185,7 +209,7 @@ export function loadStartersLayout(subLayoutContainer) {
                     data.seenCount = SeenCountInputValue;
                     data.caughtCount = CaughtCountInputValue;
                     data.hatchedCount = HatchedCountInputValue;
-                    data.ivs = data.ivs.map(() => IVsInputValue);
+                    data.ivs = [...IVsInputValue];
                 }
 
                 if (starterData[key]) {
@@ -208,24 +232,25 @@ export function loadStartersLayout(subLayoutContainer) {
                 }
 
                 const toggleCursor = () => {
-                    const uiHandler = hackInstance.achvUnlocker.currentScene.ui.getHandler();
+                    const uiHandler =
+                        hackInstance.achvUnlocker.currentScene.ui.getHandler();
                     const { cursor } = uiHandler;
                     const nextCursor = cursor === 0 ? 1 : cursor - 1;
                     uiHandler.setCursor(nextCursor);
                     uiHandler.setCursor(cursor);
                 };
-                
-                if (Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle.ui.getHandler().__proto__.constructor.name  === 'StarterSelectUiHandler') {
-                    // Invoke the cursor toggling function
+
+                if (
+                    Phaser.Display.Canvas.CanvasPool.pool[0].parent.game.scene.keys.battle.ui.getHandler()
+                        .__proto__.constructor.name === "StarterSelectUiHandler"
+                ) {
                     toggleCursor();
                 }
 
                 showToast(`Only ${selectedKey} modded!`);
             }
 
-            // Save the updated data
             hackInstance.achvUnlocker.save();
-
             setTimeout(() => {
                 button.disabled = false;
             }, 5000);
@@ -235,17 +260,39 @@ export function loadStartersLayout(subLayoutContainer) {
         }
     });
 
-    // Add dropdown to the accountScreen
-    subLayoutContainer.appendChild(dropdown);
+    // Add dropdown first (full width)
+    subLayoutContainer.appendChild(starterSelectFieldset.getElement());
 
-    subLayoutContainer.appendChild(setIVsInput);
-    subLayoutContainer.appendChild(setCandyCountInput);
-    subLayoutContainer.appendChild(setFriendshipInput);
-    subLayoutContainer.appendChild(setValueReductionInput);
-    subLayoutContainer.appendChild(setSeenCountInput);
-    subLayoutContainer.appendChild(setCaughtCountInput);
-    subLayoutContainer.appendChild(setHatchedCountInput);
+    // Create main horizontal flex layout
+    const layoutWrapper = document.createElement("div");
+    layoutWrapper.style.display = "flex";
+    layoutWrapper.style.gap = "8px";
+    layoutWrapper.style.marginBottom = "8px";
 
+    // Left column (IVs)
+    const leftColumn = document.createElement("div");
+    leftColumn.style.display = "flex";
+    leftColumn.style.flexDirection = "column";
+    leftColumn.appendChild(setIVsInput);
+
+    // Right column (other stats)
+    const rightColumn = document.createElement("div");
+    rightColumn.style.display = "flex";
+    rightColumn.style.flexDirection = "column";
+    rightColumn.appendChild(setCandyCountInput);
+    rightColumn.appendChild(setFriendshipInput);
+    rightColumn.appendChild(setValueReductionInput);
+    rightColumn.appendChild(setSeenCountInput);
+    rightColumn.appendChild(setCaughtCountInput);
+    rightColumn.appendChild(setHatchedCountInput);
+
+    // Combine layout
+    layoutWrapper.appendChild(leftColumn);
+    layoutWrapper.appendChild(rightColumn);
+    subLayoutContainer.appendChild(layoutWrapper);
+
+    // Add the unlock button and table
+    unlockAllButton.style.gap = "8px";
     subLayoutContainer.appendChild(unlockAllButton);
     subLayoutContainer.appendChild(achievementsTable.getElement());
 }
