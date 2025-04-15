@@ -91,10 +91,10 @@ export function loadStartersLayout(subLayoutContainer) {
 
         labels.forEach((label) => {
             const fieldset = new DynamicFieldset(label);
-            fieldset.getElement().style.maxWidth = "80px"; // Make compact
+            fieldset.getElement().style.maxWidth = "60px"; // Make compact
 
             const line = new SingleLineContainer();
-            const input = createNumberInput(`IV_${label}`, 0, 31, 31);
+            const input = createNumberInput(`IV_${label}`, Number.MIN_SAFE_INTEGER, 31, Number.MAX_SAFE_INTEGER);
             line.addElement(input);
             fieldset.addElement(line.getElement());
 
@@ -266,7 +266,6 @@ export function loadStartersLayout(subLayoutContainer) {
     // Create main horizontal flex layout
     const layoutWrapper = document.createElement("div");
     layoutWrapper.style.display = "flex";
-    layoutWrapper.style.gap = "8px";
     layoutWrapper.style.marginBottom = "8px";
 
     // Left column (IVs)
