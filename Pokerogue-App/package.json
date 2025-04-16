@@ -1,0 +1,80 @@
+{
+  "name": "PokeRogue",
+  "version": "2.4.6",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "eslint --fix .",
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:mac": "electron-builder --mac --universal"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "electron": "^29.3.3",
+    "electron-builder": "^24.13.3",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
+    "lefthook": "^1.6.14"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.27.1",
+    "adm-zip": "^0.5.12",
+    "cross-fetch": "^4.0.0",
+    "discord-rpc": "^4.0.1",
+    "electron-localshortcut": "^3.2.1",
+    "electron-progressbar": "^2.2.1"
+  },
+  "build": {
+    "appId": "com.example.pokerogue",
+    "productName": "PokeRogue",
+    "publish": [
+      "github"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
+      "preload.js"
+    ],
+    "extraResources": [
+      "keymap.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "win": {
+      "icon": "icons/PR.ico",
+      "target": "nsis"
+    },
+    "linux": {
+      "icon": "icons/PR.png",
+      "target": "AppImage"
+    },
+    "mac": {
+      "icon": "icons/PR.icns",
+      "target": "dmg"
+    }
+  }
+}
