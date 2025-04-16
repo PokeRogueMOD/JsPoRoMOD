@@ -11,16 +11,21 @@
 - **[Admiral Billy - PokeRogue-App-Android](https://github.com/Admiral-Billy/PokeRogue-App-Android)** 
 
 # `JsPoRoAnal`
-> **Should work** *(If not, let me know)*.
-- **[Offline Android](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Android.apk)** 
-- **[Offline Linux](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Linux.zip)**
-- **[Offline Windows](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Windows.zip)**
-- **[Plugin Chrome](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Chrome.zip)**
-- **[Plugin Firefox](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Firefox.xpi)**
-> **Not supported at this time...**
-- **Offline Mac**
+
+:white_check_mark: **[Offline Android](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Android.apk)** 
+
+:white_check_mark: **[Offline Linux](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Linux.zip)**
+
+:white_check_mark: **[Offline Windows](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Windows.zip)**
+
+:white_check_mark: **[Plugin Chrome](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Chrome.zip)**
+
+:white_check_mark: **[Plugin Firefox](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Firefox.xpi)**
+
+:x: **Offline Mac**
 > *Need to test if I can compile it on my old Mac when I have time, but maybe it's too old...*
-- **Offline iOS**
+> 
+:x: **Offline iOS**
 > *Not planned for now, since an Apple Developer Account costs $99/year...*
 
 ## [`PokéRogue Source Code`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
