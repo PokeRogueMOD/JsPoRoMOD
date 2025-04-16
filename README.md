@@ -6,7 +6,22 @@
 > 
 > _Remember to be alert at all times. Stay aware of your surroundings._
 
+# `Used Repos`
+- **[Admiral Billy - Pokerogue-App](https://github.com/Admiral-Billy/Pokerogue-App)** 
+- **[Admiral Billy - PokeRogue-App-Android](https://github.com/Admiral-Billy/PokeRogue-App-Android)** 
+
 # `JsPoRoAnal`
+> **Should work** *(If not, let me know)*.
+- **[Offline Android](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Android.apk)** 
+- **[Offline Linux](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Linux.zip)**
+- **[Offline Windows](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Windows.zip)**
+- **[Plugin Chrome](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Chrome.zip)**
+- **[Plugin Firefox](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Firefox.xpi)**
+> **Not supported at this time...**
+- **Offline Mac**
+> *Need to test if I can compile it on my old Mac when I have time, but maybe it's too old...*
+- **Offline iOS**
+> *Not planned for now, since an Apple Developer Account costs $99/year...*
 
 ## [`PokéRogue Source Code`](https://github.com/pagefaultgames/pokerogue/tree/main/src)
 
@@ -18,16 +33,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 [![`Video Tutorial`](./resources/thumbnail.png)](https://youtu.be/k6B4WqDGoxk)
 
-## `Supported OS`
-
--   `macOS (?-14) Browser: [Safari, Chrome, Firefox]`
--   `Android (?-14) Browser: [Kiwi]`
--   `iOS (15-17) [Safari]`
--   `Windows (10-11) [Chrome, Firefox]`
--   `Linux(?) [Chrome, Firefox]`
-> **`(Other versions not tested, they may work, you can try them!)`**
-
-## `Features`
+## `Features` *(List needs revision)*
 
 -   [x] **`Chrome, Kiwi & Firefox Plugins`**: All currently maintained hacks bundled in a GUI.
 -   [x] **`Overlay`**: Unlimited Rerolls with Max Cash and Max Luck.
@@ -36,7 +42,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 -   [x] **`Voucher Editor`**: Modify all Voucher counts.
 -   [x] **`Voucher Unlocks`**: Unlock all Vouchers with a datepicker.
 -   [x] **`Achievement Unlocks`**: Unlock all Achievement with a datepicker.
--   [ ] **`Single Starter MOD`**: Modify a single starter.
+-   [X] **`Single Starter MOD`**: Modify a single starter.
 -   [ ] **`.json Import and Export`**: Planned feature to upload and download the trainer and session data in your browser in `.json` format.
 -   [ ] **`New Egg generator`**: Since the Egg logic changed a bit, i wanted to rework my old code and implement the new version into the overlay.
 -   [ ] **`Account Stats MOD`**: Modify all Account Stats counts.
@@ -47,18 +53,7 @@ Welcome to the JsPoRoAnal! This is the new Repo for everything related to JavaSc
 
 # `My other Tools / MODs`
 
-## [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD)
-
-# `Other Hack / MODs`
-
-## [`MikeyTheA - PokeRogueModLoader Plugin`](https://github.com/MikeyTheA/PokeRogueModLoader)
-
-## [`MikeyTheA - mokerogue.net (Private Server - No Rules)`](https://mokerogue.net/)
-
-> [!WARNING]  
-> **I recommend that you do not reuse your account names and passwords from the original `pokerogue.net`, but just use completely new and random ones and save them with a password manager!**
-
-## [`MikeyTheA - Discord`](https://discord.gg/7kc2EYjPGQ)
+## [`PyPoRoMOD - Python DEV version.`](https://github.com/PokeRogueMOD/PyPoRoMOD) *(Not working / supported anymore)*
 
 # `Contact`
 
@@ -70,4 +65,5 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICE
 
 # `Acknowledgments`
 
+This project uses [Loguru](https://github.com/Delgan/loguru) which is licensed under the MIT License.
 This project uses [Loguru](https://github.com/Delgan/loguru) which is licensed under the MIT License.
