@@ -1,2 +1,2 @@
-App_Windows.zip filter=lfs diff=lfs merge=lfs -text
-App_Linux.zip filter=lfs diff=lfs merge=lfs -text
+Offline_PoRoMOD_Windows.zip filter=lfs diff=lfs merge=lfs -text
+Offline_PoRoMOD_Linux.zip filter=lfs diff=lfs merge=lfs -text

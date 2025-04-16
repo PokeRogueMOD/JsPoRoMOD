@@ -14,9 +14,9 @@ class AppCompiler:
     ROOT_DIR = BASE_DIR.parent
 
     ZIP_MAP = {
-        "win": ROOT_DIR / "App_Windows.zip",
-        "mac": ROOT_DIR / "App_Mac.zip",
-        "linux": ROOT_DIR / "App_Linux.zip",
+        "win": ROOT_DIR / "Offline_PoRoMOD_Windows.zip",
+        "mac": ROOT_DIR / "Offline_PoRoMOD_Mac.zip",
+        "linux": ROOT_DIR / "Offline_PoRoMOD_Linux.zip",
     }
 
     PLATFORM_MAPPING = {

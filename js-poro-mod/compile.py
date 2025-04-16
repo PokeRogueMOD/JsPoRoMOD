@@ -24,8 +24,8 @@ class JSCompiler:
     MIN_FILE: Path = BASE_DIR / MIN_NAME
     CHROME_DIR: Path = ROOT_DIR / "Chrome"
     FIREFOX_DIR: Path = ROOT_DIR / "Firefox"
-    CHROME_ZIP: Path = ROOT_DIR / "Chrome.zip"
-    FIREFOX_XPI: Path = ROOT_DIR / "Firefox.xpi"
+    CHROME_ZIP: Path = ROOT_DIR / "Plugin_PoRoMOD_Chrome.zip"
+    FIREFOX_XPI: Path = ROOT_DIR / "Plugin_PoRoMOD_Firefox.xpi"
 
     @classmethod
     def setup_directories(cls) -> None:
