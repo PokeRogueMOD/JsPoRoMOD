@@ -76,5 +76,9 @@
       "icon": "icons/PR.icns",
       "target": "dmg"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PokeRogueMOD/JsPoRoMOD.git"
   }
 }
