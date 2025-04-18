@@ -23,7 +23,7 @@
 :white_check_mark: **[Plugin Firefox](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Firefox.xpi)**
 
 :x: **Offline Mac**
-> *Need to test if I can compile it on my old Mac when I have time, but maybe it's too old...*
+> *My Mac (10.13.6) is too old...* **T.T** 
 > 
 :x: **Offline iOS**
 > *Not planned for now, since an Apple Developer Account costs $99/year...*
