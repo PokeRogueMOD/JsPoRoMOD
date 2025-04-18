@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PokeRogue+ Mod</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Register service worker to keep mod always fresh
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+
+    // Open PokeRogue site
+    window.location.replace("https://pokerogue.net");
+
+    // Inject mod (auto-update each restart using cache busting)
+    const s = document.createElement("script");
+    s.src = "https://raw.githack.com/PokeRogueMOD/JsPoRoMOD/main/js-poro-mod/mod.min.js?v=" + Date.now();
+    document.head.appendChild(s);
+  </script>
+</head>
+<body>
+  <h1>Loading PokeRogue+ Mod...</h1>
+</body>
+</html>
