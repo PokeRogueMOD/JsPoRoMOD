@@ -193,7 +193,7 @@ export function loadRollScreen() {
         settingsContent.style.display = isVisible ? "none" : "block";
         toggleIcon.textContent = isVisible
             ? "keyboard_arrow_down"
-            : "keyboard_control_key";
+            : "";
         toggleIcon.hidden = isVisible
             ? true
             : false;

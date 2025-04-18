@@ -141,7 +141,7 @@ export function loadStartersLayout(subLayoutContainer) {
             const ivLabels = ["Hp", "Atk", "Def", "SpAtk", "SpDef", "Spd"];
             const IVsInputValue = ivLabels.map((label) => {
                 const input = document.getElementById(`IV_${label}`);
-                return input ? parseInt(input.value, 10) || 0 : 0;
+                return input ? input.intValue || 0 : 0;
             });
 
             const CandysInputValue =
