@@ -7,6 +7,7 @@
 > _Remember to be alert at all times. Stay aware of your surroundings._
 
 # `Used Repos`
+> *I modded them to load the mod...*
 - **[Admiral Billy - Pokerogue-App](https://github.com/Admiral-Billy/Pokerogue-App)** 
 - **[Admiral Billy - PokeRogue-App-Android](https://github.com/Admiral-Billy/PokeRogue-App-Android)** 
 
