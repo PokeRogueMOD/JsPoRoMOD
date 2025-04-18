@@ -14,9 +14,9 @@
 
 :white_check_mark: **[Offline Android](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Android.apk)** 
 
-:white_check_mark: **[Offline Linux](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Linux.zip)**
+:white_check_mark: **[Offline Linux](https://github.com/PokeRogueMOD/JsPoRoMOD/raw/refs/heads/main/Offline_PoRoMOD_Linux.zip)**
 
-:white_check_mark: **[Offline Windows](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Offline_PoRoMOD_Windows.zip)**
+:white_check_mark: **[Offline Windows](https://github.com/PokeRogueMOD/JsPoRoMOD/raw/refs/heads/main/Offline_PoRoMOD_Windows.zip)**
 
 :white_check_mark: **[Plugin Chrome](https://raw.githubusercontent.com/PokeRogueMOD/JsPoRoMOD/main/Plugin_PoRoMOD_Chrome.zip)**
 
