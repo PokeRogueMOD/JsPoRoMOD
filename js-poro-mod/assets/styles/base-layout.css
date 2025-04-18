@@ -6,6 +6,8 @@
     padding: 8px;
     backdrop-filter: blur(3px);
     font-size: 14px !important;
+    margin: 0 !important;
+    width: auto !important;
 }
 
 .input-row,

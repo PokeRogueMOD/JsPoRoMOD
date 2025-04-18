@@ -184,6 +184,7 @@ export function loadRollScreen() {
     rollScreenElement.appendChild(settingsFieldset);
     rollScreenElement.appendChild(buttonRow);
     rollScreenElement.style.display = "flex";
+    // const rollScreenClass = document.getElementsByClassName("rollScreen")[0];
 
     // Toggle logic
     const toggleIcon = document.getElementById("settingsToggleIcon");
@@ -191,16 +192,22 @@ export function loadRollScreen() {
         const isVisible = settingsContent.style.display !== "none";
         settingsContent.style.display = isVisible ? "none" : "block";
         toggleIcon.textContent = isVisible
-            ? "keyboard_control_key"
-            : "keyboard_arrow_down";
+            ? "keyboard_arrow_down"
+            : "keyboard_control_key";
+        toggleIcon.hidden = isVisible
+            ? true
+            : false;
+
 
         if (!isVisible) {
             rollButton.textContent = "Roll";
             rollButton.classList.remove("round-roll");
+            rollScreenElement.style.flexGrow = 1;
         } else {
             rollButton.innerHTML =
                 '<span class="material-icons-outlined">casino</span>';
             rollButton.classList.add("round-roll");
+            rollScreenElement.style.flexGrow = 0;
         }
     });
 

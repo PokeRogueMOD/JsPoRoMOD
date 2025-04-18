@@ -1,8 +1,9 @@
 /* roll-screen.css */
 
 #rollScreen {
-    flex: 1;
+    /* flex: 1; */
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .input-table {
@@ -68,12 +69,12 @@ button {
 
 .round-roll {
     border-radius: 50%;
-    width: 48px;
-    min-width: 48px;
-    max-width: 48px;
-    height: 48px;
-    min-height: 48px;
-    max-height: 48px;
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    height: 32px;
+    min-height: 32px;
+    max-height: 32px;
     padding: 0;
     font-size: 24px;
     display: flex;
