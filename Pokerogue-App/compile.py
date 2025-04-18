@@ -44,7 +44,8 @@ class AppCompiler:
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
             for file in src_dir.rglob("*"):
                 if file.is_file():
-                    zipf.write(file, arcname=file.relative_to(src_dir))
+                    relative_path = file.relative_to(src_dir)
+                    zipf.write(file, relative_path)
 
     @classmethod
     def copy_project_to_tmp(cls, exclude=("dist", "node_modules")) -> Path:
