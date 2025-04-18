@@ -1,75 +1,57 @@
 <div id="rollScreen" class="container">
-    <h2>Roll MOD</h2>
-    <table class="input-table">
-        <tr class="input-row">
-            <td class="label-cell">
-                <label class="label">Luck</label>
-            </td>
-            <td class="checkbox-cell">
-                <input type="checkbox" id="luckCheckbox" class="toggle-checkbox" />
-            </td>
-            <td class="input-cell">
-                <input type="text" id="luckInput" class="number-input" />
-                <button id="setLuckButton" class="set-button">
-                    <span class="material-symbols-outlined">
-                        play_arrow
-                    </span>
-                </button>
-            </td>
-        </tr>
-        <tr class="input-row">
-            <td class="label-cell">
-                <label class="label">Money</label>
-            </td>
-            <td class="checkbox-cell">
-                <input type="checkbox" id="moneyCheckbox" class="toggle-checkbox" />
-            </td>
-            <td class="input-cell">
-                <input type="text" id="moneyInput" class="number-input" />
-                <button id="setMoneyButton" class="set-button">
-                    <span class="material-symbols-outlined">
-                        play_arrow
-                    </span>
-                </button>
-            </td>
-        </tr>
-        <tr class="input-row">
-            <td class="label-cell">
-                <label class="label">Count</label>
-            </td>
-            <td class="checkbox-cell">
-                <input type="checkbox" id="rollCountCheckbox" class="toggle-checkbox" />
-            </td>
-            <td class="input-cell">
-                <input type="text" id="rollCountInput" class="number-input" />
-                <button id="setRollCountButton" class="set-button">
-                    <span class="material-symbols-outlined">
-                        play_arrow
-                    </span>
-                </button>
-            </td>
-        </tr>
-        <tr class="input-row">
-            <td class="label-cell">
-                <label class="label">Tier</label>
-            </td>
-            <td class="checkbox-cell">
-                <input type="checkbox" id="itemTierCheckbox" class="toggle-checkbox" />
-            </td>
-            <td class="input-cell">
-                <select id="itemTierSelect" class="dropdown"></select>
-            </td>
-        </tr>
-        <tr class="input-row">
-            <td class="label-cell">
-                <label class="label">Lock</label>
-            </td>
-            <td class="checkbox-cell">
-                <input type="checkbox" id="lockShopToggle" class="toggle-checkbox" />
-            </td>
-            <td class="input-cell">
-                <button id="rollActionButton" class="roll-button">Roll</button>
-            </td>
-        </tr>
-    </table>
+    <fieldset class="settings-fieldset">
+        <legend id="settingsToggle" style="cursor: pointer; user-select: none;">
+            <span id="settingsToggleIcon">▼</span> Settings
+        </legend>
+        <div id="settingsContent">
+            <table class="input-table">
+                <tr class="input-row">
+                    <td class="label-cell"><label class="label">Luck</label></td>
+                    <td class="checkbox-cell"><input type="checkbox" id="luckCheckbox" class="toggle-checkbox" /></td>
+                    <td class="input-cell">
+                        <input type="text" id="luckInput" class="number-input" />
+                        <button id="setLuckButton" class="set-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="input-row">
+                    <td class="label-cell"><label class="label">Money</label></td>
+                    <td class="checkbox-cell"><input type="checkbox" id="moneyCheckbox" class="toggle-checkbox" /></td>
+                    <td class="input-cell">
+                        <input type="text" id="moneyInput" class="number-input" />
+                        <button id="setMoneyButton" class="set-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="input-row">
+                    <td class="label-cell"><label class="label">Count</label></td>
+                    <td class="checkbox-cell"><input type="checkbox" id="rollCountCheckbox" class="toggle-checkbox" /></td>
+                    <td class="input-cell">
+                        <input type="text" id="rollCountInput" class="number-input" />
+                        <button id="setRollCountButton" class="set-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="input-row">
+                    <td class="label-cell"><label class="label">Tier</label></td>
+                    <td class="checkbox-cell"><input type="checkbox" id="itemTierCheckbox" class="toggle-checkbox" /></td>
+                    <td class="input-cell">
+                        <select id="itemTierSelect" class="dropdown"></select>
+                    </td>
+                </tr>
+                <tr class="input-row">
+                    <td class="label-cell"><label class="label">Lock</label></td>
+                    <td class="checkbox-cell"><input type="checkbox" id="lockShopToggle" class="toggle-checkbox" /></td>
+                    <td class="input-cell"></td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+
+    <div class="button-row">
+        <button id="rollActionButton" class="roll-button">Roll</button>
+    </div>
 </div>
