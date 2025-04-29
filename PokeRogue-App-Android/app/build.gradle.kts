@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pokerogueoffline"
+    namespace = "com.mpb.poromodoffline"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.pokerogueoffline"
+        applicationId = "com.mpb.poromodoffline"
         minSdk = 26
         targetSdk = 34
         versionCode = 2
@@ -26,17 +26,18 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

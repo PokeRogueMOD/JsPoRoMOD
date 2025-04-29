@@ -19,7 +19,7 @@
         android:theme="@style/Theme.PokeRogueOffline"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
+            android:name="com.mpb.poromodoffline.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
             android:exported="true">
             <intent-filter>

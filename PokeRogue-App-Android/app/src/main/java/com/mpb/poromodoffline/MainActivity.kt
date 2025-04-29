@@ -1,4 +1,4 @@
-package com.example.pokerogueoffline
+package com.mpb.poromodoffline
 
 import android.Manifest
 import android.app.ProgressDialog
@@ -23,7 +23,6 @@ import android.webkit.DownloadListener
 import android.webkit.JavascriptInterface
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
-import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
@@ -31,6 +30,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.mpb.poromodoffline.R
 import fi.iki.elonen.NanoHTTPD
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

@@ -1,4 +1,4 @@
-package com.example.pokerogueoffline
+package com.mpb.poromodoffline
 
 import org.junit.Test
 

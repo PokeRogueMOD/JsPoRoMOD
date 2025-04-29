@@ -1,4 +1,4 @@
-package com.example.pokerogueoffline
+package com.mpb.poromodoffline
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
