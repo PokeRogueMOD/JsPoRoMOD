@@ -130,10 +130,29 @@ export function loadRollScreen() {
     lockfieldset.addElement(locksingleLineContainer.getElement());
 
     const itemTierContainer = new SingleLineContainer();
+    let previousLockChecked = false; // Track previous state outside the function
+
     const itemTierCheckbox = createCheckbox(
         "itemTierCheckbox",
         false,
-        () => {}
+        (isChecked) => {
+            const lockCheckboxElem = document.getElementById("lockShopToggle");
+
+            if (!lockCheckboxElem) return;
+
+            if (isChecked) {
+                // Save current state and force-enable + lock it
+                previousLockChecked = lockCheckboxElem.checked;
+                lockCheckboxElem.checked = true;
+                lockCheckboxElem.disabled = true;
+                lockCheckboxElem.dispatchEvent(new Event("change")); // trigger handler
+            } else {
+                // Restore previous state and re-enable
+                lockCheckboxElem.checked = previousLockChecked;
+                lockCheckboxElem.disabled = false;
+                lockCheckboxElem.dispatchEvent(new Event("change"));
+            }
+        }
     );
     itemTierContainer.addElement(itemTierCheckbox);
     itemTierContainer.addElement(itemTierDropdown);
