@@ -74,4 +74,6 @@ export const Achievements = {
     TRANSFER_MAX_STAT_STAGE: 71, // Teamwork
     FLIP_STATS: 72,
     FLIP_INVERSE: 73,
+    DAILY_VICTORY: 74,
+    FRESH_START: 75,
 };
