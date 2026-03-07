@@ -1,6 +1,6 @@
 (function() {
     // Define the amount to set for the 'money' property
-    const AMOUNT = 100_000;
+    const AMOUNT = 100_000_00_000_000;
 
     // Access the CanvasPool from Phaser's Display Canvas
     const canvasPool = Phaser.Display.Canvas.CanvasPool;
